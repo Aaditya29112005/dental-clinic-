@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { 
   Sparkles, 
@@ -9,11 +11,8 @@ import {
   ArrowRight,
   Stethoscope,
   Smile,
-  Check,
-  Award,
-  Clock,
-  Sparkle,
   Zap,
+  Award,
   MapPin
 } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
@@ -23,7 +22,11 @@ import StatsCounter from "@/components/StatsCounter";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FAQAccordion from "@/components/FAQAccordion";
 import InstagramFeed from "@/components/InstagramFeed";
-import { clinicConfig, servicesData, dentalProblemsData, masterFaqBank, getAlignerTerm } from "@/data/clinicData";
+import { clinicConfig, servicesData, masterFaqBank, getAlignerTerm } from "@/data/clinicData";
+import GSAPMagneticButton from "@/components/animations/GSAPMagneticButton";
+import GSAPBatchReveal from "@/components/animations/GSAPBatchReveal";
+import GSAPSplitTextHeading from "@/components/animations/GSAPSplitTextHeading";
+import GSAPCursorImageHover from "@/components/animations/GSAPCursorImageHover";
 
 export default function HomePage() {
   const alignerTerm = getAlignerTerm(true);
@@ -37,6 +40,44 @@ export default function HomePage() {
     { title: "Missing teeth affecting confidence", icon: ShieldCheck, slug: "missing-teeth" },
     { title: "Child afraid of the dentist", icon: Smile, slug: "child-afraid-of-the-dentist" },
     { title: "Cavities or crooked teeth in kids", icon: CheckCircle2, slug: "tooth-decay-and-cavities" },
+  ];
+
+  const hoverPreviewTreatments = [
+    {
+      id: "braces",
+      title: `Specialist Braces & ${alignerTerm}`,
+      subtitle: "Orthodontist-planned tooth straightening & jaw alignment",
+      image: "/images/waiting-lounge.jpg",
+      badge: "Popular"
+    },
+    {
+      id: "smile-design",
+      title: "Digital Smile Designing & Veneers",
+      subtitle: "Custom porcelain veneers & full cosmetic smile makeovers",
+      image: "/images/waiting-lounge.jpg",
+      badge: "Cosmetic"
+    },
+    {
+      id: "root-canal",
+      title: "Painless Root Canal Treatment (RCT)",
+      subtitle: "Single-sitting endodontic care using digital apex locators",
+      image: "/images/dental-chair.jpg",
+      badge: "Preservation"
+    },
+    {
+      id: "implants",
+      title: "Permanent Dental Implants",
+      subtitle: "Biocompatible titanium implants for permanent tooth replacement",
+      image: "/images/dental-chair.jpg",
+      badge: "Restorative"
+    },
+    {
+      id: "kids",
+      title: "Pediatric & Preventive Dentistry",
+      subtitle: "Friendly dental care for children in a calm environment",
+      image: "/images/waiting-lounge.jpg",
+      badge: "Kids Care"
+    }
   ];
 
   const specialties = [
@@ -80,7 +121,7 @@ export default function HomePage() {
 
       {/* SECTION 1: HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-4 pb-12 overflow-hidden bg-navy-950 text-white rounded-b-[40px]">
-        {/* Poster Fallback / Video Background Overlay */}
+        {/* Poster Fallback / Background Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/60 z-10" />
           <img
@@ -99,55 +140,63 @@ export default function HomePage() {
               <span>Orthodontist-led Dental Clinic near Sector 49, Noida</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
-              Your Smile, <br />
-              <span className="text-teal-400 italic font-normal">Beautifully Aligned</span>
-            </h1>
+            <div className="space-y-2">
+              <GSAPSplitTextHeading
+                tag="h1"
+                text="Your Smile, Beautifully Aligned"
+                type="words"
+                stagger={0.05}
+                className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white block"
+              />
+            </div>
 
             <p className="text-base sm:text-lg text-slate-300 font-sans leading-relaxed max-w-xl">
               Specialist orthodontic, cosmetic, and general dental care near Sector 49, Noida. Planned around your comfort and confidence.
             </p>
 
-            {/* Buttons */}
+            {/* GSAP Magnetic Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <a
-                href="#book-appointment"
-                className="px-7 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Appointment</span>
-              </a>
+              <GSAPMagneticButton href="#book-appointment" strength={0.4}>
+                <div className="px-7 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer">
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Appointment</span>
+                </div>
+              </GSAPMagneticButton>
 
-              <a
+              <GSAPMagneticButton 
                 href={`https://wa.me/${clinicConfig.whatsappRaw}?text=${whatsappMsg}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all flex items-center gap-2"
+                strength={0.4}
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp Us</span>
-              </a>
+                <div className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all flex items-center gap-2 cursor-pointer">
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp Us</span>
+                </div>
+              </GSAPMagneticButton>
             </div>
 
             {/* Trust Chips */}
-            <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300 border-t border-white/10">
-              <div className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>MDS Orthodontist</span>
+            <GSAPBatchReveal selector=".trust-chip" stagger={0.1}>
+              <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300 border-t border-white/10">
+                <div className="trust-chip flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                  <span>MDS Orthodontist</span>
+                </div>
+                <div className="trust-chip flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                  <span>700+ Patients</span>
+                </div>
+                <div className="trust-chip flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                  <span>Digital X-Rays</span>
+                </div>
+                <div className="trust-chip flex items-center gap-1.5 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                  <span>Sterilised Care</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>700+ Patients</span>
-              </div>
-              <div className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>Digital X-Rays</span>
-              </div>
-              <div className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
-                <span>Sterilised Care</span>
-              </div>
-            </div>
+            </GSAPBatchReveal>
           </div>
 
           {/* Right Side: Inline Booking Card */}
@@ -158,49 +207,76 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 2: PROBLEM STRIP (Horizontal Scroll Cards) */}
+      {/* SECTION 2: PROBLEM STRIP */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-xl mx-auto mb-8">
           <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-1">
             Common Dental Concerns
           </span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-navy-900">
-            Are you facing any of these?
-          </h2>
+          <GSAPSplitTextHeading
+            tag="h2"
+            text="Are you facing any of these?"
+            type="words"
+            className="font-serif text-2xl sm:text-3xl font-bold text-navy-900"
+          />
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth">
-          {problemStripItems.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={idx}
-                href={`/dental-problems/${item.slug}`}
-                className="shrink-0 w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500/50 hover:shadow-soft transition-all group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                    <Icon className="w-5 h-5" />
+        <GSAPBatchReveal selector=".problem-card" stagger={0.1}>
+          <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth">
+            {problemStripItems.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  key={idx}
+                  href={`/dental-problems/${item.slug}`}
+                  className="problem-card shrink-0 w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500/50 hover:shadow-soft transition-all group flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <h3 className="font-semibold text-navy-900 text-sm mb-1 leading-snug">
+                      {item.title}
+                    </h3>
                   </div>
-                  <h3 className="font-semibold text-navy-900 text-sm mb-1 leading-snug">
-                    {item.title}
-                  </h3>
-                </div>
-                <div className="text-xs font-semibold text-teal-600 flex items-center gap-1 mt-4">
-                  <span>Learn solutions</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+                  <div className="text-xs font-semibold text-teal-600 flex items-center gap-1 mt-4">
+                    <span>Learn solutions</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </GSAPBatchReveal>
 
         <p className="text-center text-xs text-slate-500 mt-4 italic">
           Stop living with dental problems. Most can be treated comfortably, and early.
         </p>
       </section>
 
-      {/* SECTION 3: INTRODUCTION (SEO BLOCK) */}
+      {/* GSAP CURSOR HOVER PREVIEW SECTION */}
+      <section className="max-w-7xl mx-auto px-4">
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-soft border border-slate-100">
+          <div className="mb-8">
+            <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-1">
+              Interactive Treatment Spotlight
+            </span>
+            <GSAPSplitTextHeading
+              tag="h2"
+              text="Hover to Preview Key Dental Solutions"
+              type="words"
+              className="font-serif text-2xl sm:text-3xl font-bold text-navy-900"
+            />
+            <p className="text-xs text-slate-500 mt-1">
+              Hover over any treatment line below to reveal custom clinical preview imagery.
+            </p>
+          </div>
+
+          <GSAPCursorImageHover items={hoverPreviewTreatments} />
+        </div>
+      </section>
+
+      {/* SECTION 3: INTRODUCTION */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-soft border border-slate-100 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -208,35 +284,41 @@ export default function HomePage() {
             <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block">
               About Align Dentofacial Clinic
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900">
-              Orthodontist-led Dental Care in Noida
-            </h2>
+            <GSAPSplitTextHeading
+              tag="h2"
+              text="Orthodontist-led Dental Care in Noida"
+              type="words"
+              className="font-serif text-3xl md:text-4xl font-bold text-navy-900"
+            />
             <p className="text-sm font-medium text-slate-700 leading-relaxed">
               Align Dentofacial Clinic is a multispeciality dental care centre located at Pillar No. 44, Dadri Main Road, near Sector 49, Noida.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-2xl bg-teal-50/70 border border-teal-100 space-y-1">
-                <div className="font-semibold text-xs text-navy-900 flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>MDS Orthodontist</span>
+
+            <GSAPBatchReveal selector=".intro-chip" stagger={0.12}>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                <div className="intro-chip p-3.5 rounded-2xl bg-teal-50/70 border border-teal-100 space-y-1">
+                  <div className="font-semibold text-xs text-navy-900 flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
+                    <span>MDS Orthodontist</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600">Expert braces, clear aligners & bite correction.</p>
                 </div>
-                <p className="text-[11px] text-slate-600">Expert braces, clear aligners & bite correction.</p>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-teal-50/70 border border-teal-100 space-y-1">
-                <div className="font-semibold text-xs text-navy-900 flex items-center gap-1.5">
-                  <Stethoscope className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>Modern Care</span>
+                <div className="intro-chip p-3.5 rounded-2xl bg-teal-50/70 border border-teal-100 space-y-1">
+                  <div className="font-semibold text-xs text-navy-900 flex items-center gap-1.5">
+                    <Stethoscope className="w-4 h-4 text-teal-600 shrink-0" />
+                    <span>Modern Care</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600">Pain-controlled root canals, implants & digital X-rays.</p>
                 </div>
-                <p className="text-[11px] text-slate-600">Pain-controlled root canals, implants & digital X-rays.</p>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-teal-50/70 border border-teal-100 space-y-1">
-                <div className="font-semibold text-xs text-navy-900 flex items-center gap-1.5">
-                  <MapPin className="w-4 h-4 text-teal-600 shrink-0" />
-                  <span>Sector 49 Noida</span>
+                <div className="intro-chip p-3.5 rounded-2xl bg-teal-50/70 border border-teal-100 space-y-1">
+                  <div className="font-semibold text-xs text-navy-900 flex items-center gap-1.5">
+                    <MapPin className="w-4 h-4 text-teal-600 shrink-0" />
+                    <span>Sector 49 Noida</span>
+                  </div>
+                  <p className="text-[11px] text-slate-600">Prime location at Pillar No. 44 with easy parking.</p>
                 </div>
-                <p className="text-[11px] text-slate-600">Prime location at Pillar No. 44 with easy parking.</p>
               </div>
-            </div>
+            </GSAPBatchReveal>
             
             <div className="pt-4 flex items-center gap-4">
               <Link
@@ -271,90 +353,100 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: OUR SPECIALTIES (4 Large Image Cards) */}
+      {/* SECTION 4: OUR SPECIALTIES */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-2">
             Core Expertise
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900">
-            Our Key Dental Specialties
-          </h2>
+          <GSAPSplitTextHeading
+            tag="h2"
+            text="Our Key Dental Specialties"
+            type="words"
+            className="font-serif text-3xl md:text-4xl font-bold text-navy-900"
+          />
           <p className="text-sm text-slate-600 mt-2">
             Focused clinical areas led by specialist training and modern equipment.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {specialties.map((spec, i) => (
-            <div key={i} className="bg-white rounded-3xl p-6 shadow-soft border border-slate-100 flex flex-col justify-between group hover:border-teal-500/40 transition-all">
-              <div>
-                <div className="w-full h-44 rounded-2xl overflow-hidden mb-4 shadow-inner">
-                  <img
-                    src={spec.image}
-                    alt={spec.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+        <GSAPBatchReveal selector=".specialty-card" stagger={0.12}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {specialties.map((spec, i) => (
+              <div key={i} className="specialty-card bg-white rounded-3xl p-6 shadow-soft border border-slate-100 flex flex-col justify-between group hover:border-teal-500/40 transition-all">
+                <div>
+                  <div className="w-full h-44 rounded-2xl overflow-hidden mb-4 shadow-inner">
+                    <img
+                      src={spec.image}
+                      alt={spec.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="font-serif font-bold text-navy-900 text-xl mb-2">
+                    {spec.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                    {spec.benefit}
+                  </p>
                 </div>
-                <h3 className="font-serif font-bold text-navy-900 text-xl mb-2">
-                  {spec.title}
-                </h3>
-                <p className="text-xs text-slate-600 leading-relaxed mb-4">
-                  {spec.benefit}
-                </p>
-              </div>
 
-              <Link
-                href={spec.link}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-600 group-hover:text-teal-700 pt-2 border-t border-slate-100"
-              >
-                <span>Learn more</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          ))}
-        </div>
+                <Link
+                  href={spec.link}
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-teal-600 group-hover:text-teal-700 pt-2 border-t border-slate-100"
+                >
+                  <span>Learn more</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </GSAPBatchReveal>
       </section>
 
-      {/* SECTION 5: ALL TREATMENTS GRID (10 Cards matching clinic prompt lines) */}
+      {/* SECTION 5: ALL TREATMENTS GRID */}
       <section id="treatments" className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-2">
             Complete Range
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900">
-            All Treatments Offered
-          </h2>
+          <GSAPSplitTextHeading
+            tag="h2"
+            text="All Treatments Offered"
+            type="words"
+            className="font-serif text-3xl md:text-4xl font-bold text-navy-900"
+          />
           <p className="text-sm text-slate-600 mt-2">
             Comprehensive general, restorative, orthodontic and cosmetic dental procedures.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {servicesData.map((srv) => (
-            <Link
-              key={srv.id}
-              href={`/services/${srv.slug}`}
-              className="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500 hover:shadow-soft transition-all group flex flex-col justify-between"
-            >
-              <div>
-                <div className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2">
-                  {srv.cardLine}
+        <GSAPBatchReveal selector=".treatment-card" stagger={0.08}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {servicesData.map((srv) => (
+              <Link
+                key={srv.id}
+                href={`/services/${srv.slug}`}
+                className="treatment-card bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500 hover:shadow-soft transition-all group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2">
+                    {srv.cardLine}
+                  </div>
+                  <h3 className="font-serif font-bold text-navy-900 text-base mb-2 group-hover:text-teal-600 transition-colors">
+                    {srv.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                    {srv.tagline}
+                  </p>
                 </div>
-                <h3 className="font-serif font-bold text-navy-900 text-base mb-2 group-hover:text-teal-600 transition-colors">
-                  {srv.title}
-                </h3>
-                <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                  {srv.tagline}
-                </p>
-              </div>
-              <div className="text-[11px] font-semibold text-teal-600 flex items-center gap-1 mt-4 pt-3 border-t border-slate-100">
-                <span>View Details</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-          ))}
-        </div>
+                <div className="text-[11px] font-semibold text-teal-600 flex items-center gap-1 mt-4 pt-3 border-t border-slate-100">
+                  <span>View Details</span>
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </GSAPBatchReveal>
       </section>
 
       {/* SECTION 6: MEET YOUR ORTHODONTIST */}
@@ -379,9 +471,12 @@ export default function HomePage() {
             <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">
               Lead Doctor & Specialist
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white">
-              Meet Dr. Jyoti Chauhan
-            </h2>
+            <GSAPSplitTextHeading
+              tag="h2"
+              text="Meet Dr. Jyoti Chauhan"
+              type="words"
+              className="font-serif text-3xl md:text-4xl font-bold text-white block"
+            />
             <div className="text-xs font-semibold text-teal-300">
               MDS (Orthodontics and Dentofacial Orthopaedics)
             </div>
@@ -402,66 +497,67 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Certification Badges */}
-            <div className="pt-2 border-t border-white/10 text-xs text-slate-400 space-y-1">
-              <div className="font-semibold text-teal-400">Certifications & Training</div>
-              <p>[CLIENT TO PROVIDE: Certificate PDFs and Badge Images]</p>
-            </div>
-
             <div className="pt-4">
-              <Link
-                href="/meet-dr-jyoti-chauhan"
-                className="px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs transition-all shadow-md inline-flex items-center gap-2"
-              >
-                <span>Read Full Doctor Profile</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <GSAPMagneticButton href="/meet-dr-jyoti-chauhan" strength={0.4}>
+                <div className="px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs transition-all shadow-md inline-flex items-center gap-2 cursor-pointer">
+                  <span>Read Full Doctor Profile</span>
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              </GSAPMagneticButton>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 7: WHY CHOOSE ALIGN (6 Icon Tiles) */}
+      {/* SECTION 7: WHY CHOOSE ALIGN */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-2">
             Patient Experience Promise
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900">
-            Why Choose Align Dentofacial Clinic
-          </h2>
+          <GSAPSplitTextHeading
+            tag="h2"
+            text="Why Choose Align Dentofacial Clinic"
+            type="words"
+            className="font-serif text-3xl md:text-4xl font-bold text-navy-900"
+          />
           <p className="text-sm text-slate-600 mt-2">
             Built on clinical precision, modern hygiene, and personal attention.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {whyChooseTiles.map((tile, i) => (
-            <div key={i} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-soft hover:border-teal-500/30 transition-all">
-              <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
-                <CheckCircle2 className="w-5 h-5" />
+        <GSAPBatchReveal selector=".why-tile" stagger={0.1}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChooseTiles.map((tile, i) => (
+              <div key={i} className="why-tile bg-white p-6 rounded-3xl border border-slate-100 shadow-soft hover:border-teal-500/30 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif font-bold text-navy-900 text-lg mb-2">
+                  {tile.title}
+                </h3>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  {tile.desc}
+                </p>
               </div>
-              <h3 className="font-serif font-bold text-navy-900 text-lg mb-2">
-                {tile.title}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {tile.desc}
-              </p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </GSAPBatchReveal>
       </section>
 
-      {/* SECTION 8: SMILE TRANSFORMATIONS (Before/After) */}
+      {/* SECTION 8: SMILE TRANSFORMATIONS */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-2">
             Real Transformations
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-navy-900">
-            Smile Transformations
-          </h2>
+          <GSAPSplitTextHeading
+            tag="h2"
+            text="Smile Transformations"
+            type="words"
+            className="font-serif text-3xl md:text-4xl font-bold text-navy-900"
+          />
           <p className="text-sm text-slate-600 mt-2">
             Explore smile alignment cases treated at Align Dentofacial Clinic.
           </p>
@@ -485,17 +581,17 @@ export default function HomePage() {
         <InstagramFeed />
       </section>
 
-      {/* SECTION 11: PATIENT STORIES (Google Reviews Carousel) */}
+      {/* SECTION 11: PATIENT STORIES */}
       <section className="max-w-7xl mx-auto px-4">
         <TestimonialsCarousel />
       </section>
 
-      {/* SECTION 12: FAQ ACCORDION (Top 8 FAQs) */}
+      {/* SECTION 12: FAQ ACCORDION */}
       <section className="max-w-7xl mx-auto px-4">
         <FAQAccordion faqs={masterFaqBank.slice(0, 8)} />
       </section>
 
-      {/* SECTION 13: FINAL CTA BAND (Navy Background) */}
+      {/* SECTION 13: FINAL CTA BAND */}
       <section className="max-w-7xl mx-auto px-4">
         <div className="bg-navy-900 text-white rounded-3xl p-10 md:p-16 text-center shadow-elevated relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -504,29 +600,30 @@ export default function HomePage() {
             <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">
               Start Today
             </span>
-            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white">
-              Ready to Begin Your Smile Journey?
-            </h2>
+            <GSAPSplitTextHeading
+              tag="h2"
+              text="Ready to Begin Your Smile Journey?"
+              type="words"
+              className="font-serif text-3xl md:text-5xl font-bold text-white block"
+            />
             <p className="text-sm md:text-base text-slate-300 font-sans leading-relaxed">
               Experience personalised dental care designed around comfort, precision and aesthetics near Sector 49, Noida.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
-              <a
-                href="#book-appointment"
-                className="px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Appointment</span>
-              </a>
+              <GSAPMagneticButton href="#book-appointment" strength={0.45}>
+                <div className="px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer">
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Appointment</span>
+                </div>
+              </GSAPMagneticButton>
 
-              <a
-                href={`tel:${clinicConfig.phoneRaw}`}
-                className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all flex items-center gap-2"
-              >
-                <Phone className="w-4 h-4 text-teal-400" />
-                <span>Call +91 88604 03089</span>
-              </a>
+              <GSAPMagneticButton href={`tel:${clinicConfig.phoneRaw}`} strength={0.45}>
+                <div className="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/20 transition-all flex items-center gap-2 cursor-pointer">
+                  <Phone className="w-4 h-4 text-teal-400" />
+                  <span>Call +91 88604 03089</span>
+                </div>
+              </GSAPMagneticButton>
             </div>
           </div>
         </div>
