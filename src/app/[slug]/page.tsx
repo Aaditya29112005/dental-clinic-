@@ -43,7 +43,7 @@ export default function LocalSeoPage({ params }: Props) {
           <div className="flex items-center space-x-2 text-xs text-slate-400 mb-6">
             <Link href="/" className="hover:text-teal-400">Home</Link>
             <span>/</span>
-            <span className="text-teal-400">Areas We Serve</span>
+            <span className="text-teal-400">Locations</span>
             <span>/</span>
             <span className="text-teal-300 font-semibold">{location.areaName}</span>
           </div>

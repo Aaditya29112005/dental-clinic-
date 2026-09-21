@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Instagram, Facebook, ShieldAlert } from "lucide-react";
-import { clinicConfig, servicesData, locationsData } from "@/data/clinicData";
+import { Phone, Mail, MapPin, Clock, Instagram, Facebook } from "lucide-react";
+import { clinicConfig, servicesData } from "@/data/clinicData";
 
 export default function Footer() {
   return (
     <footer className="bg-navy-950 text-white pt-16 pb-24 md:pb-12 border-t border-navy-900">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-navy-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pb-12 border-b border-navy-900">
           
           {/* Column 1: Brand & Contact Info */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-4">
             <Link href="/" className="inline-block bg-white p-2.5 rounded-2xl shadow-sm hover:opacity-95 transition-opacity">
               <img
                 src="/logo.png"
@@ -70,10 +70,10 @@ export default function Footer() {
           {/* Column 2: Quick Links / Treatments */}
           <div>
             <h4 className="font-serif text-sm font-bold text-teal-400 uppercase tracking-wider mb-4">
-              Treatments
+              Treatments & Services
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
-              {servicesData.slice(0, 6).map((srv) => (
+            <ul className="space-y-2.5 text-xs text-slate-300">
+              {servicesData.slice(0, 8).map((srv) => (
                 <li key={srv.id}>
                   <Link href={`/services/${srv.slug}`} className="hover:text-teal-300 transition-colors">
                     {srv.title}
@@ -83,28 +83,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Areas We Serve */}
-          <div>
-            <h4 className="font-serif text-sm font-bold text-teal-400 uppercase tracking-wider mb-4">
-              Areas We Serve
-            </h4>
-            <ul className="space-y-2 text-xs text-slate-300">
-              {locationsData.slice(0, 6).map((loc) => (
-                <li key={loc.id}>
-                  <Link href={`/${loc.slug}`} className="hover:text-teal-300 transition-colors">
-                    Dentist in {loc.areaName}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Quick Clinic Navigation & Google Map */}
+          {/* Column 3: Quick Clinic Navigation */}
           <div>
             <h4 className="font-serif text-sm font-bold text-teal-400 uppercase tracking-wider mb-4">
               Quick Navigation
             </h4>
-            <ul className="space-y-2 text-xs text-slate-300 mb-4">
+            <ul className="space-y-2.5 text-xs text-slate-300 mb-6">
               <li><Link href="/about-clinic" className="hover:text-teal-300">About Clinic</Link></li>
               <li><Link href="/meet-dr-jyoti-chauhan" className="hover:text-teal-300">Meet Dr. Jyoti Chauhan</Link></li>
               <li><Link href="/smile-assessment" className="hover:text-teal-300">Smile Assessment Quiz</Link></li>
@@ -113,11 +97,11 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-teal-300">Contact & Directions</Link></li>
             </ul>
 
-            {/* Embedded Google Map */}
-            <div id="map-location" className="w-full h-24 rounded-xl overflow-hidden border border-navy-800 bg-navy-900 relative">
+            {/* Embedded Map */}
+            <div id="map-location" className="w-full h-28 rounded-xl overflow-hidden border border-navy-800 bg-navy-900 relative">
               <iframe
                 title="Align Dentofacial Clinic Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6853874312!2d77.3767!3d28.5672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzAxLjkiTiA3N8KwMjInMzYuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6853874312!2d77.3767!3d28.5672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzAxLjkiTiA3N8KwMjInMzSureJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

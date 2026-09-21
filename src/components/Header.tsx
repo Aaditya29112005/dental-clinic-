@@ -236,31 +236,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* Areas We Serve */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("areas")}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <button className="flex items-center gap-1 px-3 py-2 rounded-lg hover:text-teal-600 hover:bg-teal-50/50 transition-colors">
-                <span>Areas We Serve</span>
-                <ChevronDown className="w-4 h-4 text-teal-600" />
-              </button>
-              {activeDropdown === "areas" && (
-                <div className="absolute top-full right-0 w-64 bg-white rounded-2xl shadow-elevated p-4 border border-slate-100 grid grid-cols-2 gap-1 animate-in fade-in duration-200 text-xs">
-                  {locationsData.map((loc) => (
-                    <Link
-                      key={loc.id}
-                      href={`/${loc.slug}`}
-                      className="px-2.5 py-1.5 rounded hover:bg-teal-50 hover:text-teal-700 text-slate-700 font-medium"
-                    >
-                      {loc.areaName}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
             <Link href="/blog" className="px-3 py-2 rounded-lg hover:text-teal-600 hover:bg-teal-50/50 transition-colors">
               Blog
             </Link>
