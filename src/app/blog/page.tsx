@@ -1,7 +1,8 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Clock, User, Sparkles } from "lucide-react";
+import { ArrowRight, Clock, User, Sparkles, Video } from "lucide-react";
 import { blogPostsData } from "@/data/clinicData";
+import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 
 export const metadata: Metadata = {
   title: "Dental & Orthodontic Blog | Align Dentofacial Clinic Noida",
@@ -35,7 +36,50 @@ export default function BlogListingPage() {
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Featured Educational Video Reels Section */}
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="bg-gradient-to-br from-navy-900 to-slate-900 text-white p-8 md:p-10 rounded-3xl shadow-soft border border-slate-800 space-y-6">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-400 uppercase tracking-widest">
+                <Video className="w-4 h-4" />
+                Featured Video Guides
+              </span>
+              <h2 className="font-serif text-2xl font-bold text-white mt-1">
+                Visual Dental Tips & Technology Highlights
+              </h2>
+            </div>
+            <span className="text-xs text-slate-400 bg-slate-800/80 px-3 py-1 rounded-lg border border-slate-700">
+              By Dr. Jyoti Chauhan
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-3">
+              <CustomVideoPlayer
+                src="/videos/video-tech-highlight.mp4"
+                poster="/images/advanced-dental-tech.jpg"
+                title="Modern Dental Technology & Precision Care"
+                subtitle="Understanding intraoral scanning and apex locators."
+                badge="Tech Reel"
+                aspectRatio="aspect-video"
+              />
+            </div>
+            <div className="space-y-3">
+              <CustomVideoPlayer
+                src="/videos/video-smile-consultation.mp4"
+                poster="/images/smile-transformation-care.jpg"
+                title="What to Expect in Your First Smile Assessment"
+                subtitle="Step-by-step patient evaluation guide."
+                badge="Patient Guide"
+                aspectRatio="aspect-video"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Article Grid */}
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPostsData.map((post) => (
           <article

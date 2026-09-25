@@ -18,18 +18,8 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/services',
-        destination: '/#treatments',
-        permanent: true,
-      },
-      {
         source: '/contact-us',
         destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/orthodontics',
-        destination: '/services/braces-noida',
         permanent: true,
       },
       {

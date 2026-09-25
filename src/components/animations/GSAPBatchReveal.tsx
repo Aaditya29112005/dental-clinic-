@@ -48,20 +48,19 @@ export default function GSAPBatchReveal({
             ease: "sine.out",
             overwrite: "auto",
           }),
-        onLeaveBack: (batch) =>
-          gsap.to(batch, {
-            autoAlpha: 0,
-            y: yOffset,
-            duration: 0.4,
-            ease: "sine.in",
-            overwrite: "auto",
-          }),
-        start: "top 85%",
-        once: false,
+        start: "top 95%",
+        once: true,
       });
     }, containerRef);
 
-    return () => ctx.revert();
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      ctx.revert();
+    };
   }, [selector, stagger, duration, yOffset]);
 
   return (

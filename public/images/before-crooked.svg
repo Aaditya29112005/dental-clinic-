@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+    <defs>
+        <!-- Gradients -->
+        <radialGradient id="bg-glow" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#1E293B"/>
+            <stop offset="100%" stop-color="#0F172A"/>
+        </radialGradient>
+        
+        <linearGradient id="lip-upper" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#E07A5F"/>
+            <stop offset="60%" stop-color="#C85A32"/>
+            <stop offset="100%" stop-color="#963B18"/>
+        </linearGradient>
+
+        <linearGradient id="lip-lower" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#963B18"/>
+            <stop offset="40%" stop-color="#D96B43"/>
+            <stop offset="100%" stop-color="#E07A5F"/>
+        </linearGradient>
+
+        <linearGradient id="gum-pink" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#EE8594"/>
+            <stop offset="70%" stop-color="#E25B6E"/>
+            <stop offset="100%" stop-color="#C23B4E"/>
+        </linearGradient>
+
+        <linearGradient id="tooth-yellowish" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFDF5"/>
+            <stop offset="50%" stop-color="#F7EED3"/>
+            <stop offset="100%" stop-color="#E6D7B0"/>
+        </linearGradient>
+
+        <linearGradient id="tooth-bright-yellow" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFDF7"/>
+            <stop offset="60%" stop-color="#F5E8C4"/>
+            <stop offset="100%" stop-color="#DFC890"/>
+        </linearGradient>
+
+        <linearGradient id="tooth-shadowed" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#EFE8D5"/>
+            <stop offset="70%" stop-color="#DDD0B0"/>
+            <stop offset="100%" stop-color="#C2B28F"/>
+        </linearGradient>
+
+        <linearGradient id="tooth-white" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="60%" stop-color="#F1F5F9"/>
+            <stop offset="100%" stop-color="#E2E8F0"/>
+        </linearGradient>
+
+        <linearGradient id="tooth-ultra-white" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="50%" stop-color="#F8FAFC"/>
+            <stop offset="100%" stop-color="#E0F2FE"/>
+        </linearGradient>
+        
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+        </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="800" height="600" fill="url(#bg-glow)"/>
+
+    <!-- Clinical Face / Mouth Frame -->
+    <!-- Dark Inner Oral Cavity -->
+    <ellipse cx="400" cy="310" rx="260" ry="140" fill="#1C0A0C"/>
+
+    <!-- Gums Upper Arch -->
+    <path d="M 140 300 Q 400 130 660 300 Q 400 180 140 300 Z" fill="url(#gum-pink)" filter="url(#shadow)"/>
+
+    <!-- Teeth Content -->
+    
+            <!-- Teeth: Crooked & Overlapped -->
+            <!-- Upper Left Premolar -->
+            <path d="M 180 300 Q 195 240 220 280 Q 230 330 200 340 Z" fill="url(#tooth-yellowish)" stroke="#D4C5A9" stroke-width="2"/>
+            <!-- Upper Left Canine -->
+            <path d="M 215 285 Q 240 210 270 270 Q 280 330 240 335 Z" fill="url(#tooth-yellowish)" stroke="#D4C5A9" stroke-width="2"/>
+            <!-- Upper Left Lateral (Tucked back) -->
+            <path d="M 265 275 Q 280 230 305 275 Q 315 320 280 325 Z" fill="url(#tooth-shadowed)" stroke="#C4B599" stroke-width="2"/>
+            <!-- Upper Left Central (Rotated & Overlapping) -->
+            <path d="M 298 260 Q 330 200 370 265 Q 375 345 320 335 Z" fill="url(#tooth-yellowish)" stroke="#D4C5A9" stroke-width="2" transform="rotate(-6 335 270)"/>
+            <!-- Upper Right Central (Protruding forward) -->
+            <path d="M 360 255 Q 410 195 445 260 Q 450 350 395 340 Z" fill="url(#tooth-bright-yellow)" stroke="#D4C5A9" stroke-width="2" transform="rotate(8 400 270)"/>
+            <!-- Upper Right Lateral -->
+            <path d="M 440 270 Q 465 220 495 275 Q 500 325 460 330 Z" fill="url(#tooth-yellowish)" stroke="#D4C5A9" stroke-width="2"/>
+            <!-- Upper Right Canine -->
+            <path d="M 490 280 Q 525 215 550 285 Q 560 335 515 340 Z" fill="url(#tooth-yellowish)" stroke="#D4C5A9" stroke-width="2"/>
+            
+            <!-- Lower Teeth (Misaligned) -->
+            <g opacity="0.9">
+                <path d="M 260 340 Q 275 385 295 350 Z" fill="url(#tooth-shadowed)" stroke="#C4B599"/>
+                <path d="M 292 342 Q 312 395 330 345 Z" fill="url(#tooth-yellowish)" stroke="#C4B599"/>
+                <path d="M 328 345 Q 355 400 375 348 Z" fill="url(#tooth-shadowed)" stroke="#C4B599"/>
+                <path d="M 372 346 Q 398 392 420 344 Z" fill="url(#tooth-yellowish)" stroke="#C4B599"/>
+                <path d="M 418 343 Q 442 388 460 342 Z" fill="url(#tooth-shadowed)" stroke="#C4B599"/>
+                <path d="M 458 340 Q 482 382 500 340 Z" fill="url(#tooth-yellowish)" stroke="#C4B599"/>
+            </g>
+            
+
+    <!-- Upper Lip Contour -->
+    <path d="M 120 290 Q 250 200 400 230 Q 550 200 680 290 Q 540 160 400 180 Q 260 160 120 290 Z" fill="url(#lip-upper)" filter="url(#shadow)"/>
+
+    <!-- Lower Lip Contour -->
+    <path d="M 130 310 Q 400 470 670 310 Q 540 430 400 420 Q 260 430 130 310 Z" fill="url(#lip-lower)" filter="url(#shadow)"/>
+
+    <!-- Photorealistic Dental Specular Highlight overlay on Lips -->
+    <path d="M 330 205 Q 400 220 470 205 Q 400 212 330 205 Z" fill="#FFFFFF" opacity="0.3"/>
+    <path d="M 320 425 Q 400 435 480 425 Q 400 429 320 425 Z" fill="#FFFFFF" opacity="0.25"/>
+
+    <!-- Case Tag Overlay -->
+    <rect x="30" y="30" width="340" height="40" rx="10" fill="#0F172A" opacity="0.85" stroke="#334155"/>
+    <text x="50" y="55" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#F8FAFC">BEFORE: Crooked & Misaligned Teeth</text>
+</svg>

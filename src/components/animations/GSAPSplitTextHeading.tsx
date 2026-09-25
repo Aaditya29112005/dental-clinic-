@@ -38,25 +38,34 @@ export default function GSAPSplitTextHeading({
       const targets = el.querySelectorAll(".split-unit");
       if (!targets.length) return;
 
-      gsap.set(targets, { yPercent: 100, opacity: 0, rotateX: -20 });
-
-      gsap.to(targets, {
-        yPercent: 0,
-        opacity: 1,
-        rotateX: 0,
-        duration: duration,
-        stagger: stagger,
-        delay: delay,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
+      gsap.fromTo(
+        targets,
+        { yPercent: 100, opacity: 0, rotateX: -20 },
+        {
+          yPercent: 0,
+          opacity: 1,
+          rotateX: 0,
+          duration: duration,
+          stagger: stagger,
+          delay: delay,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 95%",
+            once: true,
+          },
+        }
+      );
     }, headingRef);
 
-    return () => ctx.revert();
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      ctx.revert();
+    };
   }, [text, type, stagger, duration, delay]);
 
   const Tag = tag;

@@ -141,8 +141,17 @@ export default function ServiceDetailPage({ params }: Props) {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="w-full h-72 rounded-2xl bg-slate-900 text-slate-400 p-6 flex flex-col items-center justify-center text-center text-xs font-mono shadow-inner border border-teal-500/30">
-                [CLIENT TO PROVIDE: Service Showcase Photo for {service.title}]
+              <div className="relative group overflow-hidden rounded-2xl border border-teal-500/30 shadow-2xl bg-slate-900">
+                <img
+                  src={service.image || `/images/${service.slug}.jpg`}
+                  alt={service.title}
+                  className="w-full h-72 sm:h-80 object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-4 right-4 bg-navy-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 text-xs text-teal-300 font-medium flex items-center justify-between">
+                  <span>{service.title} Procedure</span>
+                  <span className="text-[10px] text-slate-300 bg-teal-500/20 px-2 py-0.5 rounded">Align Clinic</span>
+                </div>
               </div>
             </div>
           </div>

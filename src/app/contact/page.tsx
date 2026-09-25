@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Navigation, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Navigation, CheckCircle2, Film } from "lucide-react";
 import { clinicConfig } from "@/data/clinicData";
 import BookingForm from "@/components/BookingForm";
+import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 
 export const metadata: Metadata = {
   title: "Contact Us & Directions | Align Dentofacial Clinic Noida",
@@ -104,6 +105,42 @@ export default function ContactPage() {
                 <span>WhatsApp Us</span>
               </a>
             </div>
+          </div>
+
+          {/* Visual Clinic Entrance Spotlight Card */}
+          <div className="bg-white p-6 rounded-3xl shadow-soft border border-slate-100 space-y-4">
+            <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block">
+              Exterior & Entrance Preview
+            </span>
+            <div className="w-full h-56 rounded-2xl overflow-hidden shadow-inner border border-slate-200">
+              <img
+                src="/images/clinic-exterior-entrance.jpg"
+                alt="Align Dentofacial Clinic Exterior Entrance at Dadri Main Road"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Located directly at Pillar No. 44, Dadri Main Road, Sector 49, Noida. Look for our clear signage and easy ground-level entrance.
+            </p>
+          </div>
+
+          {/* Video Location Guide Reel */}
+          <div className="bg-navy-950 text-white p-6 md:p-8 rounded-3xl shadow-elevated space-y-4">
+            <div className="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-widest">
+              <Film className="w-4 h-4" />
+              <span>Location Video Guide</span>
+            </div>
+            <h3 className="font-serif text-xl font-bold text-white">
+              Watch Entrance & Arrival Walkthrough
+            </h3>
+            <CustomVideoPlayer
+              src="/videos/video-location-guide.mp4"
+              poster="/images/clinic-exterior-entrance.jpg"
+              title="Arrival Guide - Pillar 44 Dadri Main Road"
+              subtitle="Quick visual guide to finding Align Clinic."
+              badge="Location Reel"
+              className="w-full border border-teal-500/30"
+            />
           </div>
 
           {/* How to Reach Us Directions */}

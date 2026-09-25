@@ -50,21 +50,38 @@ export default function OrthodonticProblemPage({ params }: Props) {
             <span className="text-teal-300 font-semibold">{problem.title}</span>
           </div>
 
-          <div className="max-w-3xl space-y-4">
-            <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">
-              Specialist Orthodontic Care
-            </span>
-            <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white">
-              {problem.title} Treatment in Noida
-            </h1>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-              {problem.shortDesc}
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 space-y-4">
+              <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">
+                Specialist Orthodontic Care
+              </span>
+              <h1 className="font-serif text-3xl sm:text-5xl font-bold text-white">
+                {problem.title} Treatment in Noida
+              </h1>
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
+                {problem.shortDesc}
+              </p>
 
-            {/* AEO Box */}
-            <div className="bg-white/10 p-4 rounded-2xl border border-white/15 text-xs text-slate-200 mt-4">
-              <span className="font-bold text-teal-300 block mb-1">Direct Clinical Answer:</span>
-              {problem.aeoAnswer}
+              {/* AEO Box */}
+              <div className="bg-white/10 p-4 rounded-2xl border border-white/15 text-xs text-slate-200 mt-4">
+                <span className="font-bold text-teal-300 block mb-1">Direct Clinical Answer:</span>
+                {problem.aeoAnswer}
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="relative group overflow-hidden rounded-2xl border border-teal-500/30 shadow-2xl bg-slate-900">
+                <img
+                  src={problem.image || `/images/${problem.slug}.jpg`}
+                  alt={problem.title}
+                  className="w-full h-72 sm:h-80 object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-3 left-4 right-4 bg-navy-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 text-xs text-teal-300 font-medium flex items-center justify-between">
+                  <span>{problem.title} Alignment</span>
+                  <span className="text-[10px] text-slate-300 bg-teal-500/20 px-2 py-0.5 rounded">Align Orthodontics</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

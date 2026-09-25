@@ -14,42 +14,42 @@ interface InstaPost {
 const instaPosts: InstaPost[] = [
   {
     id: "post1",
-    image: "/images/dr-jyoti-chauhan.png",
+    image: "/images/dr-jyoti-portrait.jpg",
     caption: "Dr. Jyoti Chauhan (MDS Orthodontics) delivering custom braces & clear aligners for confident smiles in Noida.",
     category: "Lead Orthodontist",
     likes: 124
   },
   {
     id: "post2",
-    image: "/images/waiting-lounge.jpg",
+    image: "/images/clinic-reception-lounge.jpg",
     caption: "Step inside our calm boutique waiting lounge near Sector 49, Noida. Designed for zero-stress patient comfort.",
     category: "Clinic Tour",
     likes: 98
   },
   {
     id: "post3",
-    image: "/images/dental-chair.jpg",
+    image: "/images/clinic-chair-operatory.jpg",
     caption: "Advanced sterilised operatory equipped with modern ergonomic dental chair & ultra-low radiation digital sensor X-rays.",
     category: "Technology",
     likes: 142
   },
   {
     id: "post4",
-    image: "/images/waiting-lounge.jpg",
+    image: "/images/dr-jyoti-consultation.jpg",
     caption: "Invisalign® Clear Aligners - virtually invisible smile alignment planned with precision 3D digital scans.",
     category: "Invisalign® Care",
     likes: 186
   },
   {
     id: "post5",
-    image: "/images/dr-jyoti-chauhan.png",
-    caption: "Root Canal Treatment doesn't have to be painful! Modern endodontics under effective local anaesthesia keeps you comfortable.",
-    category: "Doctor Tips",
+    image: "/images/sterilization-station.jpg",
+    caption: "Multi-stage instrument sterilisation protocol keeping every dental visit completely safe and hygienic.",
+    category: "Safety First",
     likes: 110
   },
   {
     id: "post6",
-    image: "/images/dental-chair.jpg",
+    image: "/images/smile-transformation-care.jpg",
     caption: "700+ Happy Patients treated with transparent care & ethical treatment planning at Align Dentofacial Clinic.",
     category: "Milestone",
     likes: 215

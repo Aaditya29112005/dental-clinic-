@@ -71,15 +71,18 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
   };
 
   return (
-    <div id="book-appointment" className={`bg-white rounded-3xl p-6 md:p-8 shadow-elevated border border-teal-500/20 ${className}`}>
+    <div
+      id="book-appointment"
+      className={`bg-slate-900/40 backdrop-blur-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(0,0,0,0.45)] rounded-3xl p-6 md:p-8 text-white hover:border-teal-400/40 transition-all duration-300 ${className}`}
+    >
       <div className="mb-6">
-        <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-1">
+        <span className="text-xs font-bold text-teal-300 uppercase tracking-widest block mb-1">
           Quick & Direct
         </span>
-        <h3 className="font-serif text-2xl font-bold text-navy-900">
+        <h3 className="font-serif text-2xl font-bold text-white drop-shadow-sm">
           Book Your Consultation
         </h3>
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-xs text-slate-300 mt-1">
           Select your preferred time. We will confirm your slot within working hours.
         </p>
       </div>
@@ -87,29 +90,29 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name */}
         <div>
-          <label className="block text-xs font-semibold text-navy-900 mb-1">
+          <label className="block text-xs font-semibold text-slate-200 mb-1">
             Full Name *
           </label>
           <div className="relative">
-            <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <User className="w-4 h-4 text-teal-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               required
               placeholder="e.g. Rahul Sharma"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-slate-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all"
+              className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white placeholder:text-slate-400 shadow-inner"
             />
           </div>
         </div>
 
         {/* Phone */}
         <div>
-          <label className="block text-xs font-semibold text-navy-900 mb-1">
+          <label className="block text-xs font-semibold text-slate-200 mb-1">
             Phone Number *
           </label>
           <div className="relative">
-            <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Phone className="w-4 h-4 text-teal-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="tel"
               required
@@ -120,27 +123,27 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
                 if (phoneError) setPhoneError("");
               }}
               className={`w-full pl-10 pr-4 py-3 text-sm rounded-xl border ${
-                phoneError ? "border-red-500" : "border-slate-200"
-              } focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all`}
+                phoneError ? "border-red-400" : "border-white/20"
+              } focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white placeholder:text-slate-400 shadow-inner`}
             />
           </div>
           {phoneError && (
-            <p className="text-xs text-red-500 mt-1 font-medium">{phoneError}</p>
+            <p className="text-xs text-red-300 mt-1 font-medium">{phoneError}</p>
           )}
         </div>
 
         {/* Treatment Dropdown */}
         <div>
-          <label className="block text-xs font-semibold text-navy-900 mb-1">
+          <label className="block text-xs font-semibold text-slate-200 mb-1">
             Select Treatment *
           </label>
           <select
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all bg-white"
+            className="w-full px-4 py-3 text-sm rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
           >
             {servicesData.map((srv) => (
-              <option key={srv.id} value={srv.title}>
+              <option key={srv.id} value={srv.title} className="bg-navy-950 text-white">
                 {srv.title}
               </option>
             ))}
@@ -150,36 +153,36 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
         {/* Date and Time Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label className="block text-xs font-semibold text-navy-900 mb-1">
+            <label className="block text-xs font-semibold text-slate-200 mb-1">
               Preferred Date *
             </label>
             <div className="relative">
-              <Calendar className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Calendar className="w-4 h-4 text-teal-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="date"
                 required
                 min={new Date().toISOString().split("T")[0]}
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full pl-10 pr-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none transition-all"
+                className="w-full pl-10 pr-3 py-2.5 text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-navy-900 mb-1">
+            <label className="block text-xs font-semibold text-slate-200 mb-1">
               Preferred Time Slot
             </label>
             <div className="relative">
-              <Clock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Clock className="w-4 h-4 text-teal-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <select
                 value={formData.timeSlot}
                 onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                className="w-full pl-10 pr-3 py-2.5 text-xs rounded-xl border border-slate-200 focus:border-teal-500 outline-none transition-all bg-white"
+                className="w-full pl-10 pr-3 py-2.5 text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
               >
-                <option value="Morning (10 am - 1 pm)">Morning (10 am - 1 pm)</option>
-                <option value="Afternoon (1 pm - 4 pm)">Afternoon (1 pm - 4 pm)</option>
-                <option value="Evening (4 pm - 7 pm)">Evening (4 pm - 7 pm)</option>
+                <option value="Morning (10 am - 1 pm)" className="bg-navy-950 text-white">Morning (10 am - 1 pm)</option>
+                <option value="Afternoon (1 pm - 4 pm)" className="bg-navy-950 text-white">Afternoon (1 pm - 4 pm)</option>
+                <option value="Evening (4 pm - 7 pm)" className="bg-navy-950 text-white">Evening (4 pm - 7 pm)</option>
               </select>
             </div>
           </div>
@@ -189,7 +192,7 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group mt-2 disabled:opacity-70"
+          className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 hover:from-teal-400 hover:to-emerald-400 text-white font-semibold text-sm shadow-[0_4px_20px_rgba(20,184,166,0.35)] transition-all flex items-center justify-center gap-2 group mt-2 disabled:opacity-70 active:scale-[0.99]"
         >
           {isSubmitting ? (
             <span>Confirming Booking...</span>
@@ -203,17 +206,17 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
       </form>
 
       {/* Trust Elements */}
-      <div className="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-500">
-        <div className="flex items-center gap-1 font-medium text-amber-600">
-          <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+      <div className="mt-6 pt-5 border-t border-white/15 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-300">
+        <div className="flex items-center gap-1 font-medium text-amber-300">
+          <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           <span>5.0 Google Rating</span>
         </div>
-        <div className="flex items-center gap-1 font-medium text-navy-900">
-          <ShieldCheck className="w-3.5 h-3.5 text-teal-600" />
+        <div className="flex items-center gap-1 font-medium text-teal-300">
+          <ShieldCheck className="w-3.5 h-3.5 text-teal-400" />
           <span>MDS Orthodontist</span>
         </div>
-        <div className="flex items-center gap-1 font-medium text-slate-600">
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="flex items-center gap-1 font-medium text-emerald-300">
+          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
           <span>Sterilised Clinic</span>
         </div>
       </div>

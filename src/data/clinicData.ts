@@ -6,6 +6,7 @@ export interface ServiceItem {
   cardLine: string;
   shortDesc: string;
   aeoAnswer: string;
+  image?: string;
   fullDesc: string[];
   whoNeedsIt: string[];
   benefits: string[];
@@ -21,6 +22,7 @@ export interface OrthodonticProblemItem {
   title: string;
   shortDesc: string;
   aeoAnswer: string;
+  image?: string;
   causes: string[];
   effects: string[];
   treatments: string[];
@@ -35,6 +37,7 @@ export interface DentalProblemItem {
   title: string;
   shortDesc: string;
   aeoAnswer: string;
+  image?: string;
   symptoms: string[];
   commonCauses: string[];
   whenToSeeDentist: string[];
@@ -166,6 +169,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Precision-led dental evaluations",
     shortDesc: "Comprehensive oral health assessments using low-radiation digital imaging for early diagnosis and long-term tooth preservation.",
     aeoAnswer: "Comprehensive dental check-ups at Align Dentofacial Clinic in Noida combine thorough clinical examinations with ultra-low radiation digital X-rays. Early detection prevents complex dental problems, ensuring pain-controlled, cost-effective oral care.",
+    image: "/images/dental-checkups-and-digital-x-rays-noida.jpg",
     fullDesc: [
       "A routine dental check-up is the foundation of lifelong oral health. At Align Dentofacial Clinic, near Sector 49 Noida, our detailed evaluation includes a visual teeth inspection, gum health check, bite assessment, and oral cancer screening.",
       "Digital X-rays provide clear views of hidden tooth decay between teeth, bone structure around roots, and developing wisdom teeth. Digital sensor technology reduces radiation exposure by up to 80% compared to traditional film X-rays."
@@ -208,6 +212,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Natural-looking cavity restorations",
     shortDesc: "Painless composite restorations that repair tooth decay and match the natural shade of your natural teeth.",
     aeoAnswer: "Tooth fillings at Align Dentofacial Clinic repair decay using shade-matched composite resin. The procedure preserves natural tooth structure, restores chewing function, and prevents deep nerve infection.",
+    image: "/images/tooth-fillings-cavity-treatment-noida.jpg",
     fullDesc: [
       "When tooth decay creates a cavity, early treatment restores the tooth before nerve damage occurs. We use high-quality tooth-coloured composite resins that bond directly to your tooth enamel.",
       "Unlike old silver fillings, composite restorations blend seamlessly with your smile, require minimal tooth removal, and offer strong resistance against daily chewing pressure."
@@ -250,6 +255,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Comfort-focused, tooth-saving treatment",
     shortDesc: "Painless single-sitting or multi-sitting endodontic therapy that relieves toothache and saves infected teeth from extraction.",
     aeoAnswer: "Root canal treatment at Align Dentofacial Clinic in Noida removes infected pulp tissue, cleans the root canals, and seals them safely. Performed under effective local anaesthesia, it relieves severe tooth pain and preserves your natural tooth.",
+    image: "/images/root-canal-treatment-noida.jpg",
     fullDesc: [
       "When deep decay or injury reaches the inner nerve pulp of a tooth, severe pain and swelling can result. Root canal treatment is a precise endodontic procedure designed to eliminate infection while preserving your natural tooth structure.",
       "With advanced endodontic technology and rotary instruments, Dr. Jyoti Chauhan ensures root canals are performed with high accuracy and minimal discomfort."
@@ -292,6 +298,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Permanent, natural-looking tooth replacement",
     shortDesc: "Biocompatible titanium implants that replace missing tooth roots and support custom ceramic crowns for permanent confidence.",
     aeoAnswer: "Dental implants at Align Dentofacial Clinic in Noida replace missing teeth with permanent titanium roots and realistic porcelain crowns. They restore chewing strength, prevent jawbone loss, and look completely natural.",
+    image: "/images/dental-implants-noida.jpg",
     fullDesc: [
       "Missing teeth affect more than just your smile: they cause neighboring teeth to drift, alter your bite, and lead to gradual jawbone loss. Dental implants are the closest replacement for natural teeth available in modern dentistry.",
       "A dental implant consists of a small titanium post anchored gently into the jawbone, acting as a root. Once integrated, a custom crown is attached, providing a permanent solution that functions like a natural tooth."
@@ -334,6 +341,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Clear aligners for smile alignment",
     shortDesc: "Discreet, removable transparent trays that gently align crooked, spaced, or crowded teeth without metal wires.",
     aeoAnswer: "Clear aligners at Align Dentofacial Clinic offer an invisible, comfortable method to straighten teeth in Noida. Custom-designed by specialist MDS Orthodontist Dr. Jyoti Chauhan, removable clear trays align teeth smoothly without metal brackets.",
+    image: "/images/clear-aligners-noida.jpg",
     fullDesc: [
       "Clear aligners represent modern orthodontic innovation. Using custom 3D digital planning, a series of transparent, medical-grade plastic aligners are crafted to move your teeth gradually into ideal position.",
       "Because clear aligners are removable, you can enjoy your favorite foods, brush and floss normally, and maintain your professional appearance without visible metal wires or brackets."
@@ -376,6 +384,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Complete orthodontic smile correction",
     shortDesc: "Specialist orthodontic braces in metal and tooth-coloured ceramic for precise correction of complex bites and crowding.",
     aeoAnswer: "Orthodontic braces at Align Dentofacial Clinic in Noida provide reliable smile correction for children, teens, and adults. Led by MDS Orthodontist Dr. Jyoti Chauhan, braces fix crooked teeth, gaps, and severe bite misalignments.",
+    image: "/images/braces-noida.jpg",
     fullDesc: [
       "Braces remain one of the most effective and time-tested methods for correcting complex orthodontic concerns. Whether choosing classic high-grade metal braces or aesthetic tooth-coloured ceramic options, fixed appliances offer accurate control over individual tooth positions.",
       "As an MDS Orthodontist, Dr. Jyoti Chauhan plans every orthodontic case to improve both facial aesthetics and long-term bite function."
@@ -418,6 +427,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Luxury smile transformations",
     shortDesc: "Custom ultra-thin porcelain or composite shells that conceal stains, gaps, chips, and tooth irregularities.",
     aeoAnswer: "Dental veneers at Align Dentofacial Clinic in Noida are custom porcelain or composite shells crafted to transform discoloured, chipped, or slightly misaligned front teeth into a flawless, natural-looking smile.",
+    image: "/images/veneers-noida.jpg",
     fullDesc: [
       "Veneers are the ultimate cosmetic dental procedure for achieving a radiant, symmetrical smile. Ultra-thin shells of durable ceramic are custom-fabricated to bond directly to the front surface of your teeth.",
       "Veneers correct stubborn intrinsic staining, close gaps, fix uneven edges, and reshape teeth with remarkable aesthetic naturalism."
@@ -460,6 +470,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Brighter, healthier smiles",
     shortDesc: "Professional ultrasonic scaling to eliminate tartar, micro-polishing for smoothness, and safe whitening treatments.",
     aeoAnswer: "Professional teeth cleaning and whitening at Align Dentofacial Clinic removes stubborn calculus, tartar, and surface stains. It brightens discoloured teeth comfortably while protecting gum health.",
+    image: "/images/teeth-cleaning-polishing-whitening-noida.jpg",
     fullDesc: [
       "Even meticulous daily brushing cannot completely prevent tartar accumulation under gums and between teeth. Professional ultrasonic cleaning gently vibrates away hardened plaque and calculus.",
       "Following scaling and polishing, our professional teeth whitening treatments remove years of food, coffee, and tea stains, brightening your smile by several shades safely under dental supervision."
@@ -502,6 +513,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Personalised cosmetic dentistry",
     shortDesc: "Comprehensive aesthetic analysis combining alignment, veneers, gum contouring, and restorations for complete smile enhancement.",
     aeoAnswer: "Digital smile designing at Align Dentofacial Clinic in Noida creates personalised smile transformations. Dr. Jyoti Chauhan evaluates your facial proportions, lips, and teeth to craft a harmonious, aesthetic smile.",
+    image: "/images/smile-designing-noida.jpg",
     fullDesc: [
       "Smile designing combines art, science, and facial symmetry. Rather than treating individual teeth in isolation, we evaluate your entire face, lip line, gum display, and tooth proportions to craft your ideal smile.",
       "Using digital planning and multi-specialty care, your smile transformation may include orthodontic aligners, porcelain veneers, gum recontouring, and tooth whitening."
@@ -544,6 +556,7 @@ export const servicesData: ServiceItem[] = [
     cardLine: "Elegant dental restorations",
     shortDesc: "High-strength zircionia crowns, ceramic fixed bridges, and comfortable dentures designed for natural chewing and aesthetics.",
     aeoAnswer: "Dental crowns, bridges, and dentures at Align Dentofacial Clinic in Noida replace damaged or missing teeth with durable zirconia ceramic restorations. They restore natural biting force, speech clarity, and facial support.",
+    image: "/images/crowns-bridges-dentures-noida.jpg",
     fullDesc: [
       "When teeth are broken, severely decayed, or missing, custom prosthetics restore full functionality and appearance. A dental crown caps a damaged tooth, a bridge bridges the gap created by missing teeth, and dentures provide comfortable multi-tooth replacements.",
       "We use premium metal-free zirconia and ceramic materials crafted with CAD/CAM digital precision for strength and translucent natural beauty."
@@ -588,6 +601,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Crooked Teeth",
     shortDesc: "Misaligned or turned teeth that affect smile aesthetics and are difficult to keep clean.",
     aeoAnswer: "Crooked teeth treatment at Align Dentofacial Clinic in Noida uses braces or clear aligners to align misaligned teeth gently. Led by MDS Orthodontist Dr. Jyoti Chauhan, treatment improves smile appearance and oral hygiene.",
+    image: "/images/crooked-teeth-treatment-noida.jpg",
     causes: ["Genetics and small jaw size", "Early loss of primary baby teeth", "Habits like thumb sucking in early childhood"],
     effects: ["Increased risk of plaque buildup and cavities", "Uneven chewing pressure causing enamel wear", "Self-consciousness while smiling"],
     treatments: ["Clear Aligners", "Metal or Ceramic Braces", "Interceptive Orthodontics for children"],
@@ -604,6 +618,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Spaced Teeth (Gaps)",
     shortDesc: "Noticeable gaps or spaces between teeth caused by extra jaw space or missing teeth.",
     aeoAnswer: "Gap teeth treatment in Noida at Align Dentofacial Clinic closes spaces between teeth comfortably using clear aligners, braces, or cosmetic bonding under specialist orthodontic care.",
+    image: "/images/spaced-teeth-gaps-treatment-noida.jpg",
     causes: ["Disproportionate tooth-to-jaw size", "Large labial frenum attachment between front teeth", "Missing or abnormally small teeth"],
     effects: ["Food impaction between teeth leading to gum irritation", "Speech lisps or air leaks while talking", "Dissatisfaction with smile gap"],
     treatments: ["Clear Aligners", "Ceramic Braces", "Composite Bonding or Veneers for single gaps"],
@@ -620,6 +635,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Forward Teeth (Protrusion)",
     shortDesc: "Upper front teeth that stick out significantly forward relative to the lower jaw.",
     aeoAnswer: "Treatment for protruding upper front teeth in Noida uses dentofacial orthopaedics, braces, or clear aligners to gently bring teeth back into proper alignment and lip closure.",
+    image: "/images/before-crooked.jpg",
     causes: ["Skeletal jaw imbalance", "Thumb sucking or prolonged pacifier use", "Narrow upper arch"],
     effects: ["Risk of chipping front teeth in accidental falls", "Inability to comfortably close lips over teeth", "Dry mouth and mouth breathing"],
     treatments: ["Dentofacial Orthopaedics for growing children", "Orthodontic Braces", "Clear Aligners"],
@@ -635,6 +651,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Deep Bite (Overbite)",
     shortDesc: "Upper front teeth excessively overlap lower teeth, sometimes biting into the roof of the mouth.",
     aeoAnswer: "Deep bite treatment at Align Dentofacial Clinic in Noida corrects excessive upper tooth overlap, preventing gum trauma and protecting lower teeth from heavy wear.",
+    image: "/images/crooked-teeth-treatment-noida.jpg",
     causes: ["Overdevelopment of lower jaw bone or underdevelopment of upper arch", "Loss of back teeth"],
     effects: ["Lower teeth digging into palatal gum tissue", "Accelerated wear of lower front teeth", "Jaw joint (TMJ) discomfort"],
     treatments: ["Bite opening orthodontic appliances", "Braces with bite ramps", "Clear Aligners"],
@@ -650,6 +667,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Underbite (Reverse Bite)",
     shortDesc: "Lower front teeth sit forward in front of the upper front teeth when closing the mouth.",
     aeoAnswer: "Underbite correction in Noida uses specialized dentofacial orthopaedics or braces to align lower and upper jaw relationships for functional chewing and facial harmony.",
+    image: "/images/crooked-teeth-treatment-noida.jpg",
     causes: ["Genetics and lower jaw overgrowth", "Underdeveloped upper jaw bone"],
     effects: ["Difficulty chewing food properly", "Facial profile asymmetry", "Jaw joint pain"],
     treatments: ["Face mask / Reverse pull headgear (early age)", "Orthodontic Braces", "Clear Aligners"],
@@ -665,6 +683,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Crossbite",
     shortDesc: "One or more upper teeth bite inside the lower teeth instead of outside.",
     aeoAnswer: "Crossbite treatment at Align Dentofacial Clinic expands narrow arches and corrects tooth position using palatal expanders, braces, or clear aligners in Noida.",
+    image: "/images/crooked-teeth-treatment-noida.jpg",
     causes: ["Narrow upper jaw bone", "Genetics", "Delayed loss of baby teeth"],
     effects: ["Asymmetrical jaw growth in children", "Uneven tooth wear and gum recession", "Jaw shifting on closure"],
     treatments: ["Palatal Expanders", "Braces", "Clear Aligners"],
@@ -680,6 +699,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Open Bite",
     shortDesc: "Front upper and lower teeth do not touch when the back teeth bite together, leaving a vertical gap.",
     aeoAnswer: "Open bite correction in Noida closes front vertical gaps using habit correction appliances, braces, or clear aligners guided by MDS Orthodontist Dr. Jyoti Chauhan.",
+    image: "/images/crooked-teeth-treatment-noida.jpg",
     causes: ["Tongue thrusting habit", "Prolonged thumb sucking", "Vertical jaw growth pattern"],
     effects: ["Inability to bite or cut food with front teeth", "Speech difficulty with lisping", "Increased wear on back molar teeth"],
     treatments: ["Habit Breaking Appliances", "Clear Aligners", "Orthodontic Braces"],
@@ -695,6 +715,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Midline Misalignment",
     shortDesc: "The center line of upper front teeth does not line up with the center line of lower teeth.",
     aeoAnswer: "Midline misalignment treatment in Noida adjusts dental arch centers using precision orthodontic elastics, braces, or aligners for a symmetrical smile.",
+    image: "/images/crooked-teeth-treatment-noida.jpg",
     causes: ["Early loss of baby teeth on one side", "Asymmetrical tooth sizes", "Jaw shift"],
     effects: ["Asymmetrical smile balance", "Uneven chewing distribution"],
     treatments: ["Orthodontic Braces with asymmetric elastics", "Clear Aligners"],
@@ -710,6 +731,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Crowding",
     shortDesc: "Insufficient jaw space leading to overlapped, twisted, or pushed-back teeth.",
     aeoAnswer: "Teeth crowding treatment at Align Dentofacial Clinic in Noida creates adequate space and aligns overlapped teeth using arch expansion, braces, or clear aligners.",
+    image: "/images/before-crooked.jpg",
     causes: ["Small jaw size relative to tooth size", "Extra teeth or delayed tooth loss"],
     effects: ["Plaque traps causing decay and gum disease", "Aesthetic dissatisfaction"],
     treatments: ["Arch Expansion", "Clear Aligners", "Braces"],
@@ -725,6 +747,7 @@ export const orthodonticProblemsData: OrthodonticProblemItem[] = [
     title: "Uneven Smile",
     shortDesc: "Irregular tooth heights, slanted smile line, or uneven gum display affecting smile aesthetics.",
     aeoAnswer: "Uneven smile correction in Noida combines orthodontic levelling, aesthetic contouring, and veneers to create a balanced, symmetrical smile.",
+    image: "/images/after-straight.jpg",
     causes: ["Uneven tooth wear", "Irregular eruption heights", "Gum asymmetry"],
     effects: ["Unbalanced smile appearance", "Uneven tooth stress"],
     treatments: ["Orthodontic Levelling", "Veneers", "Cosmetic Contouring"],
@@ -744,6 +767,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Tooth Pain",
     shortDesc: "Sharp, dull, or throbbing ache in or around a tooth indicating decay, infection, or trauma.",
     aeoAnswer: "Tooth pain treatment at Align Dentofacial Clinic in Noida identifies the root cause through digital X-rays and delivers immediate, comfort-focused relief via fillings, root canal therapy, or gentle treatment.",
+    image: "/images/root-canal-treatment-noida.jpg",
     symptoms: ["Throbbing ache when biting or chewing", "Sensitivity to hot or cold temperatures", "Swollen gums or facial pressure"],
     commonCauses: ["Deep cavity reaching nerve", "Cracked tooth structure", "Gum infection or abscess"],
     whenToSeeDentist: ["Pain lasts longer than 1 day", "Pain wakes you up at night", "Fever or swelling accompanies the pain"],
@@ -762,6 +786,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Bleeding Gums",
     shortDesc: "Gums that bleed during brushing or flossing, signalling gingivitis or early gum disease.",
     aeoAnswer: "Bleeding gums treatment in Noida at Align Dentofacial Clinic removes tartar buildup through gentle ultrasonic scaling, stopping gum inflammation and protecting bone support.",
+    image: "/images/teeth-cleaning-polishing-whitening-noida.jpg",
     symptoms: ["Pink or red blood on toothbrush or sink", "Red, swollen, or tender gums", "Persistent bad breath"],
     commonCauses: ["Plaque and tartar accumulation along gumline", "Improper brushing technique", "Vitamin deficiencies or hormonal changes"],
     whenToSeeDentist: ["Gums bleed frequently while brushing", "Gums appear receded or pulled away from teeth"],
@@ -780,6 +805,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Sensitive Teeth",
     shortDesc: "Sharp pain or discomfort triggered by hot, cold, sweet, or acidic foods and drinks.",
     aeoAnswer: "Tooth sensitivity treatment at Align Dentofacial Clinic provides targeted enamel protection, fluoride varnish applications, and restorations to block painful nerve sensations.",
+    image: "/images/tooth-fillings-cavity-treatment-noida.jpg",
     symptoms: ["Brief sharp discomfort from cold water or hot tea", "Pain when breathing cold air", "Discomfort while eating sweet treats"],
     commonCauses: ["Worn enamel from hard brushing", "Gum recession exposing root surfaces", "Micro-cracks or decay"],
     whenToSeeDentist: ["Sensitivity affects daily eating and drinking", "Discomfort persists after removing hot/cold triggers"],
@@ -798,6 +824,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Tooth Decay and Cavities",
     shortDesc: "Damage to tooth enamel caused by bacterial acids, forming holes or dark spots.",
     aeoAnswer: "Cavity treatment at Align Dentofacial Clinic in Noida removes decay and restores natural tooth structure using aesthetic, durable composite fillings.",
+    image: "/images/tooth-fillings-cavity-treatment-noida.jpg",
     symptoms: ["Visible black or brown spots on teeth", "Sensitivity to sweet foods", "Food getting stuck between teeth"],
     commonCauses: ["Frequent sugary snacks and drinks", "Inadequate brushing and flossing", "Low saliva flow"],
     whenToSeeDentist: ["Noticeable dark spots or holes in teeth", "Mild discomfort when eating"],
@@ -816,6 +843,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Missing Teeth",
     shortDesc: "Gaps left by lost or extracted teeth affecting chewing, speech, and facial structure.",
     aeoAnswer: "Missing teeth replacement at Align Dentofacial Clinic in Noida restores complete function using permanent dental implants, fixed bridges, or comfortable dentures.",
+    image: "/images/dental-implants-noida.jpg",
     symptoms: ["Difficulty chewing tough foods", "Shifting of neighboring teeth", "Sunken facial appearance over time"],
     commonCauses: ["Untreated severe decay or gum disease", "Physical trauma or dental injury"],
     whenToSeeDentist: ["Immediately after losing a tooth to plan early replacement"],
@@ -834,6 +862,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Crooked or Irregular Teeth",
     shortDesc: "Overlapped, twisted, or misaligned teeth impacting smile confidence and oral hygiene.",
     aeoAnswer: "Crooked teeth care in Noida uses modern braces or clear aligners guided by MDS Orthodontist Dr. Jyoti Chauhan for precise, comfortable smile correction.",
+    image: "/images/braces-noida.jpg",
     symptoms: ["Teeth overlapping each other", "Difficulty flossing between tight teeth", "Uneven smile contour"],
     commonCauses: ["Small jaw size", "Childhood thumb sucking", "Genetics"],
     whenToSeeDentist: ["When misaligned teeth affect your confidence or make cleaning difficult"],
@@ -852,6 +881,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Stained or Yellow Teeth",
     shortDesc: "Discolouration of teeth caused by coffee, tea, smoking, or natural aging.",
     aeoAnswer: "Stained teeth treatment at Align Dentofacial Clinic brightens yellowing teeth safely using professional scaling, polishing, and supervised whitening.",
+    image: "/images/veneers-noida.jpg",
     symptoms: ["Yellow or brown surface discoloration", "Dull smile appearance"],
     commonCauses: ["Frequent coffee, tea, or dark spices", "Tobacco use", "Natural enamel thinning with age"],
     whenToSeeDentist: ["Before special events or when teeth discolouration bothers you"],
@@ -870,6 +900,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Dental Anxiety",
     shortDesc: "Fear or nervousness about visiting the dentist or undergoing dental procedures.",
     aeoAnswer: "At Align Dentofacial Clinic, we support nervous patients with a calm boutique environment, gentle communication, pain-controlled local anaesthesia, and step-by-step guidance.",
+    image: "/images/smile-designing-noida.jpg",
     symptoms: ["Nervousness, fast heartbeat, or avoidance of dental visits"],
     commonCauses: ["Past negative dental experiences", "Fear of needles or pain"],
     whenToSeeDentist: ["When anxiety prevents you from getting necessary check-ups"],
@@ -887,6 +918,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Child Afraid of the Dentist",
     shortDesc: "Pediatric fear or apprehension regarding dental examinations and treatments.",
     aeoAnswer: "Our child-friendly dental care near Sector 49 Noida uses gentle explanation, friendly rapport, and short visits to ensure children feel comfortable and safe.",
+    image: "/images/dental-checkups-and-digital-x-rays-noida.jpg",
     symptoms: ["Crying or refusal to sit in the dental chair", "Fear of dental equipment"],
     commonCauses: ["Unfamiliar environments", "Fear of discomfort"],
     whenToSeeDentist: ["By age 1 or when first baby teeth appear to build positive familiarity"],
@@ -904,6 +936,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Dental Emergency",
     shortDesc: "Sudden tooth fracture, knocked-out tooth, severe unbearable pain, or sudden facial swelling.",
     aeoAnswer: "Align Dentofacial Clinic provides prompt emergency dental care in Noida. Call or WhatsApp +91 88604 03089 immediately for urgent relief.",
+    image: "/images/root-canal-treatment-noida.jpg",
     symptoms: ["Knocked-out or dislodged tooth", "Severe uncontrollable toothache", "Broken front tooth from trauma"],
     commonCauses: ["Accidental sports injury", "Biting down on hard object", "Acute dental abscess"],
     whenToSeeDentist: ["Immediately! Call or WhatsApp us right away on +91 88604 03089"],

@@ -27,8 +27,12 @@ import GSAPMagneticButton from "@/components/animations/GSAPMagneticButton";
 import GSAPBatchReveal from "@/components/animations/GSAPBatchReveal";
 import GSAPSplitTextHeading from "@/components/animations/GSAPSplitTextHeading";
 import GSAPCursorImageHover from "@/components/animations/GSAPCursorImageHover";
+import CustomVideoPlayer from "@/components/CustomVideoPlayer";
+import MediaLightboxModal from "@/components/MediaLightboxModal";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [heroModalOpen, setHeroModalOpen] = useState(false);
   const alignerTerm = getAlignerTerm(true);
   const whatsappMsg = encodeURIComponent("Hi, I'd like to book a consultation at Align Dentofacial Clinic.");
 
@@ -47,35 +51,35 @@ export default function HomePage() {
       id: "braces",
       title: `Specialist Braces & ${alignerTerm}`,
       subtitle: "Orthodontist-planned tooth straightening & jaw alignment",
-      image: "/images/waiting-lounge.jpg",
+      image: "/images/dr-jyoti-consultation.jpg",
       badge: "Popular"
     },
     {
       id: "smile-design",
       title: "Digital Smile Designing & Veneers",
       subtitle: "Custom porcelain veneers & full cosmetic smile makeovers",
-      image: "/images/waiting-lounge.jpg",
+      image: "/images/smile-transformation-care.jpg",
       badge: "Cosmetic"
     },
     {
       id: "root-canal",
       title: "Painless Root Canal Treatment (RCT)",
       subtitle: "Single-sitting endodontic care using digital apex locators",
-      image: "/images/dental-chair.jpg",
+      image: "/images/clinic-chair-operatory.jpg",
       badge: "Preservation"
     },
     {
       id: "implants",
       title: "Permanent Dental Implants",
       subtitle: "Biocompatible titanium implants for permanent tooth replacement",
-      image: "/images/dental-chair.jpg",
+      image: "/images/treatment-room-view.jpg",
       badge: "Restorative"
     },
     {
       id: "kids",
       title: "Pediatric & Preventive Dentistry",
       subtitle: "Friendly dental care for children in a calm environment",
-      image: "/images/waiting-lounge.jpg",
+      image: "/images/clinic-reception-lounge.jpg",
       badge: "Kids Care"
     }
   ];
@@ -85,25 +89,25 @@ export default function HomePage() {
       title: `Braces and ${alignerTerm}`,
       benefit: "Precision smile alignment crafted by specialist MDS Orthodontist.",
       link: "/services/braces-noida",
-      image: "/images/waiting-lounge.jpg"
+      image: "/images/dr-jyoti-consultation.jpg"
     },
     {
       title: "Smile Designing and Veneers",
       benefit: "Luxury porcelain veneers and digital smile transformations.",
       link: "/services/smile-designing-noida",
-      image: "/images/waiting-lounge.jpg"
+      image: "/images/smile-transformation-care.jpg"
     },
     {
       title: "Root Canal Treatment",
       benefit: "Comfort-focused endodontic care that preserves your natural tooth.",
       link: "/services/root-canal-treatment-noida",
-      image: "/images/dental-chair.jpg"
+      image: "/images/clinic-chair-operatory.jpg"
     },
     {
       title: "Dental Implants",
       benefit: "Permanent, realistic titanium tooth replacements built for longevity.",
       link: "/services/dental-implants-noida",
-      image: "/images/dental-chair.jpg"
+      image: "/images/treatment-room-view.jpg"
     }
   ];
 
@@ -121,14 +125,34 @@ export default function HomePage() {
 
       {/* SECTION 1: HERO */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-4 pb-12 overflow-hidden bg-navy-950 text-white rounded-b-[40px]">
-        {/* Poster Fallback / Background Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/60 z-10" />
-          <img
-            src="/images/hero-poster.jpg"
-            alt="Align Dentofacial Clinic Interior"
-            className="w-full h-full object-cover object-center"
-          />
+        {/* Animated Video Background (Desktop & Mobile) */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          {/* Dark Gradient Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/80 to-navy-950/55 z-10 pointer-events-none" />
+          
+          {/* Desktop Animated Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/hero-poster.jpg"
+            className="hidden md:block w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+          >
+            <source src="/videos/hero-desktop.mp4" type="video/mp4" />
+          </video>
+
+          {/* Mobile Animated Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/hero-poster.jpg"
+            className="block md:hidden w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+          >
+            <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+          </video>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -351,6 +375,64 @@ export default function HomePage() {
           </div>
 
         </div>
+      </section>
+
+      {/* PATIENT EXPERIENCE VIDEO SPOTLIGHT */}
+      <section className="max-w-7xl mx-auto px-4">
+        <div className="bg-navy-950 text-white rounded-3xl p-8 md:p-12 shadow-elevated grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-6 space-y-4">
+            <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">
+              Patient Care Experience
+            </span>
+            <GSAPSplitTextHeading
+              tag="h2"
+              text="Inside Align Dentofacial Clinic"
+              type="words"
+              className="font-serif text-3xl md:text-4xl font-bold text-white block"
+            />
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Watch how our boutique dental facility near Sector 49, Noida, is designed to keep treatments calm, pain-controlled, and completely sterilised.
+            </p>
+            <ul className="space-y-2.5 text-xs text-slate-300 pt-2">
+              <li className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                <span>Zero minimal-wait appointment scheduling</span>
+              </li>
+              <li className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                <span>Private consultation desk for transparent treatment plans</span>
+              </li>
+              <li className="flex items-center gap-2 font-medium">
+                <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
+                <span>Modern digital X-rays and ergonomic dental chair care</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="lg:col-span-6">
+            <CustomVideoPlayer
+              src="/videos/video-patient-experience.mp4"
+              poster="/images/dr-jyoti-consultation.jpg"
+              title="Align Clinic Walkthrough & Patient Comfort"
+              subtitle="Calm lounge, sterilised tools, and MDS specialist consultations."
+              badge="Video Reel"
+              className="w-full shadow-2xl border-2 border-teal-500/30"
+              onExpand={() => setHeroModalOpen(true)}
+            />
+          </div>
+        </div>
+
+        {heroModalOpen && (
+          <MediaLightboxModal
+            isOpen={heroModalOpen}
+            onClose={() => setHeroModalOpen(false)}
+            type="video"
+            src="/videos/video-patient-experience.mp4"
+            title="Align Dentofacial Clinic Patient Experience"
+            description="Virtual video tour showcasing our boutique facility near Sector 49, Noida."
+            category="Video Showcase"
+          />
+        )}
       </section>
 
       {/* SECTION 4: OUR SPECIALTIES */}

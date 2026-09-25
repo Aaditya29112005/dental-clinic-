@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Award, ShieldCheck, CheckCircle2, Calendar, Stethoscope, HeartHandshake } from "lucide-react";
+import { Award, ShieldCheck, CheckCircle2, Calendar, Stethoscope, HeartHandshake, Film } from "lucide-react";
 import { clinicConfig } from "@/data/clinicData";
 import BookingForm from "@/components/BookingForm";
+import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 import { generatePhysicianSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -50,15 +51,23 @@ export default function MeetDoctorPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="w-full h-80 rounded-2xl bg-slate-900 text-slate-300 p-6 flex flex-col items-center justify-center text-center text-xs font-mono shadow-inner border border-teal-500/30">
-                [CLIENT TO PROVIDE: Dr. Jyoti Chauhan Professional Portrait]
+              <div className="w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-2 border-teal-500/40 relative">
+                <img
+                  src="/images/dr-jyoti-portrait.jpg"
+                  alt="Dr. Jyoti Chauhan MDS Orthodontist"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-4 left-4 right-4 bg-navy-950/80 backdrop-blur-md p-3 rounded-xl border border-teal-500/30 text-white">
+                  <div className="text-xs font-bold text-teal-300">{doctor.name}</div>
+                  <div className="text-[11px] text-slate-300">{doctor.qualifications}</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Profile Details */}
+      {/* Main Content Grid */}
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 space-y-10">
           
@@ -72,6 +81,28 @@ export default function MeetDoctorPage() {
             </p>
           </div>
 
+          {/* Video Spotlight: In Conversation with Dr. Jyoti */}
+          <div className="bg-navy-950 text-white p-8 rounded-3xl shadow-elevated space-y-6">
+            <div className="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-widest">
+              <Film className="w-4 h-4" />
+              <span>Doctor Spotlight Video</span>
+            </div>
+            <h3 className="font-serif text-2xl font-bold text-white">
+              In Conversation with Dr. Jyoti Chauhan
+            </h3>
+            <p className="text-xs text-slate-300">
+              Watch Dr. Jyoti explain her personal approach to pain-free smile alignment, aligner planning, and transparent patient care.
+            </p>
+            <CustomVideoPlayer
+              src="/videos/video-doctor-consultation.mp4"
+              poster="/images/dr-jyoti-consultation.jpg"
+              title="Dr. Jyoti Chauhan - Orthodontic & Dental Care Approach"
+              subtitle="Full consultation video spotlight."
+              badge="Featured Video"
+              className="w-full shadow-2xl border border-teal-500/30"
+            />
+          </div>
+
           {/* First Person Note */}
           <div className="bg-gradient-to-br from-teal-50 to-ivory p-8 rounded-3xl border border-teal-500/20 space-y-3">
             <div className="flex items-center gap-2 text-xs font-bold text-teal-600 uppercase tracking-widest">
@@ -81,6 +112,41 @@ export default function MeetDoctorPage() {
             <p className="font-serif italic text-base md:text-lg text-navy-900 leading-relaxed">
               "My philosophy is simple: every smile is unique and deserves individualised care. I believe in taking the time to explain every step of your treatment clearly, keeping procedures pain-controlled, and ensuring you feel completely comfortable throughout your smile journey."
             </p>
+          </div>
+
+          {/* Clinical Consultation & Orthodontic Reels */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-3xl shadow-soft border border-slate-100 space-y-3">
+              <span className="text-[11px] font-bold text-teal-600 uppercase tracking-wider block">
+                Consultation Walkthrough
+              </span>
+              <h4 className="font-serif font-bold text-navy-900 text-lg">
+                Patient Consultation Process
+              </h4>
+              <CustomVideoPlayer
+                src="/videos/video-doctor-explaining.mp4"
+                poster="/images/dr-jyoti-consultation.jpg"
+                title="Explaining Treatment Options"
+                badge="Consultation"
+                aspectRatio="aspect-[4/3]"
+              />
+            </div>
+
+            <div className="bg-white p-6 rounded-3xl shadow-soft border border-slate-100 space-y-3">
+              <span className="text-[11px] font-bold text-teal-600 uppercase tracking-wider block">
+                Clinical Precision
+              </span>
+              <h4 className="font-serif font-bold text-navy-900 text-lg">
+                Orthodontic Precision Reel
+              </h4>
+              <CustomVideoPlayer
+                src="/videos/video-ortho-demo.mp4"
+                poster="/images/dr-jyoti-portrait.jpg"
+                title="Orthodontic Braces & Aligner Tech"
+                badge="Precision"
+                aspectRatio="aspect-[4/3]"
+              />
+            </div>
           </div>
 
           {/* Areas of Clinical Focus */}
@@ -111,9 +177,6 @@ export default function MeetDoctorPage() {
                 </li>
               ))}
             </ul>
-            <p className="text-[11px] text-slate-400 italic pt-2">
-              [CLIENT TO PROVIDE: Certificate PDFs and Badge Images]
-            </p>
           </div>
 
         </div>

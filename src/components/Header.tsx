@@ -275,7 +275,7 @@ export default function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-[60px] bg-white z-40 overflow-y-auto p-5 animate-in slide-in-from-right duration-200">
+        <div className="lg:hidden fixed top-[68px] sm:top-[76px] bottom-0 left-0 right-0 bg-white z-40 overflow-y-auto p-5 pb-24 shadow-2xl border-t border-slate-100 animate-in slide-in-from-right duration-200">
           <div className="flex flex-col space-y-4">
             <Link 
               href="/" 

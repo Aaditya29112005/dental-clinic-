@@ -16,22 +16,22 @@ const cases: ComparisonCase[] = [
     title: "Crooked Teeth to Straight Smile",
     category: "Clear Aligners",
     duration: "10 months",
-    beforeImg: "/images/before-crooked.jpg",
-    afterImg: "/images/after-straight.jpg"
+    beforeImg: "/images/real-before-crooked.jpg",
+    afterImg: "/images/real-after-straight.jpg"
   },
   {
     title: "Deep Overbite Correction",
     category: "Orthodontic Braces",
     duration: "14 months",
-    beforeImg: "/images/before-crooked.jpg",
-    afterImg: "/images/after-straight.jpg"
+    beforeImg: "/images/real-before-overbite.jpg",
+    afterImg: "/images/real-after-overbite.jpg"
   },
   {
     title: "Front Tooth Gap Closure",
     category: "Clear Aligners",
     duration: "6 months",
-    beforeImg: "/images/before-crooked.jpg",
-    afterImg: "/images/after-straight.jpg"
+    beforeImg: "/images/real-before-gap.jpg",
+    afterImg: "/images/real-after-gap.jpg"
   }
 ];
 
@@ -80,7 +80,7 @@ export default function BeforeAfterSlider() {
                 className="absolute inset-0 overflow-hidden border-r-2 border-white shadow-2xl transition-all"
                 style={{ width: `${sliderPos[i]}%` }}
               >
-                <div className="w-[320px] md:w-[360px] h-full relative">
+                <div className="absolute inset-0 w-full h-full">
                   <img
                     src={c.beforeImg}
                     alt="Before Treatment Smile"
