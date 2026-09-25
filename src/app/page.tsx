@@ -26,7 +26,6 @@ import { clinicConfig, servicesData, masterFaqBank, getAlignerTerm } from "@/dat
 import GSAPMagneticButton from "@/components/animations/GSAPMagneticButton";
 import GSAPBatchReveal from "@/components/animations/GSAPBatchReveal";
 import GSAPSplitTextHeading from "@/components/animations/GSAPSplitTextHeading";
-import GSAPCursorImageHover from "@/components/animations/GSAPCursorImageHover";
 import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 import MediaLightboxModal from "@/components/MediaLightboxModal";
 import { useState } from "react";
@@ -44,44 +43,6 @@ export default function HomePage() {
     { title: "Missing teeth affecting confidence", icon: ShieldCheck, slug: "missing-teeth" },
     { title: "Child afraid of the dentist", icon: Smile, slug: "child-afraid-of-the-dentist" },
     { title: "Cavities or crooked teeth in kids", icon: CheckCircle2, slug: "tooth-decay-and-cavities" },
-  ];
-
-  const hoverPreviewTreatments = [
-    {
-      id: "braces",
-      title: `Specialist Braces & ${alignerTerm}`,
-      subtitle: "Orthodontist-planned tooth straightening & jaw alignment",
-      image: "/images/dr-jyoti-consultation.jpg",
-      badge: "Popular"
-    },
-    {
-      id: "smile-design",
-      title: "Digital Smile Designing & Veneers",
-      subtitle: "Custom porcelain veneers & full cosmetic smile makeovers",
-      image: "/images/smile-transformation-care.jpg",
-      badge: "Cosmetic"
-    },
-    {
-      id: "root-canal",
-      title: "Painless Root Canal Treatment (RCT)",
-      subtitle: "Single-sitting endodontic care using digital apex locators",
-      image: "/images/clinic-chair-operatory.jpg",
-      badge: "Preservation"
-    },
-    {
-      id: "implants",
-      title: "Permanent Dental Implants",
-      subtitle: "Biocompatible titanium implants for permanent tooth replacement",
-      image: "/images/treatment-room-view.jpg",
-      badge: "Restorative"
-    },
-    {
-      id: "kids",
-      title: "Pediatric & Preventive Dentistry",
-      subtitle: "Friendly dental care for children in a calm environment",
-      image: "/images/clinic-reception-lounge.jpg",
-      badge: "Kids Care"
-    }
   ];
 
   const specialties = [
@@ -276,28 +237,6 @@ export default function HomePage() {
         <p className="text-center text-xs text-slate-500 mt-4 italic">
           Stop living with dental problems. Most can be treated comfortably, and early.
         </p>
-      </section>
-
-      {/* GSAP CURSOR HOVER PREVIEW SECTION */}
-      <section className="max-w-7xl mx-auto px-4">
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-soft border border-slate-100">
-          <div className="mb-8">
-            <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-1">
-              Interactive Treatment Spotlight
-            </span>
-            <GSAPSplitTextHeading
-              tag="h2"
-              text="Hover to Preview Key Dental Solutions"
-              type="words"
-              className="font-serif text-2xl sm:text-3xl font-bold text-navy-900"
-            />
-            <p className="text-xs text-slate-500 mt-1">
-              Hover over any treatment line below to reveal custom clinical preview imagery.
-            </p>
-          </div>
-
-          <GSAPCursorImageHover items={hoverPreviewTreatments} />
-        </div>
       </section>
 
       {/* SECTION 3: INTRODUCTION */}
