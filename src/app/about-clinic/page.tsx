@@ -41,8 +41,8 @@ export default function AboutClinicPage() {
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-teal-500/30 aspect-[4/3]">
                 <img
-                  src="/images/doctor-patient-interaction.jpg"
-                  alt="Doctor Patient Discussion at Align Clinic"
+                  src="/images/about-hero.jpg"
+                  alt="Align Dentofacial Clinic Interior & Consultation"
                   className="w-full h-full object-cover"
                 />
               </div>
