@@ -98,18 +98,27 @@ export default function Footer() {
             </ul>
 
             {/* Embedded Map */}
-            <div id="map-location" className="w-full h-28 rounded-xl overflow-hidden border border-navy-800 bg-navy-900 relative">
+            <div id="map-location" className="w-full h-32 rounded-xl overflow-hidden border border-navy-800 bg-navy-900 relative group">
               <iframe
-                title="Align Dentofacial Clinic Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6853874312!2d77.3767!3d28.5672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzAxLjkiTiA3N8KwMjInMzSureJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                title="Align Dentofacial Clinic Location Map - East Avenue Grand, Sector 49 Noida"
+                src={clinicConfig.mapEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="opacity-80 hover:opacity-100 transition-opacity"
+                className="opacity-90 group-hover:opacity-100 transition-opacity"
               />
+              <a
+                href={clinicConfig.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-2 right-2 bg-navy-950/90 text-teal-400 hover:text-white px-2.5 py-1 rounded text-[10px] font-semibold flex items-center gap-1 shadow"
+              >
+                <MapPin className="w-3 h-3" />
+                <span>Open in Google Maps</span>
+              </a>
             </div>
           </div>
 

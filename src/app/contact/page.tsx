@@ -170,13 +170,24 @@ export default function ContactPage() {
 
           {/* Embedded Google Map */}
           <div className="bg-white p-6 rounded-3xl shadow-soft border border-slate-100 space-y-3">
-            <h3 className="font-serif font-bold text-navy-900 text-base">
-              Google Maps Location
-            </h3>
+            <div className="flex items-center justify-between">
+              <h3 className="font-serif font-bold text-navy-900 text-base">
+                Google Maps Location
+              </h3>
+              <a
+                href={clinicConfig.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1"
+              >
+                <span>Get Directions</span>
+                <MapPin className="w-3.5 h-3.5" />
+              </a>
+            </div>
             <div className="w-full h-64 rounded-2xl overflow-hidden border border-slate-200">
               <iframe
-                title="Align Dentofacial Clinic Google Map Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.6853874312!2d77.3767!3d28.5672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM0JzAxLjkiTiA3N8KwMjInMzYuOCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                title="Align Dentofacial Clinic Google Map Location - East Avenue Grand, Sector 49 Noida"
+                src={clinicConfig.mapEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

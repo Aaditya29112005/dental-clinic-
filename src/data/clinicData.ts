@@ -108,7 +108,10 @@ export const clinicConfig = {
   patientsTreated: "700+",
   
   address: "Pillar No. 44, East Avenue Grand, Shop No. 6, Dadri Main Road, Kohli Vihar, near Sector 49, Gautam Buddh Nagar, Noida, Uttar Pradesh 201301",
-  shortAddress: "Pillar No. 44, Dadri Main Road, Near Sector 49, Noida",
+  shortAddress: "Pillar No. 44, East Avenue Grand, Sector 49, Noida",
+  
+  mapEmbedUrl: "https://maps.google.com/maps?q=Align+Dentofacial+Clinic,+Pillar+No.+44,+East+Avenue+Grand,+Shop+No.+6,+Dadri+Main+Road,+Kohli+Vihar,+near+Sector+49,+Gautam+Buddh+Nagar,+Noida,+Uttar+Pradesh+201301&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Align+Dentofacial+Clinic+Pillar+No+44+East+Avenue+Grand+Dadri+Main+Road+Sector+49+Noida",
   
   phone: "+91 88604 03089",
   phoneRaw: "+918860403089",
@@ -123,7 +126,7 @@ export const clinicConfig = {
   socials: {
     instagram: "https://www.instagram.com/align_dentofacial_clinic_noida/",
     facebook: "https://www.facebook.com/share/1B7krdyp22/",
-    googleBusiness: "[CLIENT TO PROVIDE LINK]",
+    googleBusiness: "https://www.google.com/maps/search/?api=1&query=Align+Dentofacial+Clinic+Pillar+No+44+East+Avenue+Grand+Dadri+Main+Road+Sector+49+Noida",
   },
 
   facilities: [
