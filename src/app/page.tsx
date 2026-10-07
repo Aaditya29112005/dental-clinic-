@@ -82,14 +82,14 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="w-full space-y-20 md:space-y-28">
+    <div className="w-full space-y-20 md:space-y-28 pb-16 md:pb-0">
 
       {/* SECTION 1: HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center pt-4 pb-12 overflow-hidden bg-navy-950 text-white rounded-b-[40px]">
+      <section className="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center pt-8 sm:pt-12 pb-12 sm:pb-16 overflow-hidden bg-navy-950 text-white rounded-b-[36px] sm:rounded-b-[48px]">
         {/* Animated Video Background (Desktop & Mobile) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* Dark Gradient Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/80 to-navy-950/55 z-10 pointer-events-none" />
+          {/* Subtle Gradient Overlay tuned for mobile clarity */}
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-950/30 to-navy-950/90 md:bg-gradient-to-r md:from-navy-950/90 md:via-navy-950/80 md:to-navy-950/55 z-10 pointer-events-none" />
           
           {/* Desktop Animated Video */}
           <video
@@ -98,7 +98,7 @@ export default function HomePage() {
             muted
             playsInline
             poster="/images/hero-poster.jpg"
-            className="hidden md:block w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+            className="hidden md:block w-full h-full object-cover object-center scale-105 transition-transform duration-1000 opacity-90"
           >
             <source src="/videos/hero-desktop.mp4" type="video/mp4" />
           </video>
@@ -110,17 +110,17 @@ export default function HomePage() {
             muted
             playsInline
             poster="/images/hero-poster.jpg"
-            className="block md:hidden w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+            className="block md:hidden w-full h-full object-cover object-center scale-105 transition-transform duration-1000 opacity-95"
           >
             <source src="/videos/hero-mobile.mp4" type="video/mp4" />
           </video>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-4 sm:pt-6">
           
           {/* Left Content */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 bg-teal-500/15 border border-teal-500/30 px-3.5 py-1.5 rounded-full text-teal-300 text-xs font-semibold">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
+            <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-md border border-teal-400/40 px-3.5 py-1.5 rounded-full text-teal-300 text-[11px] sm:text-xs font-semibold shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-teal-400" />
               <span>Orthodontist-led Dental Clinic near Sector 49, Noida</span>
             </div>
@@ -131,18 +131,18 @@ export default function HomePage() {
                 text="Your Smile, Beautifully Aligned"
                 type="words"
                 stagger={0.05}
-                className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white block"
+                className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white block drop-shadow-md"
               />
             </div>
 
-            <p className="text-base sm:text-lg text-slate-300 font-sans leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-lg text-slate-200 font-sans leading-relaxed max-w-xl drop-shadow-sm">
               Specialist orthodontic, cosmetic, and general dental care near Sector 49, Noida. Planned around your comfort and confidence.
             </p>
 
             {/* GSAP Magnetic Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
               <GSAPMagneticButton href="#book-appointment" strength={0.4}>
-                <div className="px-7 py-3.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer">
+                <div className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs sm:text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer">
                   <Calendar className="w-4 h-4" />
                   <span>Book Appointment</span>
                 </div>
@@ -154,7 +154,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 strength={0.4}
               >
-                <div className="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm transition-all flex items-center gap-2 cursor-pointer">
+                <div className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm transition-all flex items-center gap-2 cursor-pointer shadow-md">
                   <MessageCircle className="w-4 h-4" />
                   <span>WhatsApp Us</span>
                 </div>
@@ -163,7 +163,7 @@ export default function HomePage() {
 
             {/* Trust Chips */}
             <GSAPBatchReveal selector=".trust-chip" stagger={0.1}>
-              <div className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs text-slate-300 border-t border-white/10">
+              <div className="pt-5 grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-[11px] sm:text-xs text-slate-200 border-t border-white/15">
                 <div className="trust-chip flex items-center gap-1.5 font-medium">
                   <CheckCircle2 className="w-4 h-4 text-teal-400 shrink-0" />
                   <span>MDS Orthodontist</span>
@@ -184,13 +184,18 @@ export default function HomePage() {
             </GSAPBatchReveal>
           </div>
 
-          {/* Right Side: Inline Booking Card */}
-          <div className="lg:col-span-5">
+          {/* Desktop Right Side: Inline Booking Card */}
+          <div className="hidden lg:block lg:col-span-5">
             <BookingForm />
           </div>
 
         </div>
       </section>
+
+      {/* Mobile Booking Form (Presented cleanly below hero video section on mobile screens) */}
+      <div className="block lg:hidden max-w-xl mx-auto px-4 -mt-8 sm:-mt-10 relative z-30 mb-8">
+        <BookingForm />
+      </div>
 
       {/* SECTION 2: PROBLEM STRIP */}
       <section className="max-w-7xl mx-auto px-4">
@@ -207,14 +212,14 @@ export default function HomePage() {
         </div>
 
         <GSAPBatchReveal selector=".problem-card" stagger={0.1}>
-          <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth">
+          <div className="flex gap-4 overflow-x-auto pb-4 no-scrollbar scroll-smooth snap-x snap-mandatory">
             {problemStripItems.map((item, idx) => {
               const Icon = item.icon;
               return (
                 <Link
                   key={idx}
                   href={`/dental-problems/${item.slug}`}
-                  className="problem-card shrink-0 w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500/50 hover:shadow-soft transition-all group flex flex-col justify-between"
+                  className="problem-card snap-start shrink-0 w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500/50 hover:shadow-soft transition-all group flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">

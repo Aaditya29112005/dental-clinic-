@@ -62,7 +62,15 @@ export default function BeforeAfterSlider() {
             </h4>
 
             {/* Interactive Image Container */}
-            <div className="relative h-64 w-full overflow-hidden rounded-2xl select-none shadow-inner border border-slate-200 bg-slate-900">
+            <div 
+              className="relative h-64 w-full overflow-hidden rounded-2xl select-none shadow-inner border border-slate-200 bg-slate-900 touch-none"
+              onTouchMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const touchX = e.touches[0].clientX - rect.left;
+                const percentage = Math.max(0, Math.min(100, (touchX / rect.width) * 100));
+                handleSliderChange(i, percentage);
+              }}
+            >
               {/* After Layer (Background) */}
               <div className="absolute inset-0">
                 <img
@@ -70,26 +78,24 @@ export default function BeforeAfterSlider() {
                   alt="After Treatment Smile Result"
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider text-white bg-emerald-600/90 backdrop-blur-md px-2 py-0.5 rounded">
+                <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-wider text-white bg-emerald-600/90 backdrop-blur-md px-2.5 py-1 rounded shadow-md">
                   After
                 </span>
               </div>
 
-              {/* Before Layer (Foreground clipped) */}
+              {/* Before Layer (Foreground clipped cleanly without squishing) */}
               <div 
-                className="absolute inset-0 overflow-hidden border-r-2 border-white shadow-2xl transition-all"
-                style={{ width: `${sliderPos[i]}%` }}
+                className="absolute inset-0 transition-none"
+                style={{ clipPath: `inset(0 ${100 - sliderPos[i]}% 0 0)` }}
               >
-                <div className="absolute inset-0 w-full h-full">
-                  <img
-                    src={c.beforeImg}
-                    alt="Before Treatment Smile"
-                    className="w-full h-full object-cover"
-                  />
-                  <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-slate-900/80 backdrop-blur-md px-2 py-0.5 rounded">
-                    Before
-                  </span>
-                </div>
+                <img
+                  src={c.beforeImg}
+                  alt="Before Treatment Smile"
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-wider text-white bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded shadow-md">
+                  Before
+                </span>
               </div>
 
               {/* Slider Handle */}
@@ -99,16 +105,16 @@ export default function BeforeAfterSlider() {
                 max="100"
                 value={sliderPos[i]}
                 onChange={(e) => handleSliderChange(i, Number(e.target.value))}
-                className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
+                className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20 touch-none"
                 aria-label="Before and after slider"
               />
 
               {/* Visible Divider Bar */}
               <div 
-                className="absolute top-0 bottom-0 w-1 bg-white shadow-lg pointer-events-none z-10 flex items-center justify-center"
+                className="absolute top-0 bottom-0 w-1 bg-white shadow-xl pointer-events-none z-10 flex items-center justify-center -ml-0.5"
                 style={{ left: `${sliderPos[i]}%` }}
               >
-                <div className="w-7 h-7 rounded-full bg-white text-navy-900 shadow-md flex items-center justify-center text-[10px] font-bold">
+                <div className="w-8 h-8 rounded-full bg-white text-navy-900 shadow-md flex items-center justify-center text-xs font-bold border border-slate-200">
                   ↔
                 </div>
               </div>

@@ -298,7 +298,7 @@ export default function SmileAssessmentQuiz() {
                 placeholder="Full Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-slate-200 focus:border-teal-500 outline-none bg-white text-slate-900 placeholder:text-slate-400"
+                className="w-full pl-10 pr-4 py-3 text-base sm:text-sm rounded-xl border border-slate-200 focus:border-teal-500 outline-none bg-white text-slate-900 placeholder:text-slate-400"
               />
             </div>
           </div>
@@ -316,7 +316,7 @@ export default function SmileAssessmentQuiz() {
                   setPhone(e.target.value);
                   if (phoneError) setPhoneError("");
                 }}
-                className={`w-full pl-10 pr-4 py-3 text-sm rounded-xl border ${
+                className={`w-full pl-10 pr-4 py-3 text-base sm:text-sm rounded-xl border ${
                   phoneError ? "border-red-500" : "border-slate-200"
                 } focus:border-teal-500 outline-none bg-white text-slate-900 placeholder:text-slate-400`}
               />

@@ -32,6 +32,12 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const alignerTerm = getAlignerTerm(true);
 
+  const [mobileAccordion, setMobileAccordion] = useState<string | null>(null);
+
+  const toggleMobileAccordion = (key: string) => {
+    setMobileAccordion(prev => prev === key ? null : key);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 40);
@@ -39,6 +45,17 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header className="w-full fixed top-0 left-0 z-50 transition-all duration-300">
@@ -68,10 +85,10 @@ export default function Header() {
               <span>Sector 49, Noida</span>
             </a>
             <div className="flex items-center space-x-2 pl-2 border-l border-navy-700">
-              <a href={clinicConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 p-1">
+              <a href={clinicConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 p-1" aria-label="Instagram">
                 <Instagram className="w-3.5 h-3.5" />
               </a>
-              <a href={clinicConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 p-1">
+              <a href={clinicConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-teal-400 p-1" aria-label="Facebook">
                 <Facebook className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -265,79 +282,231 @@ export default function Header() {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-navy-900 hover:text-teal-600 focus:outline-none"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] rounded-xl text-navy-900 bg-slate-100 hover:bg-teal-50 hover:text-teal-600 transition-colors flex items-center justify-center focus:outline-none"
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed top-[68px] sm:top-[76px] bottom-0 left-0 right-0 bg-white z-40 overflow-y-auto p-5 pb-24 shadow-2xl border-t border-slate-100 animate-in slide-in-from-right duration-200">
-          <div className="flex flex-col space-y-4">
+        <div 
+          className="lg:hidden fixed inset-0 z-40 bg-navy-950/40 backdrop-blur-sm"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Drawer Menu Content */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed top-[60px] sm:top-[72px] bottom-0 left-0 right-0 bg-white z-50 overflow-y-auto p-5 pb-28 shadow-2xl border-t border-slate-100 animate-in slide-in-from-right duration-200">
+          <div className="flex flex-col space-y-3 max-w-md mx-auto">
+            
+            {/* Quick Mobile Contact Chip */}
+            <div className="bg-teal-50 border border-teal-100 rounded-2xl p-3 flex items-center justify-between text-xs text-navy-900 mb-1">
+              <div className="flex items-center gap-2 font-semibold">
+                <Phone className="w-4 h-4 text-teal-600" />
+                <span>+91 88604 03089</span>
+              </div>
+              <a
+                href={`tel:${clinicConfig.phoneRaw}`}
+                className="bg-teal-500 text-white font-bold px-3 py-1.5 rounded-xl text-[11px] shadow-sm hover:bg-teal-600 transition-colors"
+              >
+                Call Now
+              </a>
+            </div>
+
             <Link 
               href="/" 
               onClick={() => setMobileMenuOpen(false)} 
-              className="text-base font-semibold text-navy-900 pb-2 border-b border-slate-100"
+              className="flex items-center justify-between min-h-[44px] px-3 py-2 rounded-xl text-base font-semibold text-navy-900 hover:bg-slate-50 transition-colors"
             >
-              Home
+              <span>Home</span>
             </Link>
-            
-            <div>
-              <div className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2">Orthodontics</div>
-              <div className="pl-3 space-y-2 text-sm text-slate-700">
-                <Link href="/services/braces-noida" onClick={() => setMobileMenuOpen(false)} className="block">Braces (Metal & Ceramic)</Link>
-                <Link href="/services/clear-aligners-noida" onClick={() => setMobileMenuOpen(false)} className="block">{alignerTerm}</Link>
-              </div>
-            </div>
 
-            <div>
-              <div className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2">Services</div>
-              <div className="pl-3 grid grid-cols-1 gap-2 text-sm text-slate-700">
-                {servicesData.map((s) => (
-                  <Link key={s.id} href={`/services/${s.slug}`} onClick={() => setMobileMenuOpen(false)}>
-                    {s.title}
+            {/* Accordion 1: Orthodontics */}
+            <div className="border border-slate-100 rounded-2xl overflow-hidden bg-slate-50/50">
+              <button
+                onClick={() => toggleMobileAccordion("orthodontics")}
+                className="w-full flex items-center justify-between px-4 py-3 min-h-[44px] text-sm font-semibold text-navy-900 hover:bg-slate-100/60 transition-colors text-left"
+              >
+                <span className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-teal-600" />
+                  <span>Orthodontics (Braces & Aligners)</span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-teal-600 transition-transform duration-200 ${mobileAccordion === "orthodontics" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileAccordion === "orthodontics" && (
+                <div className="px-4 pb-4 pt-1 space-y-2 text-xs border-t border-slate-200/60 bg-white">
+                  <Link
+                    href="/services/braces-noida"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block p-2.5 rounded-xl hover:bg-teal-50 text-navy-900 font-semibold transition-colors"
+                  >
+                    Braces (Metal & Ceramic)
+                    <span className="block text-[11px] text-slate-500 font-normal">Precision alignment by MDS Orthodontist</span>
                   </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="text-xs font-bold text-teal-600 uppercase tracking-wider mb-2">Dental Problems</div>
-              <div className="pl-3 grid grid-cols-2 gap-2 text-xs text-slate-700">
-                {dentalProblemsData.map((p) => (
-                  <Link key={p.id} href={`/dental-problems/${p.slug}`} onClick={() => setMobileMenuOpen(false)}>
-                    {p.title}
+                  <Link
+                    href="/services/clear-aligners-noida"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block p-2.5 rounded-xl hover:bg-teal-50 text-navy-900 font-semibold transition-colors"
+                  >
+                    {alignerTerm}
+                    <span className="block text-[11px] text-slate-500 font-normal">Invisible smile correction</span>
                   </Link>
-                ))}
-              </div>
+                  <div className="pt-2 font-bold text-teal-700 uppercase tracking-wider text-[10px]">
+                    Orthodontic Issues Corrected
+                  </div>
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {orthodonticProblemsData.slice(0, 6).map((prob) => (
+                      <Link
+                        key={prob.id}
+                        href={`/orthodontics/${prob.slug}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="p-2 rounded-lg bg-slate-50 hover:bg-teal-50 text-slate-700 hover:text-teal-700 transition-colors text-[11px] font-medium"
+                      >
+                        {prob.title}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
-            <div className="pt-2 border-t border-slate-100 flex flex-col space-y-3">
-              <Link href="/about-clinic" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium">About Clinic</Link>
-              <Link href="/meet-dr-jyoti-chauhan" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium">Meet Dr. Jyoti Chauhan</Link>
-              <Link href="/blog" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium">Blog</Link>
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium">Contact Us</Link>
+            {/* Accordion 2: All Dental Services */}
+            <div className="border border-slate-100 rounded-2xl overflow-hidden bg-slate-50/50">
+              <button
+                onClick={() => toggleMobileAccordion("services")}
+                className="w-full flex items-center justify-between px-4 py-3 min-h-[44px] text-sm font-semibold text-navy-900 hover:bg-slate-100/60 transition-colors text-left"
+              >
+                <span className="flex items-center gap-2">
+                  <Stethoscope className="w-4 h-4 text-teal-600" />
+                  <span>All Dental Services</span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-teal-600 transition-transform duration-200 ${mobileAccordion === "services" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileAccordion === "services" && (
+                <div className="px-4 pb-4 pt-1 space-y-1 text-xs border-t border-slate-200/60 bg-white">
+                  {servicesData.map((s) => (
+                    <Link
+                      key={s.id}
+                      href={`/services/${s.slug}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 rounded-lg hover:bg-teal-50 text-navy-900 font-medium transition-colors"
+                    >
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="pt-4 flex flex-col gap-2">
+            {/* Accordion 3: Dental Concerns */}
+            <div className="border border-slate-100 rounded-2xl overflow-hidden bg-slate-50/50">
+              <button
+                onClick={() => toggleMobileAccordion("problems")}
+                className="w-full flex items-center justify-between px-4 py-3 min-h-[44px] text-sm font-semibold text-navy-900 hover:bg-slate-100/60 transition-colors text-left"
+              >
+                <span className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-teal-600" />
+                  <span>Dental Problems & Symptoms</span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-teal-600 transition-transform duration-200 ${mobileAccordion === "problems" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileAccordion === "problems" && (
+                <div className="px-4 pb-4 pt-1 grid grid-cols-2 gap-1.5 border-t border-slate-200/60 bg-white">
+                  {dentalProblemsData.map((p) => (
+                    <Link
+                      key={p.id}
+                      href={`/dental-problems/${p.slug}`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="p-2 rounded-lg bg-slate-50 hover:bg-teal-50 text-slate-700 hover:text-teal-700 transition-colors text-[11px] font-medium"
+                    >
+                      {p.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Accordion 4: About Clinic */}
+            <div className="border border-slate-100 rounded-2xl overflow-hidden bg-slate-50/50">
+              <button
+                onClick={() => toggleMobileAccordion("about")}
+                className="w-full flex items-center justify-between px-4 py-3 min-h-[44px] text-sm font-semibold text-navy-900 hover:bg-slate-100/60 transition-colors text-left"
+              >
+                <span className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-teal-600" />
+                  <span>About Clinic & Doctor</span>
+                </span>
+                <ChevronDown className={`w-4 h-4 text-teal-600 transition-transform duration-200 ${mobileAccordion === "about" ? "rotate-180" : ""}`} />
+              </button>
+              {mobileAccordion === "about" && (
+                <div className="px-4 pb-4 pt-1 space-y-1 text-xs border-t border-slate-200/60 bg-white">
+                  <Link
+                    href="/about-clinic"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-3 py-2 rounded-lg hover:bg-teal-50 text-navy-900 font-medium transition-colors"
+                  >
+                    About Align Dentofacial Clinic
+                  </Link>
+                  <Link
+                    href="/meet-dr-jyoti-chauhan"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-3 py-2 rounded-lg hover:bg-teal-50 text-navy-900 font-medium transition-colors"
+                  >
+                    Meet Dr. Jyoti Chauhan (MDS)
+                  </Link>
+                  <Link
+                    href="/gallery"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-3 py-2 rounded-lg hover:bg-teal-50 text-navy-900 font-medium transition-colors"
+                  >
+                    Clinic Tour Gallery
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <div className="pt-2 flex flex-col space-y-2 border-t border-slate-100">
+              <Link 
+                href="/blog" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="flex items-center justify-between min-h-[44px] px-3 py-2 rounded-xl text-sm font-semibold text-navy-900 hover:bg-slate-50 transition-colors"
+              >
+                <span>Dental Care Blog</span>
+              </Link>
+              <Link 
+                href="/contact" 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="flex items-center justify-between min-h-[44px] px-3 py-2 rounded-xl text-sm font-semibold text-navy-900 hover:bg-slate-50 transition-colors"
+              >
+                <span>Contact & Location Map</span>
+              </Link>
+            </div>
+
+            {/* CTA Buttons in Mobile Drawer */}
+            <div className="pt-4 flex flex-col gap-2.5">
               <Link
                 href="/smile-assessment"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 text-center rounded-xl text-xs font-semibold text-teal-600 border border-teal-500"
+                className="w-full py-3.5 min-h-[44px] text-center rounded-2xl text-xs font-semibold text-teal-600 border border-teal-500 bg-teal-50/50 flex items-center justify-center gap-2 shadow-sm"
               >
-                Smile Assessment Quiz
+                <Sparkles className="w-4 h-4 text-teal-500" />
+                <span>Take Smile Assessment Quiz</span>
               </Link>
               <a
                 href="#book-appointment"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 text-center rounded-xl text-xs font-semibold text-white bg-teal-500 shadow-md"
+                className="w-full py-3.5 min-h-[44px] text-center rounded-2xl text-xs font-semibold text-white bg-teal-500 hover:bg-teal-600 shadow-md flex items-center justify-center gap-2"
               >
-                Book Appointment Now
+                <Calendar className="w-4 h-4" />
+                <span>Book Appointment Now</span>
               </a>
             </div>
+
           </div>
         </div>
       )}

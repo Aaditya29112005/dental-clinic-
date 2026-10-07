@@ -20,10 +20,17 @@ html {
   font-family: var(--font-manrope);
   background-color: var(--soft-ivory);
   color: #172C41;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch momentum scrolling */
+.overflow-x-auto, .overflow-y-auto {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom Scrollbar */

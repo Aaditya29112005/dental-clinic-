@@ -64,8 +64,8 @@ export default function MediaLightboxModal({
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full bg-slate-800 hover:bg-teal-500 hover:text-navy-950 text-slate-300 transition-colors"
-            aria-label="Close"
+            className="p-2.5 min-w-[44px] min-h-[44px] rounded-full bg-slate-800 hover:bg-teal-500 hover:text-navy-950 text-slate-300 transition-colors flex items-center justify-center focus:outline-none"
+            aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>

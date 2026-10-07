@@ -148,9 +148,11 @@ export default function BlogArticlePage({ params }: Props) {
 
           {/* Author Box */}
           <div className="bg-navy-900 text-white p-6 rounded-3xl shadow-elevated flex flex-col sm:flex-row items-center gap-6">
-            <div className="w-20 h-20 rounded-full bg-slate-950 text-slate-400 text-[10px] font-mono flex items-center justify-center shrink-0 border border-teal-500/40 text-center">
-              [Dr. Jyoti Photo]
-            </div>
+            <img
+              src="/images/dr-jyoti-chauhan.png"
+              alt="Dr. Jyoti Chauhan"
+              className="w-20 h-20 rounded-full object-cover object-top shrink-0 border-2 border-teal-400 shadow-md"
+            />
             <div className="space-y-1 text-center sm:text-left">
               <div className="font-serif font-bold text-lg text-white">{post.author.name}</div>
               <div className="text-xs text-teal-300 font-semibold">{post.author.role}</div>

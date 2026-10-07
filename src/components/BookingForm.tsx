@@ -101,7 +101,7 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
               placeholder="e.g. Rahul Sharma"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full pl-10 pr-4 py-3 text-sm rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white placeholder:text-slate-400 shadow-inner"
+              className="w-full pl-10 pr-4 py-3 text-base sm:text-sm rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white placeholder:text-slate-400 shadow-inner"
             />
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
                 setFormData({ ...formData, phone: e.target.value });
                 if (phoneError) setPhoneError("");
               }}
-              className={`w-full pl-10 pr-4 py-3 text-sm rounded-xl border ${
+              className={`w-full pl-10 pr-4 py-3 text-base sm:text-sm rounded-xl border ${
                 phoneError ? "border-red-400" : "border-white/20"
               } focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white placeholder:text-slate-400 shadow-inner`}
             />
@@ -140,7 +140,7 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
           <select
             value={formData.service}
             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-            className="w-full px-4 py-3 text-sm rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
+            className="w-full px-4 py-3 text-base sm:text-sm rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
           >
             {servicesData.map((srv) => (
               <option key={srv.id} value={srv.title} className="bg-navy-950 text-white">
@@ -164,7 +164,7 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
                 min={new Date().toISOString().split("T")[0]}
                 value={formData.date}
                 onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full pl-10 pr-3 py-2.5 text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
+                className="w-full pl-10 pr-3 py-2.5 text-base sm:text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
               <select
                 value={formData.timeSlot}
                 onChange={(e) => setFormData({ ...formData, timeSlot: e.target.value })}
-                className="w-full pl-10 pr-3 py-2.5 text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
+                className="w-full pl-10 pr-3 py-2.5 text-base sm:text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
               >
                 <option value="Morning (10 am - 1 pm)" className="bg-navy-950 text-white">Morning (10 am - 1 pm)</option>
                 <option value="Afternoon (1 pm - 4 pm)" className="bg-navy-950 text-white">Afternoon (1 pm - 4 pm)</option>
