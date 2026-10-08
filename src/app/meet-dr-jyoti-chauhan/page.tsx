@@ -51,11 +51,11 @@ export default function MeetDoctorPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="w-full aspect-[4/5] max-h-[480px] mx-auto rounded-3xl overflow-hidden shadow-2xl border-2 border-teal-500/40 relative">
+              <div className="w-full max-w-[340px] sm:max-w-[380px] lg:max-w-none aspect-[3/4] mx-auto rounded-3xl overflow-hidden shadow-2xl border-2 border-teal-500/40 relative bg-navy-950">
                 <img
                   src="/images/dr-jyoti-portrait.jpg"
                   alt="Dr. Jyoti Chauhan MDS Orthodontist"
-                  className="w-full h-full object-cover object-[center_10%] hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute bottom-4 left-4 right-4 bg-navy-950/80 backdrop-blur-md p-3 rounded-xl border border-teal-500/30 text-white">
                   <div className="text-xs font-bold text-teal-300">{doctor.name}</div>
