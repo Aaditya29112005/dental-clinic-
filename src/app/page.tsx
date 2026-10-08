@@ -306,11 +306,11 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-5 bg-gradient-to-br from-teal-50 to-ivory p-6 rounded-2xl border border-teal-500/20 text-center">
-            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-md mb-4 border-2 border-teal-500/30">
+            <div className="w-full aspect-[4/5] max-h-[380px] mx-auto rounded-2xl overflow-hidden shadow-md mb-4 border-2 border-teal-500/30">
               <img
                 src="/images/dr-jyoti-chauhan.png"
                 alt="Dr. Jyoti Chauhan MDS Orthodontist"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-[center_10%] hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="font-serif font-bold text-navy-900 text-lg">Dr. Jyoti Chauhan</div>
@@ -480,11 +480,11 @@ export default function HomePage() {
         <div className="bg-navy-900 text-white rounded-3xl p-8 md:p-12 shadow-elevated grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div className="lg:col-span-5 text-center">
-            <div className="w-full h-80 rounded-2xl overflow-hidden shadow-elevated border-2 border-teal-500/30">
+            <div className="w-full aspect-[4/5] max-h-[420px] mx-auto rounded-2xl overflow-hidden shadow-elevated border-2 border-teal-500/30">
               <img
                 src="/images/dr-jyoti-chauhan.png"
                 alt="Dr. Jyoti Chauhan MDS Orthodontist"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-[center_10%] hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="mt-4 inline-flex items-center gap-2 bg-teal-500/20 px-3 py-1 rounded-full text-xs font-semibold text-teal-300 border border-teal-500/30">

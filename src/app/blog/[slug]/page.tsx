@@ -151,7 +151,7 @@ export default function BlogArticlePage({ params }: Props) {
             <img
               src="/images/dr-jyoti-chauhan.png"
               alt="Dr. Jyoti Chauhan"
-              className="w-20 h-20 rounded-full object-cover object-top shrink-0 border-2 border-teal-400 shadow-md"
+              className="w-20 h-20 rounded-full object-cover object-[center_15%] shrink-0 border-2 border-teal-400 shadow-md"
             />
             <div className="space-y-1 text-center sm:text-left">
               <div className="font-serif font-bold text-lg text-white">{post.author.name}</div>
