@@ -18,6 +18,53 @@ interface MediaItem {
 
 const galleryMediaItems: MediaItem[] = [
   {
+    id: "real-clinic-walkthrough-video",
+    type: "video",
+    title: "Complete Boutique Operatory & Infrastructure Walkthrough",
+    category: "Video Tours",
+    desc: "Experience our modern dental chair, digital intraoral setup, and sterilised operatory bay in Noida.",
+    src: "/videos/clinic-tour-walkthrough-1.mp4",
+    poster: "/images/clinic-tour-operatory-1.jpg",
+    badge: "Virtual Tour"
+  },
+  {
+    id: "real-clinic-lounge-video",
+    type: "video",
+    title: "Calm Reception & Patient Waiting Lounge Ambience",
+    category: "Video Tours",
+    desc: "Take a virtual look inside our peaceful, home-style reception lounge at Sector 49, Noida.",
+    src: "/videos/clinic-tour-lounge-1.mp4",
+    poster: "/images/clinic-tour-reception-1.jpg",
+    badge: "Lounge Ambience"
+  },
+  {
+    id: "real-reception-img",
+    type: "image",
+    title: "Boutique Reception & Reception Desk",
+    category: "Waiting Lounge",
+    desc: "Welcoming reception environment designed for zero-stress patient arrivals.",
+    src: "/images/clinic-tour-reception-1.jpg",
+    badge: "Reception"
+  },
+  {
+    id: "real-operatory-img",
+    type: "image",
+    title: "Sterilised Operatory & Treatment Console",
+    category: "Operatories & Care",
+    desc: "Ergonomic treatment chair and low-radiation digital sensor setup for maximum comfort.",
+    src: "/images/clinic-tour-operatory-1.jpg",
+    badge: "Operatory"
+  },
+  {
+    id: "real-facility-img",
+    type: "image",
+    title: "Modern Clinic Infrastructure & Care Bay",
+    category: "Sterilization & Hygiene",
+    desc: "Strictly sterilised treatment environment with modern diagnostic instruments.",
+    src: "/images/clinic-tour-facility-1.jpg",
+    badge: "Facility"
+  },
+  {
     id: "full-virtual-tour",
     type: "video",
     title: "Complete Virtual Tour of Align Dentofacial Clinic",

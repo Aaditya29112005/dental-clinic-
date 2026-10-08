@@ -101,8 +101,8 @@ export default function AboutClinicPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-3">
               <CustomVideoPlayer
-                src="/videos/video-about-walkthrough.mp4"
-                poster="/images/treatment-room-view.jpg"
+                src="/videos/clinic-tour-walkthrough-1.mp4"
+                poster="/images/clinic-tour-operatory-1.jpg"
                 title="Boutique Operatory & Infrastructure Walkthrough"
                 subtitle="High-definition clinical setup tour."
                 badge="Facility Tour"
@@ -111,8 +111,8 @@ export default function AboutClinicPage() {
             </div>
             <div className="space-y-3">
               <CustomVideoPlayer
-                src="/videos/video-waiting-lounge-tour.mp4"
-                poster="/images/clinic-reception-lounge.jpg"
+                src="/videos/clinic-tour-lounge-1.mp4"
+                poster="/images/clinic-tour-reception-1.jpg"
                 title="Calm Lounge & Patient Waiting Experience"
                 subtitle="Designed to put nervous patients completely at ease."
                 badge="Lounge Ambience"
