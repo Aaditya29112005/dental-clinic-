@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
-import ClinicTour from "@/components/ClinicTour";
 import StatsCounter from "@/components/StatsCounter";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -592,12 +591,7 @@ export default function HomePage() {
         <BeforeAfterSlider />
       </section>
 
-      {/* SECTION 9: CLINIC TOUR */}
-      <section className="max-w-7xl mx-auto px-4">
-        <ClinicTour />
-      </section>
-
-      {/* SECTION 10: STATS COUNTERS */}
+      {/* SECTION 9: STATS COUNTERS */}
       <section className="max-w-7xl mx-auto px-4">
         <StatsCounter />
       </section>

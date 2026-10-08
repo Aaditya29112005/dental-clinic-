@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Sparkles, HeartHandshake, CheckCircle2, Film } from "lucide-react";
+import { ShieldCheck, Sparkles, HeartHandshake, CheckCircle2, Film, ArrowRight } from "lucide-react";
 import { clinicConfig } from "@/data/clinicData";
-import ClinicTour from "@/components/ClinicTour";
 import BookingForm from "@/components/BookingForm";
 import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 
@@ -137,8 +136,27 @@ export default function AboutClinicPage() {
           </div>
         </div>
 
-        {/* Gallery Section */}
-        <ClinicTour />
+        {/* Gallery CTA Banner */}
+        <div className="bg-gradient-to-br from-teal-900 to-navy-900 text-white p-8 rounded-3xl shadow-elevated flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <span className="text-xs font-bold text-teal-300 uppercase tracking-widest block">
+              Virtual Facility Experience
+            </span>
+            <h3 className="font-serif text-2xl font-bold text-white">
+              Explore Our Full Clinic Tour & Photo Gallery
+            </h3>
+            <p className="text-xs text-slate-300 max-w-xl">
+              View high-resolution photos and video walkthroughs of our waiting lounge, sterilised operatories, and dental chairs on our dedicated gallery page.
+            </p>
+          </div>
+          <Link
+            href="/gallery"
+            className="px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs transition-all shrink-0 inline-flex items-center gap-2 shadow-md"
+          >
+            <span>Open Clinic Gallery</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
 
         {/* Booking Form CTA */}
         <div className="max-w-2xl mx-auto">
