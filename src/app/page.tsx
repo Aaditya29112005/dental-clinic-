@@ -49,25 +49,25 @@ export default function HomePage() {
       title: `Braces and ${alignerTerm}`,
       benefit: "Precision smile alignment crafted by specialist MDS Orthodontist.",
       link: "/services/braces-noida",
-      image: "/images/dr-jyoti-consultation.jpg"
+      image: "/images/clear-aligners-noida.jpg"
     },
     {
       title: "Smile Designing and Veneers",
       benefit: "Luxury porcelain veneers and digital smile transformations.",
       link: "/services/smile-designing-noida",
-      image: "/images/smile-transformation-care.jpg"
+      image: "/images/smile-designing-noida.jpg"
     },
     {
       title: "Root Canal Treatment",
       benefit: "Comfort-focused endodontic care that preserves your natural tooth.",
       link: "/services/root-canal-treatment-noida",
-      image: "/images/clinic-chair-operatory.jpg"
+      image: "/images/root-canal-treatment-noida.jpg"
     },
     {
       title: "Dental Implants",
       benefit: "Permanent, realistic titanium tooth replacements built for longevity.",
       link: "/services/dental-implants-noida",
-      image: "/images/treatment-room-view.jpg"
+      image: "/images/dental-implants-noida.jpg"
     }
   ];
 
