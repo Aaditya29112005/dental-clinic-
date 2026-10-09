@@ -14,9 +14,9 @@ interface InstaPost {
 const instaPosts: InstaPost[] = [
   {
     id: "post1",
-    image: "/images/dr-jyoti-portrait.jpg",
-    caption: "Dr. Jyoti Chauhan (MDS Orthodontics) delivering custom braces & clear aligners for confident smiles in Noida.",
-    category: "Lead Orthodontist",
+    image: "/images/clear-aligners-noida.jpg",
+    caption: "Custom braces & clear aligners delivered with precision by specialist MDS Orthodontist in Noida.",
+    category: "Orthodontics",
     likes: 124
   },
   {
@@ -100,15 +100,15 @@ export default function InstagramFeed() {
                   <span>Comment</span>
                 </div>
               </div>
-
-              {/* Tag Badge */}
-              <div className="absolute top-3 left-3 bg-navy-900/80 backdrop-blur-md text-teal-300 text-[11px] font-semibold px-2.5 py-1 rounded-full border border-teal-500/30">
-                {post.category}
-              </div>
             </div>
 
             {/* Post Content Footer */}
             <div className="p-4 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
+                  {post.category}
+                </span>
+              </div>
               <p className="text-xs text-slate-700 line-clamp-2 leading-relaxed">
                 {post.caption}
               </p>
