@@ -16,7 +16,6 @@ import {
   MapPin
 } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import StatsCounter from "@/components/StatsCounter";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -571,27 +570,7 @@ export default function HomePage() {
         </GSAPBatchReveal>
       </section>
 
-      {/* SECTION 8: SMILE TRANSFORMATIONS */}
-      <section className="max-w-7xl mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-10">
-          <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block mb-2">
-            Real Transformations
-          </span>
-          <GSAPSplitTextHeading
-            tag="h2"
-            text="Smile Transformations"
-            type="words"
-            className="font-serif text-3xl md:text-4xl font-bold text-navy-900"
-          />
-          <p className="text-sm text-slate-600 mt-2">
-            Explore smile alignment cases treated at Align Dentofacial Clinic.
-          </p>
-        </div>
-
-        <BeforeAfterSlider />
-      </section>
-
-      {/* SECTION 9: STATS COUNTERS */}
+      {/* SECTION 8: STATS COUNTERS */}
       <section className="max-w-7xl mx-auto px-4">
         <StatsCounter />
       </section>
