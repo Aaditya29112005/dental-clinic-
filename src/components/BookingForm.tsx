@@ -47,7 +47,10 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          source: "Website Booking Form"
+        }),
       });
 
       if (response.ok) {

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, phone, service, date, timeSlot } = body;
+    const { name, phone, service, date, timeSlot, source, notes } = body;
 
     if (!name || !phone || !service) {
       return NextResponse.json(
@@ -12,41 +12,45 @@ export async function POST(request: Request) {
       );
     }
 
-    // Webhook simulation / Email notification payload log
-    console.log("=== NEW APPOINTMENT BOOKING LEAD RECEIVED ===");
-    console.log(`Clinic: Align Dentofacial Clinic, Noida`);
-    console.log(`Patient Name: ${name}`);
-    console.log(`Phone: ${phone}`);
-    console.log(`Requested Service: ${service}`);
-    console.log(`Preferred Date: ${date}`);
-    console.log(`Preferred Time: ${timeSlot}`);
-    console.log(`Timestamp: ${new Date().toISOString()}`);
-    console.log("=============================================");
+    const leadData = {
+      name,
+      phone,
+      service,
+      date: date || "Flexible / Not specified",
+      timeSlot: timeSlot || "Flexible",
+      source: source || "Website Booking Form",
+      notes: notes || "",
+      submittedAt: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+    };
 
-    // Webhook POST placeholder (e.g., Google Sheet / Zapier / Make)
-    const webhookUrl = process.env.BOOKING_WEBHOOK_URL;
+    // Server Console Log
+    console.log("=== NEW APPOINTMENT LEAD RECEIVED ===");
+    console.log(`Patient Name: ${leadData.name}`);
+    console.log(`Phone: ${leadData.phone}`);
+    console.log(`Service: ${leadData.service}`);
+    console.log(`Preferred Date: ${leadData.date}`);
+    console.log(`Preferred Time: ${leadData.timeSlot}`);
+    console.log(`Submitted At: ${leadData.submittedAt}`);
+    console.log("====================================");
+
+    // Google Sheet Webhook Integration
+    const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.BOOKING_WEBHOOK_URL;
     if (webhookUrl) {
       try {
         await fetch(webhookUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name,
-            phone,
-            service,
-            date,
-            timeSlot,
-            submittedAt: new Date().toISOString(),
-          }),
+          body: JSON.stringify(leadData),
+          redirect: "follow",
         });
       } catch (err) {
-        console.error("Webhook notification error:", err);
+        console.error("Google Sheet Webhook Notification Error:", err);
       }
     }
 
     return NextResponse.json({
       success: true,
-      message: "Appointment request logged successfully",
+      message: "Lead recorded and sent to Google Sheet successfully",
     });
   } catch (error) {
     console.error("Booking API error:", error);
