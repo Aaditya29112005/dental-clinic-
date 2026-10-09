@@ -34,7 +34,11 @@ export async function POST(request: Request) {
     console.log("====================================");
 
     // Google Sheet Webhook Integration
-    const webhookUrl = process.env.GOOGLE_SHEET_WEBHOOK_URL || process.env.BOOKING_WEBHOOK_URL;
+    const webhookUrl =
+      process.env.GOOGLE_SHEET_WEBHOOK_URL ||
+      process.env.BOOKING_WEBHOOK_URL ||
+      "https://script.google.com/macros/s/AKfycbyK5K79_C5K2J8MJMpRVwQ3norX_zQ88tcl2JcIw5u9rNpJun3ZuTwED8j9GBlxG58y/exec";
+      
     if (webhookUrl) {
       try {
         await fetch(webhookUrl, {
