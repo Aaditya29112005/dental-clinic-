@@ -97,9 +97,9 @@ export const clinicConfig = {
       "Cosmetic dentistry"
     ],
     certifications: [
+      "Invisalign® Masterclass & Advanced Training (Trained by Dr. Jignesh Kothari, Black Diamond Provider & Global KOL)",
       "Advanced Endodontics Certification",
-      "Dental Implants Specialist Certification",
-      "Invisalign Provider Certification [CLIENT TO VERIFY]"
+      "Dental Implants Specialist Certification"
     ],
     bio: "Dr. Jyoti Chauhan is an experienced MDS Orthodontist dedicated to creating healthy, harmonious smiles. Specialising in braces, clear aligners, and comprehensive dentofacial orthopaedics, she combines clinical precision with a gentle touch. Her practice is built on individualised care plans, evidence-based treatments, and a commitment to keeping every procedure comfortable for patients of all ages."
   },

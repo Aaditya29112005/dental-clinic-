@@ -81,6 +81,44 @@ export default function MeetDoctorPage() {
             </p>
           </div>
 
+          {/* Invisalign Masterclass Spotlight */}
+          <div className="bg-gradient-to-br from-navy-900 to-navy-950 text-white p-6 sm:p-8 rounded-3xl shadow-elevated border border-teal-500/30 space-y-6">
+            <div className="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-widest">
+              <Award className="w-4 h-4 text-teal-400" />
+              <span>Advanced Invisalign® Masterclass Training</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+              <div className="md:col-span-5">
+                <div className="w-full max-w-[280px] mx-auto aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-teal-500/40">
+                  <img
+                    src="/images/invisalign-training-dr-jignesh-kothari.jpg"
+                    alt="Dr. Jyoti Chauhan with Dr. Jignesh Kothari (Black Diamond Invisalign Provider)"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="text-[11px] text-teal-300 text-center mt-2 font-medium">
+                  Dr. Jyoti Chauhan with Dr. Jignesh Kothari (Invisalign® Global KOL)
+                </div>
+              </div>
+              <div className="md:col-span-7 space-y-3">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+                  Trained under India's Renowned Black Diamond Invisalign® Provider
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed font-sans">
+                  "Feeling incredibly honored to have been part of the Invisalign Training Program by none other than Dr. Jignesh Kothari, India’s renowned Black Diamond Invisalign Provider and a global Key Opinion Leader in orthodontics. His passion, depth of knowledge, and practical insights were a masterclass in the art and science of creating confident smiles."
+                </p>
+                <div className="pt-2 border-t border-white/10 flex flex-wrap gap-2 text-[11px] font-semibold text-teal-300">
+                  <span className="bg-teal-500/20 px-2.5 py-1 rounded-full border border-teal-500/30">
+                    Advanced 3D Case Planning
+                  </span>
+                  <span className="bg-teal-500/20 px-2.5 py-1 rounded-full border border-teal-500/30">
+                    Invisalign® Excellence
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Video Spotlight: In Conversation with Dr. Jyoti */}
           <div className="bg-navy-950 text-white p-8 rounded-3xl shadow-elevated space-y-6">
             <div className="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-widest">

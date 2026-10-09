@@ -13,6 +13,13 @@ interface InstaPost {
 
 const instaPosts: InstaPost[] = [
   {
+    id: "post-invisalign-masterclass",
+    image: "/images/invisalign-training-dr-jignesh-kothari.jpg",
+    caption: "Honored to participate in the Invisalign® Masterclass by Dr. Jignesh Kothari (Black Diamond Provider & Global Orthodontic KOL). Applying advanced 3D aligner planning for smile excellence in Noida!",
+    category: "Invisalign® Masterclass",
+    likes: 248
+  },
+  {
     id: "post1",
     image: "/images/clear-aligners-noida.jpg",
     caption: "Custom braces & clear aligners delivered with precision by specialist MDS Orthodontist in Noida.",
