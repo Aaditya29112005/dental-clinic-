@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import { patientReviews } from "@/data/clinicData";
+import { patientReviews, clinicConfig } from "@/data/clinicData";
 
 export default function TestimonialsCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,24 +66,24 @@ export default function TestimonialsCarousel() {
         </div>
 
         {/* Carousel Navigation Buttons */}
-        <div className="flex items-center justify-between mt-6 px-2">
+        <div className="flex items-center justify-between mt-6 px-2 gap-4">
           <button
             onClick={prevSlide}
             aria-label="Previous review"
-            className="p-3 rounded-full bg-white text-navy-900 shadow-md hover:bg-teal-500 hover:text-white transition-all"
+            className="p-3 rounded-full bg-white text-navy-900 shadow-md hover:bg-teal-500 hover:text-white transition-all shrink-0"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-center flex-wrap gap-1.5 max-w-xs md:max-w-md">
             {patientReviews.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  currentIndex === idx ? "w-8 bg-teal-500" : "bg-slate-300 hover:bg-slate-400"
+                className={`h-2.5 rounded-full transition-all ${
+                  currentIndex === idx ? "w-7 bg-teal-500" : "w-2.5 bg-slate-300 hover:bg-slate-400"
                 }`}
               />
             ))}
@@ -92,7 +92,7 @@ export default function TestimonialsCarousel() {
           <button
             onClick={nextSlide}
             aria-label="Next review"
-            className="p-3 rounded-full bg-white text-navy-900 shadow-md hover:bg-teal-500 hover:text-white transition-all"
+            className="p-3 rounded-full bg-white text-navy-900 shadow-md hover:bg-teal-500 hover:text-white transition-all shrink-0"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -101,7 +101,7 @@ export default function TestimonialsCarousel() {
         {/* Google Reviews CTA */}
         <div className="text-center mt-8">
           <a
-            href="https://www.google.com"
+            href={clinicConfig.googleMapsLink}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs font-semibold text-teal-600 hover:text-teal-700 bg-white px-5 py-2.5 rounded-full shadow-sm border border-slate-200 hover:border-teal-500 transition-all"

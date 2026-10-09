@@ -1302,48 +1302,111 @@ export const masterFaqBank = [
   { question: "What should I do in a dental emergency?", answer: "Call or WhatsApp us immediately on +91 88604 03089 for urgent assistance." }
 ];
 
-// Patient Reviews (6 Real-style Google Reviews)
+// Patient Reviews (15 Real Verified Google Reviews)
 export const patientReviews = [
   {
-    name: "Ananya Sharma",
-    location: "Sector 50, Noida",
-    rating: 5,
-    date: "2 months ago",
-    comment: "Dr. Jyoti Chauhan is an incredible orthodontist! I was hesitant about getting aligners as an adult, but her clear explanation and calm clinic made the journey so smooth. Highly recommend Align Dentofacial Clinic."
-  },
-  {
-    name: "Vikram Malhotra",
-    location: "Sector 49, Noida",
+    name: "Bhumika",
+    location: "Verified Google Review",
     rating: 5,
     date: "1 month ago",
-    comment: "Had my root canal treatment done here. Zero pain during the procedure. Very hygienic operatory and transparent doctor who doesn't suggest unnecessary treatments."
+    comment: "I had a really great experience at Align Dentofacial Clinic. I got my RCT done here, and the entire experience was much better than I expected. The consultation was very thorough, and the treatment was completely painless and comfortable."
   },
   {
-    name: "Pooja Verma",
-    location: "Sector 76, Noida",
+    name: "Prakash Rawat",
+    location: "Local Guide • 16 reviews",
     rating: 5,
-    date: "3 weeks ago",
-    comment: "Brought my 8-year-old daughter for a checkup. Dr. Jyoti was so gentle and patient with her. The clinic environment feels so peaceful compared to typical hospitals."
+    date: "1 month ago",
+    comment: "I recently got my dental treatment done by Dr. Jyoti Chauhan, and I am extremely happy with the treatment and the overall experience."
   },
   {
-    name: "Rohan Gupta",
-    location: "Kohli Vihar, Noida",
+    name: "Navneet Sharma",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "5 months ago",
+    comment: "I had an excellent experience at this Align Dentofacial clinic. The doctor was professional, friendly, and made me feel comfortable throughout my treatment. The doctor explained every step clearly and ensured I was at ease."
+  },
+  {
+    name: "Geetanjali Chandela",
+    location: "Verified Google Review",
     rating: 5,
     date: "4 months ago",
-    comment: "Great experience with dental cleaning and teeth whitening. The digital X-ray system is fast and the clinic is spotless clean. Convenient location right on Dadri Main Road."
+    comment: "We had a great experience with the dentist while treating my 3-year-old daughter. She was extremely patient, caring, and gave full attention throughout the appointment. What I appreciated the most was how much time and effort she took to keep my child engaged and comfortable."
   },
   {
-    name: "Sneha Reddy",
-    location: "Sector 51, Noida",
+    name: "Anu Chauhan",
+    location: "Verified Google Review",
     rating: 5,
-    date: "Recent Patient",
-    comment: "Got ceramic braces for my crowded teeth. The progress in 6 months is amazing. Very punctual appointments and friendly care!"
+    date: "3 months ago",
+    comment: "The experience at the clinic was good I have got my ortho treatment done there. I am very satisfied by the treatment and I am very thankful to Dr. Jyoti for giving very beautiful smile and confidence."
   },
   {
-    name: "Amitabh Srivastava",
-    location: "Sector 48, Noida",
+    name: "Amit Pandey",
+    location: "Verified Google Review",
     rating: 5,
-    date: "Recent Patient",
-    comment: "Extremely professional clinic. Got a zircionia crown fitted after my RCT. Perfect bite fit and looks just like my original tooth."
+    date: "5 months ago",
+    comment: "Dr Jyoti Chauhan is very polite in nature. She explained everything in detail while the treatment is going on. If anyone need a dentist I will surely recommend her name."
+  },
+  {
+    name: "Ashu Sarpanch",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "9 months ago",
+    comment: "I recently visited Align Dentofacial clinic for a consultation and treatment. My experience was very positive from start to finish. The staff and doctors are highly professional and take the time to explain everything thoroughly."
+  },
+  {
+    name: "Kundan Babu",
+    location: "Local Guide • 26 reviews",
+    rating: 5,
+    date: "9 months ago",
+    comment: "I had a great experience at ALIGN Dentofacial Clinic. The doctors are highly professional, knowledgeable, and patient-friendly. The clinic is very clean, well-equipped, and follows excellent hygiene standards. I felt comfortable throughout."
+  },
+  {
+    name: "Anjan Jha",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "6 months ago",
+    comment: "I visited her with my mother in law. She was very scared at first day but Dr. Jyoti comforted her and gave her the courage she wanted. Please do visit Align Dentofacial for painless treatment."
+  },
+  {
+    name: "Nisha Srivastava",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "5 months ago",
+    comment: "She is very humble and best doctor. She explained everything about the problem and what will be the best solution for me. It was a painless treatment. Highly recommend."
+  },
+  {
+    name: "Kajal Dedhaa",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "9 months ago",
+    comment: "Very happy with my treatment results. The doctor is skilled and attentive, and the clinic maintains high hygiene standards. Appointments were well managed and the staff was cooperative. A trustworthy dental clinic."
+  },
+  {
+    name: "Saundarya Pal",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "7 months ago",
+    comment: "I am very scared of visiting dentists but she is fabulous in her work and very polite and humble. Highly recommended."
+  },
+  {
+    name: "Sujoy Singh",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "1 year ago",
+    comment: "I had my root canal treatment (RCT) done at Align Dentofacial Clinic, and it was a great experience. The clinic has specialists for all types of dental procedures. My RCT was performed by an endodontist, and it was completely painless."
+  },
+  {
+    name: "Saurav Gurjar",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "5 months ago",
+    comment: "I got very best treatment here at Align dental care. Root canal was very well and teeth removal was very well and I got relief in my pain."
+  },
+  {
+    name: "Shreya Singh",
+    location: "Verified Google Review",
+    rating: 5,
+    date: "9 months ago",
+    comment: "I can't say enough great things about Dr. Jyoti! She is extremely professional, knowledgeable, and always takes time to answer all of my questions thoroughly. Besides, every appointment is on time."
   }
 ];
