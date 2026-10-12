@@ -152,40 +152,7 @@ export default function MeetDoctorPage() {
             </p>
           </div>
 
-          {/* Clinical Consultation & Orthodontic Reels */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-3xl shadow-soft border border-slate-100 space-y-3">
-              <span className="text-[11px] font-bold text-teal-600 uppercase tracking-wider block">
-                Consultation Walkthrough
-              </span>
-              <h4 className="font-serif font-bold text-navy-900 text-lg">
-                Patient Consultation Process
-              </h4>
-              <CustomVideoPlayer
-                src="/videos/video-doctor-explaining.mp4"
-                poster="/images/dr-jyoti-consultation.jpg"
-                title="Explaining Treatment Options"
-                badge="Consultation"
-                aspectRatio="aspect-[4/3]"
-              />
-            </div>
 
-            <div className="bg-white p-6 rounded-3xl shadow-soft border border-slate-100 space-y-3">
-              <span className="text-[11px] font-bold text-teal-600 uppercase tracking-wider block">
-                Clinical Precision
-              </span>
-              <h4 className="font-serif font-bold text-navy-900 text-lg">
-                Orthodontic Precision Reel
-              </h4>
-              <CustomVideoPlayer
-                src="/videos/video-ortho-demo.mp4"
-                poster="/images/dr-jyoti-portrait.jpg"
-                title="Orthodontic Braces & Aligner Tech"
-                badge="Precision"
-                aspectRatio="aspect-[4/3]"
-              />
-            </div>
-          </div>
 
           {/* Areas of Clinical Focus */}
           <div className="bg-white p-8 rounded-3xl shadow-soft border border-slate-100 space-y-4">
