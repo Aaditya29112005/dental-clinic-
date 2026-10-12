@@ -20,143 +20,143 @@ const galleryMediaItems: MediaItem[] = [
   {
     id: "real-clinic-walkthrough-video",
     type: "video",
-    title: "Complete Boutique Operatory & Infrastructure Walkthrough",
+    title: "Clinic Operatory & Bay Walkthrough",
     category: "Video Tours",
-    desc: "Experience our modern dental chair, digital intraoral setup, and sterilised operatory bay in Noida.",
+    desc: "Walkthrough of our modern dental operatory bay and treatment setup.",
     src: "/videos/clinic-tour-walkthrough-1.mp4",
-    poster: "/images/clinic-tour-operatory-1.jpg",
+    poster: "/images/poster-walkthrough.jpg",
     badge: "Virtual Tour"
   },
   {
     id: "real-clinic-lounge-video",
     type: "video",
-    title: "Calm Reception & Patient Waiting Lounge Ambience",
+    title: "Reception & Waiting Lounge Tour",
     category: "Video Tours",
-    desc: "Take a virtual look inside our peaceful, home-style reception lounge at Sector 49, Noida.",
+    desc: "Tour of our peaceful waiting lounge and consultation area.",
     src: "/videos/clinic-tour-lounge-1.mp4",
-    poster: "/images/clinic-tour-reception-1.jpg",
+    poster: "/images/poster-walkthrough.jpg",
     badge: "Lounge Ambience"
   },
   {
     id: "real-reception-img",
     type: "image",
-    title: "Boutique Reception & Reception Desk",
+    title: "Reception & Consultation Desk",
     category: "Waiting Lounge",
-    desc: "Welcoming reception environment designed for zero-stress patient arrivals.",
+    desc: "Front desk and consultation area with doctor qualifications and patient guidance.",
     src: "/images/clinic-tour-reception-1.jpg",
     badge: "Reception"
   },
   {
     id: "real-operatory-img",
     type: "image",
-    title: "Sterilised Operatory & Treatment Console",
+    title: "Sterilised Treatment Operatory",
     category: "Operatories & Care",
-    desc: "Ergonomic treatment chair and low-radiation digital sensor setup for maximum comfort.",
+    desc: "Hygienic operatory bay equipped with ergonomic dental chair and digital sensors.",
     src: "/images/clinic-tour-operatory-1.jpg",
     badge: "Operatory"
   },
   {
-    id: "real-facility-img",
+    id: "clinic-entrance-img",
     type: "image",
-    title: "Modern Clinic Infrastructure & Care Bay",
-    category: "Sterilization & Hygiene",
-    desc: "Strictly sterilised treatment environment with modern diagnostic instruments.",
-    src: "/images/clinic-tour-facility-1.jpg",
-    badge: "Facility"
+    title: "Clinic Entrance & Welcome Lounge",
+    category: "Waiting Lounge",
+    desc: "Boutique entrance welcoming patients to Align Dentofacial Clinic.",
+    src: "/images/clinic-reception-lounge.jpg",
+    badge: "Entrance"
   },
   {
     id: "full-virtual-tour",
     type: "video",
-    title: "Complete Virtual Tour of Align Dentofacial Clinic",
+    title: "Full Clinic Walkthrough Tour",
     category: "Video Tours",
-    desc: "Experience our full boutique clinic in Sector 49, Noida, from entrance lounge to sterilised operatories.",
+    desc: "Complete walkthrough of the reception, operatory, and clinic facilities.",
     src: "/videos/video-full-tour.mp4",
-    poster: "/images/clinic-hero-bg.jpg",
+    poster: "/images/poster-full-tour.jpg",
     badge: "Full Tour"
   },
   {
     id: "operatory-tour-video",
     type: "video",
-    title: "Operatory Room & Patient Chair Setup Walkthrough",
+    title: "Operatory Room Setup Tour",
     category: "Video Tours",
-    desc: "Take a closer look at our ergonomically designed treatment chair and calm clinical lighting.",
+    desc: "Detailed look at our operatory lighting, treatment chair, and diagnostic tools.",
     src: "/videos/video-operatory-walkthrough.mp4",
-    poster: "/images/clinic-chair-operatory.jpg",
+    poster: "/images/poster-operatory-tour.jpg",
     badge: "Operatory Tour"
-  },
-  {
-    id: "reception-lounge-img",
-    type: "image",
-    title: "Calm Home-Style Waiting Lounge",
-    category: "Waiting Lounge",
-    desc: "Peaceful reception with plush leather seating, complimentary refreshments, and Invisalign display area.",
-    src: "/images/clinic-reception-lounge.jpg",
-    badge: "Lounge"
   },
   {
     id: "chair-demo-video",
     type: "video",
-    title: "Ergonomic Dental Chair & Tech Setup",
+    title: "Ergonomic Dental Chair Demo",
     category: "Video Tours",
-    desc: "Designed for maximum patient back comfort and low-radiation digital sensor integration.",
+    desc: "Demonstration of our modern dental chair for comfortable patient positioning.",
     src: "/videos/video-chair-demo.mp4",
-    poster: "/images/operatory-chair-side.jpg",
-    badge: "Tech Feature"
+    poster: "/images/poster-chair-demo.jpg",
+    badge: "Chair Demo"
   },
   {
     id: "operatory-setup-img",
     type: "image",
-    title: "Advanced Operatory Room Setup",
+    title: "Ergonomic Dental Treatment Chair",
     category: "Operatories & Care",
-    desc: "Spacious treatment bay dedicated to orthodontic, endodontic, and restorative dentistry.",
+    desc: "Advanced treatment chair designed for gentle, strain-free patient visits.",
     src: "/images/clinic-chair-operatory.jpg",
-    badge: "Operatory"
+    badge: "Treatment Chair"
   },
   {
     id: "sterilization-protocol-video",
     type: "video",
-    title: "Multi-Step Sterilisation & Hygiene Showcase",
+    title: "Hygiene & Sterilisation Protocols",
     category: "Video Tours",
-    desc: "See how every instrument undergoes rigorous autoclave sterilization and pouch sealing for total safety.",
+    desc: "Overview of autoclave sterilisation and clinical cleanliness protocols.",
     src: "/videos/video-sterilization-protocol.mp4",
-    poster: "/images/sterilization-station.jpg",
-    badge: "Safety Guarantee"
-  },
-  {
-    id: "sterilization-room-img",
-    type: "image",
-    title: "Dedicated Sterilisation & Instrument Station",
-    category: "Sterilization & Hygiene",
-    desc: "Hospital-grade sterilisation equipment protecting every patient during visits.",
-    src: "/images/sterilization-station.jpg",
+    poster: "/images/poster-sterilization.jpg",
     badge: "Sterilisation"
-  },
-  {
-    id: "reception-desk-front-img",
-    type: "image",
-    title: "Boutique Reception Desk & Concierge",
-    category: "Waiting Lounge",
-    desc: "Minimal waiting times with warm front-desk assistance and quick digital check-ins.",
-    src: "/images/reception-desk-front.jpg",
-    badge: "Reception"
   },
   {
     id: "patient-consultation-desk-img",
     type: "image",
-    title: "Private Consultation & X-Ray Review Desk",
+    title: "Cervical Enamel Loss Restoration (Before & After)",
     category: "Operatories & Care",
-    desc: "Transparent discussion room for reviewing 3D aligner plans and digital X-rays with Dr. Jyoti.",
+    desc: "Clinical result showing aesthetic restoration for cervical abrasion.",
     src: "/images/patient-consultation-desk.jpg",
+    badge: "Clinical Case"
+  },
+  {
+    id: "pediatric-care-img",
+    type: "image",
+    title: "Dr. Jyoti Chauhan with Pediatric Patient",
+    category: "Operatories & Care",
+    desc: "Gentle and compassionate pediatric dental check-up experience.",
+    src: "/images/sterilization-station.jpg",
+    badge: "Pediatric Care"
+  },
+  {
+    id: "reception-desk-front-img",
+    type: "image",
+    title: "Comfortable Dental Consultation",
+    category: "Operatories & Care",
+    desc: "Patient consultation and examination in a reassuring, friendly environment.",
+    src: "/images/reception-desk-front.jpg",
     badge: "Consultation"
   },
   {
     id: "operatory-chair-side-img",
     type: "image",
-    title: "Precision Dental Lighting & Sensor Console",
-    category: "Operatories & Care",
-    desc: "Focused glare-free operating lights and digital intraoral camera console.",
+    title: "Smiling Patient with Dental Mirror",
+    category: "Waiting Lounge",
+    desc: "Young patient enjoying a fun and friendly visit at the clinic.",
     src: "/images/operatory-chair-side.jpg",
-    badge: "Precision"
+    badge: "Patient Smile"
+  },
+  {
+    id: "clinic-review-story-img",
+    type: "image",
+    title: "Verified 5-Star Pediatric Review",
+    category: "Waiting Lounge",
+    desc: "Real patient feedback highlighting patient and stress-free care for kids.",
+    src: "/images/clinic-hero-bg.jpg",
+    badge: "Patient Review"
   }
 ];
 
@@ -233,10 +233,9 @@ export default function ClinicTour() {
           </div>
 
           <CustomVideoPlayer
-            src="/videos/video-full-tour.mp4"
-            poster="/images/clinic-hero-bg.jpg"
-            title="Step Inside Align Dentofacial Clinic, Noida"
-            subtitle="Explore our quiet waiting lounge, consultation desk, and sterilised operatory setup."
+            src="/videos/clinic-tour-walkthrough-1.mp4"
+            poster="/images/poster-walkthrough.jpg"
+            title="Complete Clinic Video Walkthrough"
             badge="Featured Virtual Tour"
             className="w-full"
             onExpand={() => setActiveLightboxMedia(galleryMediaItems[0])}
@@ -256,7 +255,6 @@ export default function ClinicTour() {
                 src={item.src}
                 poster={item.poster}
                 title={item.title}
-                subtitle={item.desc}
                 badge={item.badge}
                 aspectRatio="aspect-[4/3]"
                 onExpand={() => setActiveLightboxMedia(item)}
@@ -287,12 +285,9 @@ export default function ClinicTour() {
 
                 {/* Content Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                  <h4 className="font-serif font-bold text-base text-white leading-snug">
+                  <h4 className="font-serif font-bold text-base text-white leading-snug drop-shadow-sm">
                     {item.title}
                   </h4>
-                  <p className="text-xs text-slate-300 line-clamp-2 mt-1">
-                    {item.desc}
-                  </p>
                 </div>
               </div>
             )}
