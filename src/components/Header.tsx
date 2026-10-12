@@ -101,12 +101,25 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
           
           {/* Clinic Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <img
-              src="/logo.png"
-              alt="Align Dentofacial Clinic Logo"
-              className="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
-            />
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group select-none py-0.5">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <img
+                src="/images/clinic-logo-emblem.png"
+                alt="Align Dentofacial Clinic"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className="font-serif font-black tracking-wide text-navy-950 text-base sm:text-xl leading-none uppercase group-hover:text-teal-600 transition-colors">
+                ALIGN
+              </span>
+              <span className="text-[9px] sm:text-[11px] font-bold tracking-[0.16em] text-teal-600 uppercase leading-tight mt-0.5">
+                Dentofacial Clinic
+              </span>
+              <span className="hidden sm:block text-[8px] tracking-wide text-slate-400 font-medium italic">
+                Healthy Smiles, Happy Lives
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links */}

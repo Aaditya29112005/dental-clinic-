@@ -10,12 +10,25 @@ export default function Footer() {
           
           {/* Column 1: Brand & Contact Info */}
           <div className="space-y-4">
-            <Link href="/" className="inline-block bg-white p-2.5 rounded-2xl shadow-sm hover:opacity-95 transition-opacity">
-              <img
-                src="/logo.png"
-                alt="Align Dentofacial Clinic Logo"
-                className="h-10 sm:h-12 w-auto object-contain"
-              />
+            <Link href="/" className="inline-flex items-center gap-3 group select-none">
+              <div className="relative w-12 h-12 shrink-0 p-1 bg-white/10 rounded-2xl border border-white/10 backdrop-blur-sm group-hover:scale-105 transition-transform">
+                <img
+                  src="/images/clinic-logo-emblem.png"
+                  alt="Align Dentofacial Clinic"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <span className="font-serif font-black tracking-wide text-white text-xl leading-none uppercase group-hover:text-teal-400 transition-colors">
+                  ALIGN
+                </span>
+                <span className="text-[11px] font-bold tracking-[0.16em] text-teal-400 uppercase leading-tight mt-0.5">
+                  Dentofacial Clinic
+                </span>
+                <span className="text-[8px] tracking-wide text-slate-400 font-medium italic mt-0.5">
+                  "Healthy Smiles, Happy Lives"
+                </span>
+              </div>
             </Link>
 
             <p className="text-xs text-slate-300 leading-relaxed max-w-sm">
