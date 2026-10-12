@@ -112,9 +112,9 @@ export default function AboutClinicPage() {
               <CustomVideoPlayer
                 src="/videos/clinic-tour-lounge-1.mp4"
                 poster="/images/clinic-tour-reception-1.jpg"
-                title="Calm Lounge & Patient Waiting Experience"
-                subtitle="Designed to put nervous patients completely at ease."
-                badge="Lounge Ambience"
+                title="Calm Reception & Patient Waiting Lounge"
+                subtitle="Peaceful, welcoming reception lounge designed to put patients completely at ease."
+                badge="Reception Lounge"
                 className="w-full"
               />
             </div>
