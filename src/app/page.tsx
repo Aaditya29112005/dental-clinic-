@@ -34,13 +34,13 @@ export default function HomePage() {
   const whatsappMsg = encodeURIComponent("Hi, I'd like to book a consultation at Align Dentofacial Clinic.");
 
   const problemStripItems = [
-    { title: "Crooked or irregular teeth", icon: Smile, slug: "crooked-or-irregular-teeth" },
-    { title: "Bleeding gums while brushing", icon: Zap, slug: "bleeding-gums" },
-    { title: "Sensitive to hot or cold", icon: Sparkles, slug: "sensitive-teeth" },
-    { title: "Pain while eating", icon: Stethoscope, slug: "tooth-pain" },
-    { title: "Missing teeth affecting confidence", icon: ShieldCheck, slug: "missing-teeth" },
-    { title: "Child afraid of the dentist", icon: Smile, slug: "child-afraid-of-the-dentist" },
-    { title: "Cavities or crooked teeth in kids", icon: CheckCircle2, slug: "tooth-decay-and-cavities" },
+    { title: "Tooth Pain", image: "/images/tooth-pain-concern.jpg", icon: Stethoscope, slug: "tooth-pain" },
+    { title: "Bleeding Gums", image: "/images/bleeding-gums-concern.jpg", icon: Zap, slug: "bleeding-gums" },
+    { title: "Sensitive Teeth", image: "/images/sensitive-teeth-concern.jpg", icon: Sparkles, slug: "sensitive-teeth" },
+    { title: "Tooth Decay & Cavities", image: "/images/tooth-decay-cavities-concern.jpg", icon: CheckCircle2, slug: "tooth-decay-and-cavities" },
+    { title: "Missing Teeth", image: "/images/missing-teeth-concern.jpg", icon: ShieldCheck, slug: "missing-teeth" },
+    { title: "Crooked & Irregular Teeth", image: "/images/crooked-irregular-teeth-concern.jpg", icon: Smile, slug: "crooked-or-irregular-teeth" },
+    { title: "Stained & Yellow Teeth", image: "/images/stained-yellow-teeth-concern.jpg", icon: Sparkles, slug: "stained-or-yellow-teeth" },
   ];
 
   const specialties = [
@@ -217,17 +217,24 @@ export default function HomePage() {
                 <Link
                   key={idx}
                   href={`/dental-problems/${item.slug}`}
-                  className="problem-card snap-start shrink-0 w-64 bg-white p-5 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500/50 hover:shadow-soft transition-all group flex flex-col justify-between"
+                  className="problem-card snap-start shrink-0 w-64 bg-white p-4 rounded-2xl border border-slate-200/80 shadow-card hover:border-teal-500/50 hover:shadow-soft transition-all group flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
-                      <Icon className="w-5 h-5" />
+                    <div className="relative w-full h-36 rounded-xl overflow-hidden mb-3 bg-slate-100">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute top-2 left-2 w-7 h-7 rounded-lg bg-navy-950/70 backdrop-blur-md text-teal-300 flex items-center justify-center">
+                        <Icon className="w-3.5 h-3.5" />
+                      </div>
                     </div>
-                    <h3 className="font-semibold text-navy-900 text-sm mb-1 leading-snug">
+                    <h3 className="font-semibold text-navy-900 text-sm mb-1 leading-snug group-hover:text-teal-600 transition-colors">
                       {item.title}
                     </h3>
                   </div>
-                  <div className="text-xs font-semibold text-teal-600 flex items-center gap-1 mt-4">
+                  <div className="text-xs font-semibold text-teal-600 flex items-center gap-1 mt-3">
                     <span>Learn solutions</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>

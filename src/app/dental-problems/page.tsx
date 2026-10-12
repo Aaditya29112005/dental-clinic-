@@ -49,12 +49,21 @@ export default function DentalProblemsPage() {
           {dentalProblemsData.map((prob) => (
             <div 
               key={prob.id}
-              className="bg-white rounded-2xl p-6 shadow-soft border border-slate-100 hover:border-teal-500/30 transition-all flex flex-col justify-between group"
+              className="bg-white rounded-2xl p-5 shadow-soft border border-slate-100 hover:border-teal-500/30 transition-all flex flex-col justify-between group overflow-hidden"
             >
               <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <AlertCircle className="w-5 h-5 text-teal-500" />
-                  <h3 className="font-serif text-xl font-bold text-navy-900 group-hover:text-teal-600 transition-colors">
+                {prob.image && (
+                  <div className="w-full h-44 rounded-xl overflow-hidden mb-4 bg-slate-100 relative">
+                    <img
+                      src={prob.image}
+                      alt={prob.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <div className="flex items-center gap-2 mb-2">
+                  <AlertCircle className="w-4 h-4 text-teal-500 shrink-0" />
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-navy-900 group-hover:text-teal-600 transition-colors">
                     {prob.title}
                   </h3>
                 </div>
@@ -64,7 +73,7 @@ export default function DentalProblemsPage() {
               </div>
               <Link
                 href={`/dental-problems/${prob.slug}`}
-                className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1 group-hover:translate-x-1 transition-all"
+                className="text-xs font-bold text-teal-600 hover:text-teal-700 flex items-center gap-1 group-hover:translate-x-1 transition-all pt-3 border-t border-slate-100"
               >
                 <span>View Solutions & Causes</span>
                 <ArrowRight className="w-3.5 h-3.5" />
