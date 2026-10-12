@@ -13,7 +13,6 @@ interface MediaItem {
   desc: string;
   src: string;
   poster?: string;
-  badge?: string;
 }
 
 const galleryMediaItems: MediaItem[] = [
@@ -24,8 +23,7 @@ const galleryMediaItems: MediaItem[] = [
     category: "Video Tours",
     desc: "Walkthrough of our modern dental operatory bay and treatment setup.",
     src: "/videos/clinic-tour-walkthrough-1.mp4",
-    poster: "/images/poster-walkthrough.jpg",
-    badge: "Virtual Tour"
+    poster: "/images/poster-walkthrough.jpg"
   },
   {
     id: "real-clinic-lounge-video",
@@ -34,8 +32,7 @@ const galleryMediaItems: MediaItem[] = [
     category: "Video Tours",
     desc: "Tour of our peaceful waiting lounge and consultation area.",
     src: "/videos/clinic-tour-lounge-1.mp4",
-    poster: "/images/poster-walkthrough.jpg",
-    badge: "Lounge Ambience"
+    poster: "/images/poster-walkthrough.jpg"
   },
   {
     id: "real-reception-img",
@@ -43,8 +40,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Reception & Consultation Desk",
     category: "Waiting Lounge",
     desc: "Front desk and consultation area with doctor qualifications and patient guidance.",
-    src: "/images/clinic-tour-reception-1.jpg",
-    badge: "Reception"
+    src: "/images/clinic-tour-reception-1.jpg"
   },
   {
     id: "real-operatory-img",
@@ -52,8 +48,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Sterilised Treatment Operatory",
     category: "Operatories & Care",
     desc: "Hygienic operatory bay equipped with ergonomic dental chair and digital sensors.",
-    src: "/images/clinic-tour-operatory-1.jpg",
-    badge: "Operatory"
+    src: "/images/clinic-tour-operatory-1.jpg"
   },
   {
     id: "clinic-entrance-img",
@@ -61,8 +56,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Clinic Entrance & Welcome Lounge",
     category: "Waiting Lounge",
     desc: "Boutique entrance welcoming patients to Align Dentofacial Clinic.",
-    src: "/images/clinic-reception-lounge.jpg",
-    badge: "Entrance"
+    src: "/images/clinic-reception-lounge.jpg"
   },
   {
     id: "full-virtual-tour",
@@ -71,8 +65,7 @@ const galleryMediaItems: MediaItem[] = [
     category: "Video Tours",
     desc: "Complete walkthrough of the reception, operatory, and clinic facilities.",
     src: "/videos/video-full-tour.mp4",
-    poster: "/images/poster-full-tour.jpg",
-    badge: "Full Tour"
+    poster: "/images/poster-full-tour.jpg"
   },
   {
     id: "operatory-tour-video",
@@ -81,8 +74,7 @@ const galleryMediaItems: MediaItem[] = [
     category: "Video Tours",
     desc: "Detailed look at our operatory lighting, treatment chair, and diagnostic tools.",
     src: "/videos/video-operatory-walkthrough.mp4",
-    poster: "/images/poster-operatory-tour.jpg",
-    badge: "Operatory Tour"
+    poster: "/images/poster-operatory-tour.jpg"
   },
   {
     id: "chair-demo-video",
@@ -91,8 +83,7 @@ const galleryMediaItems: MediaItem[] = [
     category: "Video Tours",
     desc: "Demonstration of our modern dental chair for comfortable patient positioning.",
     src: "/videos/video-chair-demo.mp4",
-    poster: "/images/poster-chair-demo.jpg",
-    badge: "Chair Demo"
+    poster: "/images/poster-chair-demo.jpg"
   },
   {
     id: "operatory-setup-img",
@@ -100,8 +91,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Ergonomic Dental Treatment Chair",
     category: "Operatories & Care",
     desc: "Advanced treatment chair designed for gentle, strain-free patient visits.",
-    src: "/images/clinic-chair-operatory.jpg",
-    badge: "Treatment Chair"
+    src: "/images/clinic-chair-operatory.jpg"
   },
   {
     id: "sterilization-protocol-video",
@@ -110,8 +100,7 @@ const galleryMediaItems: MediaItem[] = [
     category: "Video Tours",
     desc: "Overview of autoclave sterilisation and clinical cleanliness protocols.",
     src: "/videos/video-sterilization-protocol.mp4",
-    poster: "/images/poster-sterilization.jpg",
-    badge: "Sterilisation"
+    poster: "/images/poster-sterilization.jpg"
   },
   {
     id: "patient-consultation-desk-img",
@@ -119,8 +108,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Cervical Enamel Loss Restoration (Before & After)",
     category: "Operatories & Care",
     desc: "Clinical result showing aesthetic restoration for cervical abrasion.",
-    src: "/images/patient-consultation-desk.jpg",
-    badge: "Clinical Case"
+    src: "/images/patient-consultation-desk.jpg"
   },
   {
     id: "pediatric-care-img",
@@ -128,8 +116,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Dr. Jyoti Chauhan with Pediatric Patient",
     category: "Operatories & Care",
     desc: "Gentle and compassionate pediatric dental check-up experience.",
-    src: "/images/sterilization-station.jpg",
-    badge: "Pediatric Care"
+    src: "/images/sterilization-station.jpg"
   },
   {
     id: "reception-desk-front-img",
@@ -137,8 +124,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Comfortable Dental Consultation",
     category: "Operatories & Care",
     desc: "Patient consultation and examination in a reassuring, friendly environment.",
-    src: "/images/reception-desk-front.jpg",
-    badge: "Consultation"
+    src: "/images/reception-desk-front.jpg"
   },
   {
     id: "operatory-chair-side-img",
@@ -146,8 +132,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Smiling Patient with Dental Mirror",
     category: "Waiting Lounge",
     desc: "Young patient enjoying a fun and friendly visit at the clinic.",
-    src: "/images/operatory-chair-side.jpg",
-    badge: "Patient Smile"
+    src: "/images/operatory-chair-side.jpg"
   },
   {
     id: "clinic-review-story-img",
@@ -155,8 +140,7 @@ const galleryMediaItems: MediaItem[] = [
     title: "Verified 5-Star Pediatric Review",
     category: "Waiting Lounge",
     desc: "Real patient feedback highlighting patient and stress-free care for kids.",
-    src: "/images/clinic-hero-bg.jpg",
-    badge: "Patient Review"
+    src: "/images/clinic-hero-bg.jpg"
   }
 ];
 
@@ -236,7 +220,6 @@ export default function ClinicTour() {
             src="/videos/clinic-tour-walkthrough-1.mp4"
             poster="/images/poster-walkthrough.jpg"
             title="Complete Clinic Video Walkthrough"
-            badge="Featured Virtual Tour"
             className="w-full"
             onExpand={() => setActiveLightboxMedia(galleryMediaItems[0])}
           />
@@ -255,7 +238,6 @@ export default function ClinicTour() {
                 src={item.src}
                 poster={item.poster}
                 title={item.title}
-                badge={item.badge}
                 aspectRatio="aspect-[4/3]"
                 onExpand={() => setActiveLightboxMedia(item)}
               />
@@ -270,13 +252,6 @@ export default function ClinicTour() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
-                
-                {/* Badge */}
-                {item.badge && (
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-teal-500/90 text-navy-950 shadow-md backdrop-blur-md">
-                    {item.badge}
-                  </span>
-                )}
 
                 {/* Lightbox Icon Hover */}
                 <div className="absolute top-4 right-4 p-2 rounded-xl bg-navy-900/80 text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-md">

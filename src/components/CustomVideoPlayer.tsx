@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Play, Pause, Volume2, VolumeX, Maximize2, Sparkles } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize2 } from "lucide-react";
 
 interface CustomVideoPlayerProps {
   src: string;
@@ -92,27 +92,19 @@ export default function CustomVideoPlayer({
       {/* Subtle Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent pointer-events-none" />
 
-      {/* Header Badge & Subtitle */}
-      {(badge || title || onExpand) && (
-        <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none">
-          {badge ? (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-teal-500/90 text-navy-950 shadow-md backdrop-blur-md">
-              <Sparkles className="w-3 h-3" />
-              {badge}
-            </span>
-          ) : <div />}
-          {onExpand && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onExpand();
-              }}
-              className="pointer-events-auto ml-auto p-2 rounded-xl bg-navy-900/80 hover:bg-teal-500 text-white hover:text-navy-950 transition-colors backdrop-blur-md border border-white/10"
-              title="Expand Video"
-            >
-              <Maximize2 className="w-4 h-4" />
-            </button>
-          )}
+      {/* Header Controls (Expand) */}
+      {onExpand && (
+        <div className="absolute top-4 right-4 z-10 pointer-events-auto">
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onExpand();
+            }}
+            className="p-2 rounded-xl bg-navy-900/80 hover:bg-teal-500 text-white hover:text-navy-950 transition-colors backdrop-blur-md border border-white/10"
+            title="Expand Video"
+          >
+            <Maximize2 className="w-4 h-4" />
+          </button>
         </div>
       )}
 

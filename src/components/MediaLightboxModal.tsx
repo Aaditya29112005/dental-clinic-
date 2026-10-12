@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { X, Sparkles } from "lucide-react";
+import { X } from "lucide-react";
 
 interface MediaLightboxModalProps {
   isOpen: boolean;
@@ -52,12 +52,6 @@ export default function MediaLightboxModal({
         {/* Header bar */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-navy-950/60">
           <div className="flex items-center gap-2">
-            {category && (
-              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-teal-400 uppercase tracking-widest bg-teal-500/10 px-2.5 py-1 rounded-full border border-teal-500/20">
-                <Sparkles className="w-3 h-3" />
-                {category}
-              </span>
-            )}
             <h3 className="font-serif font-bold text-white text-lg line-clamp-1">
               {title || "Align Dentofacial Clinic Media"}
             </h3>
