@@ -15,7 +15,7 @@ export default function TermsPage() {
 
       <h2 className="font-serif text-xl font-bold text-navy-900 pt-4">1. Appointments & Walk-ins</h2>
       <p>
-        Appointments scheduled online or over the phone are confirmed upon contact by our reception team. Walk-in patients are welcome during operating hours (Tuesday to Sunday, 10 am to 7 pm; Monday closed).
+        Appointments scheduled online or over the phone are confirmed upon contact by our reception team. Walk-in patients and scheduled appointments are welcome Tuesday to Sunday, 10 am to 7 pm. Please note that the clinic is strictly closed on Mondays (neither walk-ins nor appointments are available).
       </p>
 
       <h2 className="font-serif text-xl font-bold text-navy-900 pt-4">2. Ethical Care & Estimates</h2>

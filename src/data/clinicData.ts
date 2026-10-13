@@ -118,8 +118,8 @@ export const clinicConfig = {
   whatsappRaw: "918860403089",
   email: "contact@aligndentofacial.in",
   
-  hours: "Tuesday to Sunday, 10 am to 7 pm. Monday closed.",
-  hoursDetail: "Tuesday to Sunday: 10:00 AM to 7:00 PM. Monday: Closed. By appointment, walk-ins welcome.",
+  hours: "Tue - Sun: 10:00 AM - 7:00 PM (Monday Closed)",
+  hoursDetail: "Tuesday to Sunday: 10:00 AM to 7:00 PM (Appointments & Walk-ins welcome). Monday: Strictly Closed (No walk-ins, no appointments).",
   
   serviceArea: "In-clinic care in Noida",
   
@@ -992,7 +992,7 @@ export const locationsData: LocationItem[] = [
     routeDirections: "Take the main road connecting Sector 51 to Dadri Main Road, heading south toward Pillar No. 44.",
     popularTreatments: ["Braces", "Root Canal Therapy", "Kids Dentistry"],
     faqs: [
-      { question: "Are walk-ins welcome for Sector 51 residents?", answer: "Yes, walk-ins are welcome, though scheduling an appointment ensures zero waiting time." }
+      { question: "Are walk-ins welcome for Sector 51 residents?", answer: "Yes, walk-ins and appointments are welcome Tuesday to Sunday (10:00 AM - 7:00 PM). Please note the clinic is strictly closed on Mondays (no walk-ins or appointments)." }
     ]
   },
   {
@@ -1070,7 +1070,7 @@ export const locationsData: LocationItem[] = [
     routeDirections: "Take Sector 41 main exit road onto Dadri Main Road toward Pillar No. 44.",
     popularTreatments: ["Cosmetic Dentistry", "Braces", "Implants"],
     faqs: [
-      { question: "What are clinic timings for Sector 41 patients?", answer: "Tuesday to Sunday, 10:00 AM to 7:00 PM (Monday closed)." }
+      { question: "What are clinic timings for Sector 41 patients?", answer: "Tuesday to Sunday, 10:00 AM to 7:00 PM. Monday is completely closed (neither walk-ins nor appointments)." }
     ]
   },
   {

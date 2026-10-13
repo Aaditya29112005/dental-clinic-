@@ -21,7 +21,15 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
   });
 
   const [phoneError, setPhoneError] = useState("");
+  const [dateError, setDateError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const isDateMonday = (dateStr: string) => {
+    if (!dateStr) return false;
+    const [y, m, d] = dateStr.split("-").map(Number);
+    const dateObj = new Date(y, m - 1, d);
+    return dateObj.getDay() === 1; // 1 is Monday
+  };
 
   const validatePhone = (phone: string) => {
     // Remove spaces, hyphens, and +91 country code prefix
@@ -33,9 +41,15 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPhoneError("");
+    setDateError("");
 
     if (!validatePhone(formData.phone)) {
       setPhoneError("Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.");
+      return;
+    }
+
+    if (formData.date && isDateMonday(formData.date)) {
+      setDateError("Clinic is completely closed on Mondays (no walk-ins or appointments). Please choose Tuesday to Sunday.");
       return;
     }
 
@@ -166,10 +180,25 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
                 required
                 min={new Date().toISOString().split("T")[0]}
                 value={formData.date}
-                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full pl-10 pr-3 py-2.5 text-base sm:text-xs rounded-xl border border-white/20 focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer"
+                onChange={(e) => {
+                  const val = e.target.value;
+                  if (val && isDateMonday(val)) {
+                    setDateError("Clinic is completely closed on Mondays (no walk-ins or appointments). Please pick Tue – Sun.");
+                  } else {
+                    setDateError("");
+                  }
+                  setFormData({ ...formData, date: val });
+                }}
+                className={`w-full pl-10 pr-3 py-2.5 text-base sm:text-xs rounded-xl border ${
+                  dateError ? "border-amber-400 ring-2 ring-amber-400/40" : "border-white/20"
+                } focus:border-teal-400 focus:ring-2 focus:ring-teal-400/30 focus:bg-navy-950/80 outline-none transition-all bg-white/10 backdrop-blur-md text-white shadow-inner cursor-pointer`}
               />
             </div>
+            {dateError ? (
+              <p className="text-[11px] text-amber-300 mt-1 font-medium leading-tight">{dateError}</p>
+            ) : (
+              <p className="text-[10px] text-slate-300 mt-1">Tue – Sun (Closed on Mondays)</p>
+            )}
           </div>
 
           <div>

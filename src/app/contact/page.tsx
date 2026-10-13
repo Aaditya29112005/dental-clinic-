@@ -77,11 +77,20 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-teal-600 shrink-0" />
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
                 <div>
                   <div className="font-bold text-navy-900 text-sm">Clinic Hours</div>
-                  <p className="text-slate-600">{clinicConfig.hoursDetail}</p>
+                  <div className="mt-1 space-y-1.5 text-xs">
+                    <p className="text-slate-700">
+                      <span className="font-semibold text-navy-900">Tuesday to Sunday:</span> 10:00 AM – 7:00 PM
+                      <span className="block text-[11px] text-teal-700 font-medium">Walk-ins & appointments welcome</span>
+                    </p>
+                    <div className="inline-flex items-center gap-1.5 bg-red-50 text-red-800 border border-red-200/80 rounded-lg px-2.5 py-1 text-[11px] font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0"></span>
+                      <span><strong>Monday: Strictly Closed</strong> (No walk-ins, not available even on appointment)</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
