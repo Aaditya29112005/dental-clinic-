@@ -360,11 +360,11 @@ export default function HomePage() {
 
           <div className="lg:col-span-6">
             <CustomVideoPlayer
-              src="/videos/video-patient-experience.mp4"
-              poster="/images/dr-jyoti-consultation.jpg"
-              title="Align Clinic Walkthrough & Patient Comfort"
-              subtitle="Calm lounge, sterilised tools, and MDS specialist consultations."
-              badge="Video Reel"
+              src="/videos/align-clinic-walkthrough-tour.mp4"
+              poster="/images/poster-align-clinic-walkthrough.jpg"
+              title="Align Clinic Virtual Walkthrough Tour"
+              subtitle="Explore our consultation area, operatory room, sterilization bay, and waiting lounge."
+              badge="Virtual Tour"
               className="w-full shadow-2xl border-2 border-teal-500/30"
               onExpand={() => setHeroModalOpen(true)}
             />
@@ -376,10 +376,10 @@ export default function HomePage() {
             isOpen={heroModalOpen}
             onClose={() => setHeroModalOpen(false)}
             type="video"
-            src="/videos/video-patient-experience.mp4"
-            title="Align Dentofacial Clinic Patient Experience"
-            description="Virtual video tour showcasing our boutique facility near Sector 49, Noida."
-            category="Video Showcase"
+            src="/videos/align-clinic-walkthrough-tour.mp4"
+            title="Align Dentofacial Clinic Virtual Walkthrough Tour"
+            description="Complete virtual walkthrough of our consultation cabin, operatory room, sterilization bay, and waiting lounge near Sector 49, Noida."
+            category="Virtual Tour"
           />
         )}
       </section>

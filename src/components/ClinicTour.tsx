@@ -37,11 +37,21 @@ export interface MediaItem {
 const galleryMediaItems: MediaItem[] = [
   // --- Clinic Tours & Facilities ---
   {
+    id: "clinic-complete-walkthrough-vid",
+    type: "video",
+    title: "Complete Clinic Virtual Walkthrough Tour",
+    category: "Clinic Tours & Facilities",
+    desc: "Virtual video walkthrough covering our consultation cabin, operatory room, sterilization bay, and waiting lounge in Noida.",
+    src: "/videos/align-clinic-walkthrough-tour.mp4",
+    poster: "/images/poster-align-clinic-walkthrough.jpg",
+    tag: "Virtual Tour"
+  },
+  {
     id: "clinic-operatory-walkthrough-vid",
     type: "video",
-    title: "Complete Operatory Bay Walkthrough",
+    title: "Operatory Room & Treatment Chair Tour",
     category: "Clinic Tours & Facilities",
-    desc: "Virtual video walkthrough of our modern dental chair, instrument console, and operatory bay in Noida.",
+    desc: "Close-up video walkthrough of our modern dental chair, instrument console, and operatory bay in Noida.",
     src: "/videos/clinic-tour-walkthrough-1.mp4",
     poster: "/images/poster-operatory-walkthrough.jpg",
     tag: "Operatory Tour"
@@ -517,9 +527,9 @@ export default function ClinicTour() {
 
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
               <CustomVideoPlayer
-                src="/videos/clinic-tour-walkthrough-1.mp4"
-                poster="/images/poster-operatory-walkthrough.jpg"
-                title="Complete Operatory Bay Walkthrough"
+                src="/videos/align-clinic-walkthrough-tour.mp4"
+                poster="/images/poster-align-clinic-walkthrough.jpg"
+                title="Complete Clinic Virtual Walkthrough Tour"
                 className="w-full"
                 onExpand={() => setActiveLightboxMedia(galleryMediaItems[0])}
               />
