@@ -134,8 +134,8 @@ export default function ContactPage() {
               Watch Entrance & Arrival Walkthrough
             </h3>
             <CustomVideoPlayer
-              src="/videos/clinic-tour-walkthrough-1.mp4"
-              poster="/images/clinic-tour-facility-1.jpg"
+              src="/videos/align-clinic-walkthrough-tour.mp4"
+              poster="/images/poster-align-clinic-walkthrough.jpg"
               title="Arrival Guide - Pillar 44 Dadri Main Road"
               subtitle="Quick visual guide to finding Align Clinic."
               badge="Location Reel"
