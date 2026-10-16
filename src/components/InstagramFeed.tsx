@@ -1,11 +1,14 @@
 "use client";
 
-import { Instagram, Heart, MessageCircle, ExternalLink, Sparkles } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Instagram, Heart, MessageCircle, ExternalLink, Film, Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { clinicConfig } from "@/data/clinicData";
 
 interface InstaPost {
   id: string;
   image: string;
+  videoSrc?: string;
+  isVideo?: boolean;
   caption: string;
   category: string;
   likes: number;
@@ -56,12 +59,102 @@ const instaPosts: InstaPost[] = [
   },
   {
     id: "post6",
-    image: "/images/smile-transformation-care.jpg",
-    caption: "700+ Happy Patients treated with transparent care & ethical treatment planning at Align Dentofacial Clinic.",
-    category: "Milestone",
-    likes: 215
+    image: "/images/poster-align-clinic-walkthrough.jpg",
+    videoSrc: "/videos/align-clinic-walkthrough-tour.mp4",
+    isVideo: true,
+    caption: "Step inside Align Dentofacial Clinic! Watch our complete video walkthrough of our reception, operatory & sterilization setup in Noida.",
+    category: "Clinic Tour Reel",
+    likes: 382
   }
 ];
+
+function ReelPlayer({ src, poster }: { src: string; poster: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+    }
+  }, []);
+
+  const togglePlay = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    if (isPlaying) {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const toggleMute = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!videoRef.current) return;
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  return (
+    <div className="relative h-64 w-full overflow-hidden bg-slate-950 group/reel">
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        loop
+        muted={isMuted}
+        playsInline
+        autoPlay
+        onClick={togglePlay}
+        className="w-full h-full object-cover cursor-pointer"
+      />
+
+      {/* Reel Badge */}
+      <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-[10px] font-bold flex items-center gap-1.5 z-10 shadow-md pointer-events-none">
+        <Film className="w-3.5 h-3.5 text-pink-400 animate-pulse" />
+        <span>Reel</span>
+      </div>
+
+      {/* Play/Pause Center Indicator when paused */}
+      {!isPlaying && (
+        <div
+          onClick={togglePlay}
+          className="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer z-10"
+        >
+          <div className="w-12 h-12 rounded-full bg-pink-600/90 text-white flex items-center justify-center shadow-lg transform transition-transform hover:scale-110">
+            <Play className="w-6 h-6 fill-white ml-0.5" />
+          </div>
+        </div>
+      )}
+
+      {/* Controls Bar */}
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-auto">
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pause reel" : "Play reel"}
+          className="w-7 h-7 rounded-full bg-black/70 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/90 transition-all shadow-md"
+        >
+          {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-white" />}
+        </button>
+
+        <button
+          type="button"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute reel" : "Mute reel"}
+          className="w-7 h-7 rounded-full bg-black/70 backdrop-blur-md text-white flex items-center justify-center hover:bg-black/90 transition-all shadow-md"
+        >
+          {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-teal-300" />}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function InstagramFeed() {
   return (
@@ -82,49 +175,74 @@ export default function InstagramFeed() {
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {instaPosts.map((post) => (
-          <a
+          <div
             key={post.id}
-            href={clinicConfig.socials.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative bg-white rounded-3xl overflow-hidden shadow-soft border border-slate-100 hover:shadow-elevated transition-all duration-300 block"
+            className="group relative bg-white rounded-3xl overflow-hidden shadow-soft border border-slate-100 hover:shadow-elevated transition-all duration-300 flex flex-col justify-between"
           >
-            {/* Image Container */}
-            <div className="relative h-64 w-full overflow-hidden bg-slate-900">
-              <img
-                src={post.image}
-                alt={post.caption}
-                className="w-full h-full object-cover object-[center_15%] group-hover:scale-110 transition-transform duration-500"
-              />
-              {/* Overlay on hover */}
-              <div className="absolute inset-0 bg-navy-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white">
-                <div className="flex items-center gap-1.5 font-semibold text-sm">
-                  <Heart className="w-5 h-5 fill-white text-white" />
-                  <span>{post.likes}</span>
+            {/* Media Container */}
+            {post.isVideo && post.videoSrc ? (
+              <ReelPlayer src={post.videoSrc} poster={post.image} />
+            ) : (
+              <a
+                href={clinicConfig.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative h-64 w-full overflow-hidden bg-slate-900 block"
+              >
+                <img
+                  src={post.image}
+                  alt={post.caption}
+                  className="w-full h-full object-cover object-[center_15%] group-hover:scale-110 transition-transform duration-500"
+                />
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-navy-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white">
+                  <div className="flex items-center gap-1.5 font-semibold text-sm">
+                    <Heart className="w-5 h-5 fill-white text-white" />
+                    <span>{post.likes}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 font-semibold text-sm">
+                    <MessageCircle className="w-5 h-5 fill-white text-white" />
+                    <span>Comment</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5 font-semibold text-sm">
-                  <MessageCircle className="w-5 h-5 fill-white text-white" />
-                  <span>Comment</span>
-                </div>
-              </div>
-            </div>
+              </a>
+            )}
 
             {/* Post Content Footer */}
-            <div className="p-4 space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-teal-600 bg-teal-50 px-2.5 py-0.5 rounded-full border border-teal-200">
-                  {post.category}
-                </span>
+            <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border flex items-center gap-1 ${
+                    post.isVideo 
+                      ? "text-pink-700 bg-pink-50 border-pink-200" 
+                      : "text-teal-600 bg-teal-50 border-teal-200"
+                  }`}>
+                    {post.isVideo && <Film className="w-3 h-3 text-pink-500" />}
+                    <span>{post.category}</span>
+                  </span>
+                  {post.isVideo && (
+                    <span className="text-[10px] font-semibold text-pink-600 flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-pink-500 animate-ping inline-block"></span>
+                      Reel
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-slate-700 line-clamp-2 leading-relaxed">
+                  {post.caption}
+                </p>
               </div>
-              <p className="text-xs text-slate-700 line-clamp-2 leading-relaxed">
-                {post.caption}
-              </p>
-              <div className="flex items-center justify-between text-[11px] text-pink-600 font-semibold pt-2 border-t border-slate-100">
-                <span>View on Instagram</span>
+
+              <a
+                href={clinicConfig.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between text-[11px] text-pink-600 font-semibold pt-2 border-t border-slate-100 hover:text-pink-700 transition-colors"
+              >
+                <span>{post.isVideo ? "Watch on Instagram" : "View on Instagram"}</span>
                 <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </div>
+              </a>
             </div>
-          </a>
+          </div>
         ))}
       </div>
 
