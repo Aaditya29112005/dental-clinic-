@@ -190,8 +190,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mobile Booking Form (Presented cleanly below hero video section on mobile screens) */}
-      <div className="block lg:hidden max-w-xl mx-auto px-4 -mt-8 sm:-mt-10 relative z-30 mb-8">
+      {/* PATIENT REVIEWS & GOOGLE STORIES (Placed directly under hero as requested) */}
+      <section className="max-w-7xl mx-auto px-4 -mt-4 sm:-mt-6 relative z-30 mb-8 sm:mb-12">
+        <TestimonialsCarousel />
+      </section>
+
+      {/* Mobile Booking Form (Presented cleanly below hero and reviews on mobile screens) */}
+      <div className="block lg:hidden max-w-xl mx-auto px-4 relative z-30 mb-10">
         <BookingForm />
       </div>
 
@@ -585,11 +590,6 @@ export default function HomePage() {
       {/* INSTAGRAM FEED SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4">
         <InstagramFeed />
-      </section>
-
-      {/* SECTION 11: PATIENT STORIES */}
-      <section className="max-w-7xl mx-auto px-4">
-        <TestimonialsCarousel />
       </section>
 
       {/* SECTION 12: FAQ ACCORDION */}
