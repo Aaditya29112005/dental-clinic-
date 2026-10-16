@@ -42,7 +42,7 @@ const instaPosts: InstaPost[] = [
   },
   {
     id: "post4",
-    image: "/images/dr-jyoti-consultation.jpg",
+    image: "/images/invisalign-provider-lounge.png",
     caption: "Invisalign® Clear Aligners - virtually invisible smile alignment planned with precision 3D digital scans.",
     category: "Invisalign® Care",
     likes: 186

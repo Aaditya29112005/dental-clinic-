@@ -121,15 +121,24 @@ export default function ContactPage() {
             <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block">
               Exterior & Entrance Preview
             </span>
-            <div className="w-full h-56 rounded-2xl overflow-hidden shadow-inner border border-slate-200">
-              <img
-                src="/images/clinic-entrance-door-photo.jpg"
-                alt="Align Dentofacial Clinic Exterior Entrance at Dadri Main Road"
-                className="w-full h-full object-cover"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 h-auto sm:h-56">
+              <div className="h-48 sm:h-full rounded-2xl overflow-hidden shadow-inner border border-slate-200">
+                <img
+                  src="/images/east-avenue-grand-building-exterior.jpg"
+                  alt="East Avenue Grand Complex Exterior at Pillar 44 Dadri Main Road"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="h-48 sm:h-full rounded-2xl overflow-hidden shadow-inner border border-slate-200">
+                <img
+                  src="/images/clinic-entrance-door-photo.jpg"
+                  alt="Align Dentofacial Clinic Ground Floor Entrance Door"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Located directly at Pillar No. 44, Dadri Main Road, Sector 49, Noida. Look for our clear signage and easy ground-level entrance.
+              Located directly at Pillar No. 44, East Avenue Grand, Dadri Main Road, Sector 49, Noida. Look for our clear signage and easy ground-level entrance.
             </p>
           </div>
 

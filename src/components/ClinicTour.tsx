@@ -78,11 +78,11 @@ const galleryMediaItems: MediaItem[] = [
   {
     id: "clinic-lounge-img",
     type: "image",
-    title: "Patient Waiting Lounge & Reception",
+    title: "Official Invisalign® Provider Lounge",
     category: "Clinic Tours & Facilities",
-    desc: "Calm, comfortable waiting lounge with plush leather seating, air conditioning, and Invisalign showcase.",
-    src: "/images/waiting-lounge.jpg",
-    tag: "Lounge"
+    desc: "Calm, comfortable waiting lounge with plush leather seating, air conditioning, and official Invisalign Provider showcase in Noida.",
+    src: "/images/invisalign-provider-lounge.png",
+    tag: "Invisalign Lounge"
   },
   {
     id: "clinic-reception-desk-img",
