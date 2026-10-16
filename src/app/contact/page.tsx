@@ -123,7 +123,7 @@ export default function ContactPage() {
             </span>
             <div className="w-full h-56 rounded-2xl overflow-hidden shadow-inner border border-slate-200">
               <img
-                src="/images/clinic-tour-facility-1.jpg"
+                src="/images/clinic-entrance-door-photo.jpg"
                 alt="Align Dentofacial Clinic Exterior Entrance at Dadri Main Road"
                 className="w-full h-full object-cover"
               />
@@ -133,21 +133,21 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* Video Location Guide Reel */}
+          {/* Video Location & Clinic Walkthrough Reel */}
           <div className="bg-navy-950 text-white p-6 md:p-8 rounded-3xl shadow-elevated space-y-4">
             <div className="flex items-center gap-2 text-xs font-bold text-teal-400 uppercase tracking-widest">
               <Film className="w-4 h-4" />
-              <span>Location Video Guide</span>
+              <span>Clinic Video Tour</span>
             </div>
             <h3 className="font-serif text-xl font-bold text-white">
-              Watch Entrance & Arrival Walkthrough
+              Watch Clinic Walkthrough & Video Tour
             </h3>
             <CustomVideoPlayer
               src="/videos/align-clinic-walkthrough-tour.mp4"
               poster="/images/poster-align-clinic-walkthrough.jpg"
-              title="Arrival Guide - Pillar 44 Dadri Main Road"
-              subtitle="Quick visual guide to finding Align Clinic."
-              badge="Location Reel"
+              title="Align Dentofacial Clinic Tour"
+              subtitle="Complete video walkthrough of our entrance, reception lounge, dental operatory & sterilization setup."
+              badge="Clinic Tour"
               className="w-full border border-teal-500/30"
             />
           </div>

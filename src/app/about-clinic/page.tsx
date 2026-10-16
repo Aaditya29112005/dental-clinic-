@@ -100,11 +100,11 @@ export default function AboutClinicPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-3">
               <CustomVideoPlayer
-                src="/videos/clinic-tour-walkthrough-1.mp4"
-                poster="/images/clinic-tour-operatory-1.jpg"
-                title="Boutique Operatory & Infrastructure Walkthrough"
-                subtitle="High-definition clinical setup tour."
-                badge="Facility Tour"
+                src="/videos/align-clinic-walkthrough-tour.mp4"
+                poster="/images/poster-align-clinic-walkthrough.jpg"
+                title="Complete Clinic Video Tour & Facility Walkthrough"
+                subtitle="High-definition video walkthrough of our reception, dental operatory & sterilization setup."
+                badge="Clinic Tour"
                 className="w-full"
               />
             </div>
