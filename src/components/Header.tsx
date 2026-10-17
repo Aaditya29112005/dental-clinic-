@@ -25,6 +25,7 @@ import {
   locationsData,
   getAlignerTerm
 } from "@/data/clinicData";
+import { scrollToBookingForm } from "@/lib/scrollToBooking";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -285,7 +286,11 @@ export default function Header() {
             </Link>
             <a
               href="#book-appointment"
-              className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-teal-500 hover:bg-teal-600 shadow-md hover:shadow-lg transition-all flex items-center gap-1.5"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToBookingForm("/#book-appointment");
+              }}
+              className="px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-teal-500 hover:bg-teal-600 shadow-md hover:shadow-lg transition-all flex items-center gap-1.5 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Appointment</span>
@@ -512,8 +517,12 @@ export default function Header() {
               </Link>
               <a
                 href="#book-appointment"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3.5 min-h-[44px] text-center rounded-2xl text-xs font-semibold text-white bg-teal-500 hover:bg-teal-600 shadow-md flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileMenuOpen(false);
+                  scrollToBookingForm("/#book-appointment");
+                }}
+                className="w-full py-3.5 min-h-[44px] text-center rounded-2xl text-xs font-semibold text-white bg-teal-500 hover:bg-teal-600 shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Appointment Now</span>

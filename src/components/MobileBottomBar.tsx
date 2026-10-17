@@ -2,11 +2,17 @@
 
 import { Phone, MessageCircle, Calendar } from "lucide-react";
 import { clinicConfig } from "@/data/clinicData";
+import { scrollToBookingForm } from "@/lib/scrollToBooking";
 
 export default function MobileBottomBar() {
   const whatsappMsg = encodeURIComponent(
     "Hi, I'd like to book a consultation at Align Dentofacial Clinic."
   );
+
+  const handleBook = (e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollToBookingForm("/#book-appointment");
+  };
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 py-2.5 px-3 pb-[max(0.625rem,env(safe-area-inset-bottom))] shadow-lg">
@@ -29,13 +35,15 @@ export default function MobileBottomBar() {
           <span className="text-[11px] font-semibold">WhatsApp</span>
         </a>
 
-        <a
-          href="#book-appointment"
-          className="flex flex-col items-center justify-center py-2.5 px-1 rounded-xl bg-teal-500 hover:bg-teal-600 active:scale-95 text-white transition-all shadow-sm min-h-[44px]"
+        <button
+          type="button"
+          onClick={handleBook}
+          aria-label="Book Consultation Appointment"
+          className="flex flex-col items-center justify-center py-2.5 px-1 rounded-xl bg-teal-500 hover:bg-teal-600 active:scale-95 text-white transition-all shadow-sm min-h-[44px] cursor-pointer"
         >
           <Calendar className="w-4 h-4 mb-0.5" />
           <span className="text-[11px] font-semibold">Book</span>
-        </a>
+        </button>
       </div>
     </div>
   );

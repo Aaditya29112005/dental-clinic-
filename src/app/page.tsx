@@ -25,12 +25,26 @@ import GSAPBatchReveal from "@/components/animations/GSAPBatchReveal";
 import GSAPSplitTextHeading from "@/components/animations/GSAPSplitTextHeading";
 import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 import MediaLightboxModal from "@/components/MediaLightboxModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { scrollToBookingForm } from "@/lib/scrollToBooking";
 
 export default function HomePage() {
   const [heroModalOpen, setHeroModalOpen] = useState(false);
   const alignerTerm = getAlignerTerm(true);
   const whatsappMsg = encodeURIComponent("Hi, I'd like to book a consultation at Align Dentofacial Clinic.");
+
+  useEffect(() => {
+    const handleHash = () => {
+      if (typeof window !== "undefined" && window.location.hash === "#book-appointment") {
+        setTimeout(() => {
+          scrollToBookingForm();
+        }, 150);
+      }
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
 
   const problemStripItems = [
     { title: "Tooth Pain", image: "/images/tooth-pain-concern.jpg", icon: Stethoscope, slug: "tooth-pain" },
@@ -139,7 +153,10 @@ export default function HomePage() {
             {/* GSAP Magnetic Buttons */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
               <GSAPMagneticButton href="#book-appointment" strength={0.4}>
-                <div className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs sm:text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer">
+                <div 
+                  onClick={() => scrollToBookingForm()}
+                  className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs sm:text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer"
+                >
                   <Calendar className="w-4 h-4" />
                   <span>Book Appointment</span>
                 </div>
@@ -183,7 +200,7 @@ export default function HomePage() {
 
           {/* Desktop Right Side: Inline Booking Card */}
           <div className="hidden lg:block lg:col-span-5">
-            <BookingForm />
+            <BookingForm id="desktop-booking-form" />
           </div>
 
         </div>
@@ -196,7 +213,7 @@ export default function HomePage() {
 
       {/* Mobile Booking Form (Presented cleanly after reviews on mobile screens) */}
       <div className="block lg:hidden max-w-xl mx-auto px-4 relative z-30 mb-8">
-        <BookingForm />
+        <BookingForm id="book-appointment" />
       </div>
 
       {/* SECTION 2: PROBLEM STRIP */}
@@ -556,7 +573,10 @@ export default function HomePage() {
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
               <GSAPMagneticButton href="#book-appointment" strength={0.45}>
-                <div className="px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer">
+                <div 
+                  onClick={() => scrollToBookingForm()}
+                  className="px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm shadow-lg hover:shadow-teal-500/30 transition-all flex items-center gap-2 cursor-pointer"
+                >
                   <Calendar className="w-4 h-4" />
                   <span>Book Appointment</span>
                 </div>

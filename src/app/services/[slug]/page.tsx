@@ -270,7 +270,7 @@ export default function ServiceDetailPage({ params }: Props) {
         {/* Sidebar Column */}
         <div className="lg:col-span-4 space-y-8">
           {/* Booking Form Card */}
-          <div id="book-service-form" className="sticky top-28">
+          <div id="book-service-form" className="sticky top-28 scroll-mt-28">
             <BookingForm defaultService={service.title} />
 
             {/* Related Treatments */}

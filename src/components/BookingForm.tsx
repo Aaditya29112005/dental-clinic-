@@ -8,9 +8,14 @@ import { servicesData } from "@/data/clinicData";
 interface BookingFormProps {
   defaultService?: string;
   className?: string;
+  id?: string;
 }
 
-export default function BookingForm({ defaultService = "", className = "" }: BookingFormProps) {
+export default function BookingForm({ 
+  defaultService = "", 
+  className = "",
+  id = "book-appointment" 
+}: BookingFormProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
@@ -89,8 +94,9 @@ export default function BookingForm({ defaultService = "", className = "" }: Boo
 
   return (
     <div
-      id="book-appointment"
-      className={`bg-slate-900/40 backdrop-blur-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(0,0,0,0.45)] rounded-3xl p-6 md:p-8 text-white hover:border-teal-400/40 transition-all duration-300 ${className}`}
+      id={id}
+      data-booking-form="true"
+      className={`scroll-mt-28 bg-slate-900/40 backdrop-blur-2xl border border-white/25 shadow-[0_8px_32px_0_rgba(0,0,0,0.45)] rounded-3xl p-6 md:p-8 text-white hover:border-teal-400/40 transition-all duration-300 ${className}`}
     >
       <div className="mb-6">
         <span className="text-xs font-bold text-teal-300 uppercase tracking-widest block mb-1">
