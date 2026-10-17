@@ -12,7 +12,6 @@ import {
   Stethoscope,
   Smile,
   Zap,
-  Award,
   MapPin
 } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
@@ -483,67 +482,6 @@ export default function HomePage() {
             ))}
           </div>
         </GSAPBatchReveal>
-      </section>
-
-      {/* SECTION 6: MEET YOUR ORTHODONTIST */}
-      <section className="max-w-7xl mx-auto px-4">
-        <div className="bg-navy-900 text-white rounded-3xl p-8 md:p-12 shadow-elevated grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          
-          <div className="lg:col-span-5 text-center">
-            <div className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-none aspect-[3/4] mx-auto rounded-2xl overflow-hidden shadow-elevated border-2 border-teal-500/30 bg-navy-950">
-              <img
-                src="/images/dr-jyoti-chauhan.png"
-                alt="Dr. Jyoti Chauhan MDS Orthodontist"
-                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-            <div className="mt-4 inline-flex items-center gap-2 bg-teal-500/20 px-3 py-1 rounded-full text-xs font-semibold text-teal-300 border border-teal-500/30">
-              <Award className="w-3.5 h-3.5 text-teal-400" />
-              <span>MDS Orthodontics Specialist</span>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 space-y-4">
-            <span className="text-xs font-bold text-teal-400 uppercase tracking-widest block">
-              Lead Doctor & Specialist
-            </span>
-            <GSAPSplitTextHeading
-              tag="h2"
-              text="Meet Dr. Jyoti Chauhan"
-              type="words"
-              className="font-serif text-3xl md:text-4xl font-bold text-white block"
-            />
-            <div className="text-xs font-semibold text-teal-300">
-              MDS (Orthodontics and Dentofacial Orthopaedics)
-            </div>
-
-            <p className="text-sm text-slate-300 leading-relaxed font-sans">
-              {clinicConfig.leadDoctor.bio}
-            </p>
-
-            {/* Specialty Tags */}
-            <div className="pt-2">
-              <div className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Areas of Focus</div>
-              <div className="flex flex-wrap gap-2">
-                {clinicConfig.leadDoctor.areasOfWork.map((area, idx) => (
-                  <span key={idx} className="bg-white/10 text-slate-200 text-xs px-3 py-1 rounded-lg border border-white/10">
-                    {area}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <GSAPMagneticButton href="/meet-dr-jyoti-chauhan" strength={0.4}>
-                <div className="px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-semibold text-xs transition-all shadow-md inline-flex items-center gap-2 cursor-pointer">
-                  <span>Read Full Doctor Profile</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </GSAPMagneticButton>
-            </div>
-          </div>
-
-        </div>
       </section>
 
       {/* SECTION 7: WHY CHOOSE ALIGN */}
