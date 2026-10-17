@@ -190,13 +190,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PATIENT REVIEWS & GOOGLE STORIES (Placed directly under hero as requested) */}
-      <section className="max-w-7xl mx-auto px-4 -mt-4 sm:-mt-6 relative z-30 mb-8 sm:mb-12">
+      {/* SECTION: PATIENT STORIES & GOOGLE REVIEWS (Directly below Hero) */}
+      <section className="max-w-7xl mx-auto px-4 -mt-4 sm:-mt-6 relative z-30 mb-8">
         <TestimonialsCarousel />
       </section>
 
-      {/* Mobile Booking Form (Presented cleanly below hero and reviews on mobile screens) */}
-      <div className="block lg:hidden max-w-xl mx-auto px-4 relative z-30 mb-10">
+      {/* Mobile Booking Form (Presented cleanly after reviews on mobile screens) */}
+      <div className="block lg:hidden max-w-xl mx-auto px-4 relative z-30 mb-8">
         <BookingForm />
       </div>
 

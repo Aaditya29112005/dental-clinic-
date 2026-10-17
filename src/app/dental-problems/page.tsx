@@ -57,7 +57,7 @@ export default function DentalProblemsPage() {
                     <img
                       src={prob.image}
                       alt={prob.title}
-                      className={`w-full h-full ${prob.slug === "dental-emergency" ? "object-contain bg-white" : "object-cover"} group-hover:scale-105 transition-transform duration-300`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 )}

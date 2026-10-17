@@ -7,7 +7,7 @@ import CustomVideoPlayer from "@/components/CustomVideoPlayer";
 
 export const metadata: Metadata = {
   title: "Contact Us & Directions | Align Dentofacial Clinic Noida",
-  description: "Contact Align Dentofacial Clinic at Pillar No. 44, Dadri Main Road, near Sector 49, Noida. Call or WhatsApp +91 88604 03089 to book your appointment.",
+  description: "Contact Align Dentofacial Clinic at Flyover Pillar No. 44, Dadri Main Road, near Sector 49, Noida. Call or WhatsApp +91 88604 03089 to book your appointment.",
   alternates: {
     canonical: "https://aligndentofacial.in/contact",
   },
@@ -34,7 +34,7 @@ export default function ContactPage() {
             Contact & Location Directions
           </h1>
           <p className="text-sm text-slate-300 mt-2 max-w-xl mx-auto">
-            Located right on Dadri Main Road at Pillar No. 44, East Avenue Grand, near Sector 49, Noida.
+            Located right on Dadri Main Road at Flyover Pillar No. 44, East Avenue Grand, near Sector 49, Noida.
           </p>
         </div>
       </section>
@@ -121,15 +121,15 @@ export default function ContactPage() {
             <span className="text-xs font-bold text-teal-600 uppercase tracking-widest block">
               Exterior & Entrance Preview
             </span>
-            <div className="w-full h-72 sm:h-80 rounded-2xl overflow-hidden shadow-inner border border-slate-200">
+            <div className="w-full h-72 sm:h-96 rounded-2xl overflow-hidden shadow-inner border border-slate-200">
               <img
-                src="/images/clinic-building-exterior-pillar44.jpg"
-                alt="Align Dentofacial Clinic Exterior at Flyover Pillar 44 Dadri Main Road, East Avenue Grand"
-                className="w-full h-full object-cover"
+                src="/images/clinic-exterior-building.png"
+                alt="Align Dentofacial Clinic Exterior at East Avenue Grand, Flyover Pillar 44 Dadri Main Road"
+                className="w-full h-full object-cover object-[center_35%]"
               />
             </div>
             <p className="text-xs text-slate-600 leading-relaxed">
-              Located directly at Flyover Pillar No. 44, East Avenue Grand (Shop No. 6), Dadri Main Road, Sector 49, Noida. Look for our prominent blue clinic signage and easy ground-level entrance.
+              Located directly at Flyover Pillar No. 44, East Avenue Grand, Dadri Main Road, Sector 49, Noida. Look for our clear clinic signage and easy ground-level entrance.
             </p>
           </div>
 
@@ -164,7 +164,7 @@ export default function ContactPage() {
             <ul className="space-y-2 text-xs text-slate-600">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
-                <span>Head toward Dadri Main Road near Sector 49. Look for Flyover Pillar No. 44.</span>
+                <span>Head toward Dadri Main Road near Sector 49. Look for Flyover Pillar No. 44 (flyover pillar, not a metro pillar).</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />

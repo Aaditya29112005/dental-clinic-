@@ -72,7 +72,7 @@ export default function DentalProblemPage({ params }: Props) {
                 <img
                   src={problem.image || `/images/${problem.slug}.jpg`}
                   alt={problem.title}
-                  className={`w-full h-72 sm:h-80 ${problem.slug === "dental-emergency" ? "object-contain bg-white" : "object-cover"} rounded-2xl transform group-hover:scale-105 transition-transform duration-500`}
+                  className="w-full h-72 sm:h-80 object-cover rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent opacity-80" />
                 <div className="absolute bottom-3 left-4 right-4 bg-navy-900/80 backdrop-blur-md p-3 rounded-xl border border-white/10 text-xs text-teal-300 font-medium flex items-center justify-between">
