@@ -93,7 +93,7 @@ export default function AboutClinicPage() {
               Take a Virtual Walkthrough of Our Clinic
             </h2>
             <p className="text-xs text-slate-300">
-              Watch our facility setup video reels below to see our peaceful waiting lounge and sterilised treatment environment.
+              Watch our facility setup video reels below to explore our complete clinic walkthrough and modern treatment operatory.
             </p>
           </div>
 
@@ -110,11 +110,11 @@ export default function AboutClinicPage() {
             </div>
             <div className="space-y-3">
               <CustomVideoPlayer
-                src="/videos/clinic-tour-lounge-1.mp4"
-                poster="/images/clinic-tour-reception-1.jpg"
-                title="Calm Reception & Patient Waiting Lounge"
-                subtitle="Peaceful, welcoming reception lounge designed to put patients completely at ease."
-                badge="Reception Lounge"
+                src="/videos/clinic-tour-walkthrough-1.mp4"
+                poster="/images/poster-operatory-walkthrough.jpg"
+                title="Operatory Room & Modern Treatment Chair"
+                subtitle="Close-up video walkthrough of our ergonomic dental chair, instrument console, and sterile operatory."
+                badge="Treatment Operatory"
                 className="w-full"
               />
             </div>

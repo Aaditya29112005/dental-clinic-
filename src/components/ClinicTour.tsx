@@ -67,6 +67,16 @@ const galleryMediaItems: MediaItem[] = [
     tag: "Sterilization"
   },
   {
+    id: "intraoral-3d-scanner-demo-vid",
+    type: "video",
+    title: "3D Intraoral Digital Impression Scanning",
+    category: "Clinic Tours & Facilities",
+    desc: "Live 3D intraoral digital impression scanning for high-precision clear aligners, dental crowns, and orthodontic planning.",
+    src: "/videos/intraoral-3d-scan-technology.mp4",
+    poster: "/images/poster-intraoral-scan.jpg",
+    tag: "3D Scanner"
+  },
+  {
     id: "clinic-facade-img",
     type: "image",
     title: "Clinic Entrance & Welcome Glass Facade",

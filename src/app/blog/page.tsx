@@ -59,9 +59,9 @@ export default function BlogListingPage() {
               <CustomVideoPlayer
                 src="/videos/video-tech-highlight.mp4"
                 poster="/images/advanced-dental-tech.jpg"
-                title="Modern Dental Technology & Precision Care"
-                subtitle="Understanding intraoral scanning and apex locators."
-                badge="Tech Reel"
+                title="3D Intraoral Digital Scanning & Technology"
+                subtitle="Live digital impression scanning for accurate orthodontic alignment and clear aligners."
+                badge="3D Intraoral Scan"
                 aspectRatio="aspect-video"
               />
             </div>
@@ -69,9 +69,9 @@ export default function BlogListingPage() {
               <CustomVideoPlayer
                 src="/videos/video-smile-consultation.mp4"
                 poster="/images/smile-transformation-care.jpg"
-                title="What to Expect in Your First Smile Assessment"
-                subtitle="Step-by-step patient evaluation guide."
-                badge="Patient Guide"
+                title="Dr. Jyoti Chauhan Performing Clinical Procedure"
+                subtitle="Specialist orthodontic care and precision dental treatment in our sterile operatory."
+                badge="Clinical Care"
                 aspectRatio="aspect-video"
               />
             </div>
