@@ -93,7 +93,7 @@ export default function AboutClinicPage() {
               Take a Virtual Walkthrough of Our Clinic
             </h2>
             <p className="text-xs text-slate-300">
-              Watch our facility setup video reels below to explore our complete clinic walkthrough and modern treatment operatory.
+              Watch our facility setup video reels below to explore our complete clinic walkthrough and 3D digital scanning technology.
             </p>
           </div>
 
@@ -110,11 +110,11 @@ export default function AboutClinicPage() {
             </div>
             <div className="space-y-3">
               <CustomVideoPlayer
-                src="/videos/clinic-tour-walkthrough-1.mp4"
-                poster="/images/poster-operatory-walkthrough.jpg"
-                title="Operatory Room & Modern Treatment Chair"
-                subtitle="Close-up video walkthrough of our ergonomic dental chair, instrument console, and sterile operatory."
-                badge="Treatment Operatory"
+                src="/videos/intraoral-3d-scan-technology.mp4"
+                poster="/images/poster-intraoral-scan.jpg"
+                title="3D Intraoral Digital Scanning & Technology"
+                subtitle="Live 3D optical impression scanning for high-precision clear aligners and orthodontic planning."
+                badge="3D Intraoral Scan"
                 className="w-full"
               />
             </div>
