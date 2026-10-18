@@ -921,7 +921,7 @@ export const dentalProblemsData: DentalProblemItem[] = [
     title: "Child Afraid of the Dentist",
     shortDesc: "Pediatric fear or apprehension regarding dental examinations and treatments.",
     aeoAnswer: "Our child-friendly dental care near Sector 49 Noida uses gentle explanation, friendly rapport, and short visits to ensure children feel comfortable and safe.",
-    image: "/images/dental-checkups-and-digital-x-rays-noida.jpg",
+    image: "/images/child-afraid-of-the-dentist.png",
     symptoms: ["Crying or refusal to sit in the dental chair", "Fear of dental equipment"],
     commonCauses: ["Unfamiliar environments", "Fear of discomfort"],
     whenToSeeDentist: ["By age 1 or when first baby teeth appear to build positive familiarity"],
