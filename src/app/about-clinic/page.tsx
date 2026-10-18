@@ -34,15 +34,15 @@ export default function AboutClinicPage() {
                 About Align Dentofacial Clinic
               </h1>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-sans">
-                Established in 2024 at Pillar No. 44, Dadri Main Road, near Sector 49, Noida. We combine specialist orthodontic precision with a calm, home-style environment.
+                Established in 2024 at Flyover Pillar No. 44, Dadri Main Road, near Sector 49, Noida. We combine specialist orthodontic precision with a calm, home-style environment.
               </p>
             </div>
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-teal-500/30 aspect-[4/3]">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-2 border-teal-500/30 aspect-[4/3] bg-navy-900">
                 <img
                   src="/images/about-hero.jpg"
-                  alt="Align Dentofacial Clinic Interior & Consultation"
-                  className="w-full h-full object-cover"
+                  alt="Align Dentofacial Clinic Entrance Door at Flyover Pillar 44 Noida"
+                  className="w-full h-full object-cover object-[center_40%]"
                 />
               </div>
             </div>

@@ -71,8 +71,8 @@ const galleryMediaItems: MediaItem[] = [
     type: "image",
     title: "Clinic Entrance & Welcome Glass Facade",
     category: "Clinic Tours & Facilities",
-    desc: "Modern boutique facade and welcoming glass entrance at Pillar 44, Dadri Main Road, near Sector 49, Noida.",
-    src: "/images/dr-jyoti-consultation.jpg",
+    desc: "Modern boutique facade and welcoming glass entrance at Flyover Pillar 44, Dadri Main Road, near Sector 49, Noida.",
+    src: "/images/align-clinic-entrance-door.jpg",
     tag: "Entrance"
   },
   {
